@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<title>Clothes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<body>
+
+<!-- Sidebar Menu -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="sidebar">
+  <a href="javascript:void(0)" onclick="sidebar_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="index.html" onclick="sidebar_close()" class="w3-bar-item w3-button">Categories</a>
+  <a href="#thechild" onclick="sidebar_close()" class="w3-bar-item w3-button">The Child</a>
+  <a href="#theparent" onclick="sidebar_close()" class="w3-bar-item w3-button">The Parent</a>
+  <a href="#foodact" onclick="sidebar_close()" class="w3-bar-item w3-button">Child Activity: CLOTHES</a>
+  <a href="#logout" onclick="sidebar_close()" class="w3-bar-item w3-button">Logout</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="sidebar_open()">☰</div>
+    <div class="w3-center w3-padding-16">List of Clothes</div>
+  </div>
+</div>
+  
+<!-- Page Content -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="clothes pics/tshirt.jpg" alt="Shirt" style="width:100%">
+      <h3>Shirt</h3>
+      <p>TSHIRT</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="clothes pics/pants.jpg" alt="Pants" style="width:100%">
+      <h3>Pants</h3>
+      <p>LEVI'S</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="clothes pics/brief.jpg" alt="Brief" style="width:100%">
+      <h3>Brief</h3>
+      <p>BENCH</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="clothes pics/shorts.jpg" alt="Shorts" style="width:100%">
+      <h3>Shorts</h3>
+      <p>shorts</p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="clothes pics/jacket.jpg" alt="Jacket" style="width:100%">
+      <h3>Jacket</h3>
+      <p>Jackeeeet</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="clothes pics/skirt.jpg" alt="Skirt" style="width:100%">
+      <h3>Skirt</h3>
+      <p>skirts</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="clothes pics/panty.jpg" alt="Panty" style="width:100%">
+      <h3>Panty</h3>
+      <p>BENCH</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="clothes pics/dress.jpg" alt="Dress" style="width:100%">
+      <h3>Dress</h3>
+      <p>dreeeeess</p>
+    </div>
+  </div>
+  
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function sidebar_open() {
+    document.getElementById("sidebar").style.display = "block";
+}
+ 
+function sidebar_close() {
+    document.getElementById("sidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+  
