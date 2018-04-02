@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+        <script src="/static/bootstrap-3.3.7/dist/js/jquery-3.3.1.min.js"></script>
+        <script src="/static/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>    
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <div class="container" id="maincontainer">
+            <div id="myalert" style="position:relative; top:75px;">
+                
+            </div>
+            <div style="position: relative; top:70px; border: 1px solid gray; border-radius:10px; box-shadow:0 3px 7px 1px; padding:15px;">
+                <div class="row">
+                    <div class="col-sm-12" style="text-align:center;">
+                        <span style="font-size:150%;">Communication Aid</span>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <label for="username">username</label>
+                        <input type="text" class="form-control" id="username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <label for="password">password</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" style="width:100%;" onclick="login()">
+                            Login
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p id="area1"></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <script>
+                function login() {
+                    var username = $("#username").val();
+                    var password = $("#password").val();
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                       
+                        if (this.readyState == 4 && this.status == 200) {
+                            $("#myalert").html('\
+                                <div class="alert alert-success alert-dismissible">\
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>\
+                                    <strong>Login Successful</strong>\
+                                </div>\
+                                ');                            // $("#area1").text(JSON.stringify(this.responseText));
+                            // console.log(JSON.stringify(this.responseText));
+                        }else if(this.status == 401){
+                            $("#myalert").html('\
+                                <div class="alert alert-danger alert-dismissible">\
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>\
+                                    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.\
+                                </div>\
+                                ');
+                        }
+
+                    };
+                    xhttp.open("POST", "http://localhost:4000/user/login/", true);
+                    xhttp.setRequestHeader("Content-type", "application/json");
+                    xhttp.send(JSON.stringify({"name":username,"password":password}) );
+                }
+                </script>
+
+    </body>
+</html>
