@@ -9,3 +9,14 @@ function goto_enroll() {
 function goto_home() {
 	location = "enroll_home.html";
 }
+
+function goto_directory(){
+	location = "spec.html"
+}
+
+function alert_call(value){
+	alert("Calling "+value);
+}
+function info(){
+	location = "call.html"
+}

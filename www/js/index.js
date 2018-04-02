@@ -42,7 +42,7 @@ function register_user(form){
     
         
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/user";
+    var url = "http://127.0.0.1:80/user";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
@@ -73,7 +73,7 @@ function add_directory(form){
     
         
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/directory";
+    var url = "http://127.0.0.1:80/directory";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
@@ -88,7 +88,7 @@ function add_directory(form){
 
 
     
-    location="class.html"  
+    location="enroll_home.html"  
     alert("Thanks ! " + name  + " is successfully added to your Directory.");
     
 
