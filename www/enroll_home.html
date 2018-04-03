@@ -20,7 +20,7 @@
 		<tr>
 			<thead>
 				<tr>
-					<th> <center><h2> Contact <button class="button button1" onclick="goto_directory()">ADD +</button></h2></center></th>
+					<th> <center><h2> Contact <button class="button button1" onclick="goto_directory()">AD D +</button></h2></center></th>
 	<!-- 				<th> Contact </th> -->
 				</tr>
 			</thead>
@@ -51,9 +51,10 @@
 			var directory_data='';
 			$.each(data,function(key,value){
 				directory_data += '<tr>';
-				val = value.contact
-				directory_data += '<td onclick="alert(val)"><h2>'+value.name+'</h2></td>';
-				directory_data += '<td>'+value.contact+'</td>';
+				val = value.contact;
+				yu =value.address;
+				directory_data += '<td onclick="info('+val+')" location = "call.html"><h2>'+value.name+'</h2></td>';
+				// directory_data += '<td>'+value.contact+'</td>';
 				
 				// directory_data += '<td><h2><a onclick="alert_call(val)"><span class="glyphicon glyphicon-earphone"></span></a></h2></td>';
 				
@@ -62,11 +63,11 @@
 			$('#directory_table').append(directory_data);
 		});
 	});
-	var table = document.getElementById("directory_table"),rIndex;
-	for(var i = 0; i < table.rows.length; i++){
-		table.rows[i].onclick = function(){
-			rIndex = this.rowIndex;
-			console.log(rIndex);
-		};
-	}
+	// var table = document.getElementById("directory_table"),rIndex;
+	// for(var i = 0; i < table.rows.length; i++){
+	// 	table.rows[i].onclick = function(){
+	// 		rIndex = this.rowIndex;
+	// 		console.log(rIndex);
+	// 	};
+	// }
 </script>

@@ -17,6 +17,9 @@ function goto_directory(){
 function alert_call(value){
 	alert("Calling "+value);
 }
-function info(){
-	location = "call.html"
+function info(val){
+	alert(name);
+
+	location = "call.html?"+val;
+
 }

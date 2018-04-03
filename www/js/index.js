@@ -35,30 +35,24 @@ function pasuser(form) {
 
 function register_user(form){
 
-    var username = form.id.value;
-    var password = form.pass.value;
-    var email = form.email.value;
 
-    
         
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:80/user";
+    var url = "http://127.0.0.1/user";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json.username + ", " + json.email + ", " + json.password);
+            console.log(json.form.id.value +", " + json.form.acc_type.value + ", " + json.form.email.value + ", " + json.form.pass.value);
         }
     }
-    var json =JSON.stringify({"username": username, "email":email, "password":password});
+    var json =JSON.stringify({"username": form.id.value,"acc_type":form.acc_type.value, "email":form.email.value, "password":form.pass.value});
     console.log(json)
     xhr.send(json);
 
-
-    
     location="index.html";
-    alert("Thanks " + username  + "! You are now Registered.");
+    alert("Thanks " + form.id.value  + "! You are now Registered.");
        
 
 }
