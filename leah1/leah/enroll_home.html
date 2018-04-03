@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/class.css">
 	<link rel="stylesheet" type="text/css" href="css/enroll_home.css">
+
+
 	<!-- 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,26 +18,59 @@
 <body>
 	<h1>Class Name</h1>
 	<button class="button button1" onclick="goto_enroll()">Add Student</button>
-	<h2>   </h2><br><br>
-	<table>
-		<thead>
-			<th> ID </th>
-			<th> Name </th>
-			<th>Option</th>
-		</thead>
-		
+	<h2>   </h2><br><br>s
+	<table id ="class_table">
 		<tr>
-			<td>1234</td>
-			<td>Alien</td>
-			<td style="text-align: center;">	
-				<button class="button button2" >Edit</button>			
+			<thead>
+				<tr>
+					<!-- <th> ID </th> -->
+					<th> Name </th>
+					<!-- <th>Option</th> -->
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td >
+						
+					</td>
+					
+				</tr>
+				
+			</tbody>
+		
+		
+
+							
 <!-- 		<a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
 			<a href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a> -->
 
-				<button class="button button2" >Delete</button> 
-			</td>
+				 
+			
 		</tr>
 		
 	</table>
 </body>
 </html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$.getJSON("http://127.0.0.1/user",function(data){
+			var directory_data='';
+			$.each(data,function(key,value){
+				directory_data += '<tr>';
+				val =value.email;
+				directory_data += '<td onclick="alert('+value.username+')"><h2>'+value.username+'</h2></td>';
+				// directory_data += '<td onclick="alert('+value.password+')"><h2>'+value.email+'</h2></td>';
+				// directory_data += '<td style="text-align: center;"><button class="button button2" >Edit</button><button class="button button2" >Delete</button></td>'
+
+
+
+				// directory_data += '<td><h2><a onclick="alert_call(val)"><span class="glyphicon glyphicon-earphone"></span></a></h2></td>';
+				
+				directory_data += '</tr>';
+			});
+			$('#class_table').append(directory_data);
+		});
+	});
+</script>

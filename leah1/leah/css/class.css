@@ -4,7 +4,7 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url(pic1.jpg);
     height: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
