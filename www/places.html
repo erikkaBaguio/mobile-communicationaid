@@ -36,51 +36,75 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
-      <img src="place pics/playground.jpg" alt="PlayGround" style="width:100%">
+      <img src="place pics/playground.jpg" style="width:100%" onclick="document.getElementById('playground_play').play(); playground_clicks(); return false;" alt="PlayGround">
       <h3>PlayGround</h3>
-      <p>Children's Park</p>
+      <p>Playground is an outdoor area provided for children to play on, especially at a school or public park.</p>
     </div>
     <div class="w3-quarter">
-      <img src="place pics/mall.jpg" alt="Mall" style="width:100%">
-      <h3>Mall</h3>
-      <p>Gaisano Mall</p>
+      <img src="place pics/mall.jpg" style="width:100%" onclick="document.getElementById('mall_play').play(); mall_clicks(); return false;" alt="Shopping Mall">
+      <h3>Shopping Mall</h3>
+      <p>Shopping mall a large building or series of connected buildings containing a variety of retail stores and typically also restaurants.</p>
     </div>
     <div class="w3-quarter">
-      <img src="place pics/church.jpg" alt="Church" style="width:100%">
+      <img src="place pics/church.jpg" style="width:100%" onclick="document.getElementById('church_play').play(); church_clicks(); return false;" alt="Church">
       <h3>Church</h3>
-      <p>Cathedral</p>
+      <p>Church is a building used for public Christian worship.</p>
     </div>
     <div class="w3-quarter">
-      <img src="place pics/school.jpg" alt="School" style="width:100%">
+      <img src="place pics/school.jpg" style="width:100%" onclick="document.getElementById('school_play').play(); school_clicks(); return false;" alt="School">
       <h3>School</h3>
-      <p>MSUIIT</p>
+      <p>School is a place where educating the children</p>
     </div>
   </div>
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <div class="w3-quarter">
-      <img src="place pics/jollibee.jpg" alt="Jolibee" style="width:100%">
+      <img src="place pics/jollibee.jpg" style="width:100%" onclick="document.getElementById('jollibee_play').play(); jollibee_clicks(); return false;" alt="Jollibee">
       <h3>Jollibee</h3>
-      <p>Chicken Joy</p>
+      <p>Jollibee is a Filipino multinational chain of fast food restaurants owned by Jollibee Foods Corporation (JFC).</p>
     </div>
     <div class="w3-quarter">
-      <img src="place pics/mcdo.jpg" alt="McDonald's" style="width:100%">
+      <img src="place pics/mcdo.jpg" style="width:100%" onclick="document.getElementById('mcdo_play').play(); mcdo_clicks(); return false;" alt="McDonald's">
       <h3>McDonald's</h3>
-      <p>McFloat</p>
+      <p>McDonald's is a large group of US fast food restaurants in many countries of the world.</p>
     </div>
     <div class="w3-quarter">
-      <img src="place pics/beach.jpg" alt="Beach" style="width:100%">
+      <img src="place pics/beach.jpg" style="width:100%" onclick="document.getElementById('beach_play').play(); beach_clicks(); return false;" alt="Beach">
       <h3>Beach</h3>
-      <p>Beach</p>
+      <p>Beach is a pebbly or sandy shore, especially by the ocean between high- and low-water marks.</p>
     </div>
     <div class="w3-quarter">
-      <img src="place pics/pool.jpg" alt="Swimming Pool" style="width:100%">
+      <img src="place pics/pool.jpg" style="width:100%" onclick="document.getElementById('pool_play').play(); pool_clicks(); return false;" alt="Swimming Pool">
       <h3>Swimming Pool</h3>
-      <p>Timoga Cold Springs</p>
+      <p>Swimming pool is an artificial pool for people to swimming in</p>
     </div>
   </div>
   
+  <audio id="playground_play">
+    <source src="audio/playground.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="mall_play">
+    <source src="audio/mall.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="church_play">
+    <source src="audio/church.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="school_play">
+    <source src="audio/school.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="jollibee_play">
+    <source src="audio/jollibee.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="mcdo_play">
+    <source src="audio/mcdo.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="beach_play">
+    <source src="audio/beach.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="pool_play">
+    <source src="audio/pool.mp3" type="audio/ogg" />
+    </audio>
 
 <!-- End page content -->
 </div>

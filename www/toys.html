@@ -36,51 +36,75 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
-      <img src="toy pics/toycar.jpg" alt="Toy Car" style="width:100%">
+      <img src="toy pics/toycar.jpg" style="width:100%" onclick="document.getElementById('toycar_play').play(); toycar_clicks(); return false;" alt="Toy Car">
       <h3>Toy Car</h3>
-      <p>CAR</p>
+      <p>Toy car is a miniature representation of an automobile used to play for children.</p>
     </div>
     <div class="w3-quarter">
-      <img src="toy pics/puzzle.jpg" alt="Puzzle Board" style="width:100%">
+      <img src="toLego bricks/blocks y pics/puzzle.jpg" style="width:100%" onclick="document.getElementById('puzzle_play').play(); puzzle_clicks(); return false;" alt="Puzzle">
       <h3>Puzzle</h3>
-      <p>PUZZLE GAME</p>
+      <p>Puzzle is a tiling puzzle that requires the assembly of often oddly shaped interlocking and tessellating pieces.</p>
     </div>
     <div class="w3-quarter">
-      <img src="toy pics/teddybear.jpg" alt="Teddy Bear" style="width:100%">
+      <img src="toy pics/teddybear.jpg" style="width:100%" onclick="document.getElementById('teddybear_play').play(); teddybear_clicks(); return false;" alt="Teddy Bear">
       <h3>Teddy Bear</h3>
-      <p>BIG BEAR</p>
+      <p>Teddy bear, usually stuffed with soft material and covered with furlike plush.</p>
     </div>
     <div class="w3-quarter">
-      <img src="toy pics/flashcards.jpg" alt="Flash Cards" style="width:100%">
+      <img src="toy pics/flashcards.jpg" style="width:100%" onclick="document.getElementById('flashcards_play').play(); flashcards_clicks(); return false;" alt="Flash Cards">
       <h3>Flash Cards</h3>
-      <p>PLAY CARDS</p>
+      <p>A flash cards is a card bearing information, as words or numbers, on either or both sides, used in classroom drills or in private study.</p>
     </div>
   </div>
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <div class="w3-quarter">
-      <img src="toy pics/lego.jpg" alt="Lego Blocks" style="width:100%">
+      <img src="toy pics/lego.jpg" style="width:100%" onclick="document.getElementById('lego_play').play(); lego_clicks(); return false;" alt="Lego Blocks">
       <h3>Lego Blocks</h3>
-      <p>LEGOOO</p>
+      <p>Lego bricks/blocks is a line of plastic construction toys that are manufactured by The Lego Group, a privately held company based in Billund, Denmark.</p>
     </div>
     <div class="w3-quarter">
-      <img src="toy pics/ball.jpg" alt="Ball" style="width:100%">
+      <img src="toy pics/ball.jpg" style="width:100%" onclick="document.getElementById('ball_play').play(); ball_clicks(); return false;" alt="Ball">
       <h3>Ball</h3>
-      <p>BALL</p>
+      <p>A ball is used in ball games, where the play of the game follows the state of the ball as it is hit, kicked or thrown by players.</p>
     </div>
     <div class="w3-quarter">
-      <img src="toy pics/doodlepad.jpg" alt="Doodle Pad" style="width:100%">
+      <img src="toy pics/doodlepad.jpg" style="width:100%" onclick="document.getElementById('doodlepad_play').play(); doodlepad_clicks(); return false;" alt="Doodle Pad">
       <h3>Doodle Pad</h3>
-      <p>Doodle pad</p>
+      <p>Doodle pad is a magnetic drawing toy, consisting of a drawing board, a magnetic stylus, and a few magnet shapes.</p>
     </div>
     <div class="w3-quarter">
-      <img src="toy pics/rattle.jpg" alt="Rattle" style="width:100%">
+      <img src="toy pics/rattle.jpg" style="width:100%" onclick="document.getElementById('rattle_play').play(); rattle_clicks(); return false;" alt="Rattle">
       <h3>Rattle</h3>
-      <p>Rattle</p>
+      <p>Rattle is a type of percussion instrument which produces a sound when shaken.</p>
     </div>
   </div>
   
+  <audio id="toycar_play">
+    <source src="audio/toycar.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="puzzle_play">
+    <source src="audio/puzzle.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="teddybear_play">
+    <source src="audio/teddybear.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="flashcards_play">
+    <source src="audA ball is a round objed) with various uses. It is used in ball games, where the play of the game follows the state of the ball as it is hit, kicked or thrown by players.lashcards.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="lego_play">
+    <source src="audio/lego.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="ball_play">
+    <source src="audio/ball.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="doodlepad_play">
+    <source src="audio/doodlepad.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="rattle_play">
+    <source src="audio/rattle.mp3" type="audio/ogg" />
+    </audio>
 
 <!-- End page content -->
 </div>

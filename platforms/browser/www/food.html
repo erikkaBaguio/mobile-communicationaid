@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<title>Food</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<body>
+
+<!-- Sidebar Menu -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="sidebar">
+  <a href="javascript:void(0)" onclick="sidebar_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="index.html" onclick="sidebar_close()" class="w3-bar-item w3-button">Categories</a>
+  <a href="#thechild" onclick="sidebar_close()" class="w3-bar-item w3-button">The Child</a>
+  <a href="#theparent" onclick="sidebar_close()" class="w3-bar-item w3-button">The Parent</a>
+  <a href="#foodact" onclick="sidebar_close()" class="w3-bar-item w3-button">Child Activity: FOOD</a>
+  <a href="#logout" onclick="sidebar_close()" class="w3-bar-item w3-button">Logout</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="sidebar_open()">☰</div>
+    <div class="w3-center w3-padding-16">List of Food</div>
+  </div>
+</div>
+  
+<!-- Page Content -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="food pics/sandwich.jpg" style="width:100%" onclick="document.getElementById('sandwich_play').play(); sandwich_clicks(); return false;" alt="Sandwich">
+      <h3>Sandwich</h3>
+      <p>A sandwich is a food typically consisting of vegetables, sliced cheese or meat, placed on or between slices of bread, or more generally any dish wherein two or more pieces of bread serve as a container or wrapper for another food type.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/chicken.jpg" style="width:100%" onclick="document.getElementById('chicken_play').play(); chicken_clicks(); return false;" alt="Chicken">
+      <h3>Fried Chicken</h3>
+      <p>Fried chicken is a dish consisting of chicken pieces usually from broiler chickens which have been floured or battered and then pan-fried, deep fried, or pressure fried.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/spaghetti.jpg" style="width:100%" onclick="document.getElementById('spaghetti_play').play(); spaghetti_clicks(); return false;" alt="Spaghetti">
+      <h3>Spaghetti</h3>
+      <p>Spaghetti is a long, thin, solid, cylindrical pasta. Spaghettoni is a thicker form of spaghetti, while capellini is a very thin spaghetti.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/steak.jpg" style="width:100%" onclick="document.getElementById('steak_play').play(); steak_clicks(); return false;" alt="Steak">
+      <h3>Steak</h3>
+      <p>Steak is a meat generally sliced across the muscle fibers, potentially including a bone.</p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="food pics/chocolate.jpg" style="width:100%" onclick="document.getElementById('chocolate_play').play(); chocolate_clicks(); return false;" alt="Chocolate">
+      <h3>Chocolate</h3>
+      <p>Chocolates is a typically sweet, usually brown food preparation of Theobroma cacao seeds, roasted and ground. It is made in the form of a liquid, paste, or in a block, or used as a flavoring ingredient in other foods.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/cookies.jpg" style="width:100%" onclick="document.getElementById('cookies_play').play(); cookies_clicks(); return false;" alt="Cookies">
+      <h3>Cookies</h3>
+      <p>Cookies is a baked or cooked food that is small, flat and sweet. It usually contains flour, sugar and some type of oil or fat.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/marshmallow.jpg" style="width:100%" onclick="document.getElementById('marshmallow_play').play(); marshmallow_clicks(); return false;" alt="Marshmallow">
+      <h3>Marshmallow</h3>
+      <p>Marshmallow is a sugar-based candy or type of sweets that in its modern form typically consists of sugar, water and gelatin whipped to a spongy consistency, molded into small cylindrical pieces, and coated with corn starch.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/lollipop.jpg" style="width:100%" onclick="document.getElementById('lollipop_play').play(); lollipop_clicks(); return false;" alt="Lollipop">
+      <h3>Lollipop</h3>
+      <p>Lollipop is a type of sugar candy usually consisting of hard candy mounted on a stick and intended for sucking or licking.</p>
+    </div>
+  </div>
+  
+
+  <audio id="sandwich_play">
+    <source src="audio/sandwich.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="chicken_play">
+    <source src="audio/chicken.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="spaghetti_play">
+    <source src="audio/spaghetti.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="steak_play">
+    <source src="audio/steak.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="chocolate_play">
+    <source src="audio/chocolate.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="cookies_play">
+    <source src="audio/cookies.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="marshmallow_play">
+    <source src="audio/marshmallow.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="lollipop_play">
+    <source src="audio/lollipop.mp3" type="audio/ogg" />
+    </audio>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function sidebar_open() {
+    document.getElementById("sidebar").style.display = "block";
+}
+ 
+function sidebar_close() {
+    document.getElementById("sidebar").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
+  

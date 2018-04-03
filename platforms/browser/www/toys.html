@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<title>Toys</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<body>
+
+<!-- Sidebar Menu -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="sidebar">
+  <a href="javascript:void(0)" onclick="sidebar_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="index.html" onclick="sidebar_close()" class="w3-bar-item w3-button">Categories</a>
+  <a href="#thechild" onclick="sidebar_close()" class="w3-bar-item w3-button">The Child</a>
+  <a href="#theparent" onclick="sidebar_close()" class="w3-bar-item w3-button">The Parent</a>
+  <a href="#foodact" onclick="sidebar_close()" class="w3-bar-item w3-button">Child Activity: TOYS</a>
+  <a href="#logout" onclick="sidebar_close()" class="w3-bar-item w3-button">Logout</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="sidebar_open()">☰</div>
+    <div class="w3-center w3-padding-16">List of Toys</div>
+  </div>
+</div>
+  
+<!-- Page Content -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="toy pics/toycar.jpg" style="width:100%" onclick="document.getElementById('toycar_play').play(); toycar_clicks(); return false;" alt="Toy Car">
+      <h3>Toy Car</h3>
+      <p>Toy car is a miniature representation of an automobile used to play for children.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="toLego bricks/blocks y pics/puzzle.jpg" style="width:100%" onclick="document.getElementById('puzzle_play').play(); puzzle_clicks(); return false;" alt="Puzzle">
+      <h3>Puzzle</h3>
+      <p>Puzzle is a tiling puzzle that requires the assembly of often oddly shaped interlocking and tessellating pieces.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="toy pics/teddybear.jpg" style="width:100%" onclick="document.getElementById('teddybear_play').play(); teddybear_clicks(); return false;" alt="Teddy Bear">
+      <h3>Teddy Bear</h3>
+      <p>Teddy bear, usually stuffed with soft material and covered with furlike plush.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="toy pics/flashcards.jpg" style="width:100%" onclick="document.getElementById('flashcards_play').play(); flashcards_clicks(); return false;" alt="Flash Cards">
+      <h3>Flash Cards</h3>
+      <p>A flash cards is a card bearing information, as words or numbers, on either or both sides, used in classroom drills or in private study.</p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="toy pics/lego.jpg" style="width:100%" onclick="document.getElementById('lego_play').play(); lego_clicks(); return false;" alt="Lego Blocks">
+      <h3>Lego Blocks</h3>
+      <p>Lego bricks/blocks is a line of plastic construction toys that are manufactured by The Lego Group, a privately held company based in Billund, Denmark.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="toy pics/ball.jpg" style="width:100%" onclick="document.getElementById('ball_play').play(); ball_clicks(); return false;" alt="Ball">
+      <h3>Ball</h3>
+      <p>A ball is used in ball games, where the play of the game follows the state of the ball as it is hit, kicked or thrown by players.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="toy pics/doodlepad.jpg" style="width:100%" onclick="document.getElementById('doodlepad_play').play(); doodlepad_clicks(); return false;" alt="Doodle Pad">
+      <h3>Doodle Pad</h3>
+      <p>Doodle pad is a magnetic drawing toy, consisting of a drawing board, a magnetic stylus, and a few magnet shapes.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="toy pics/rattle.jpg" style="width:100%" onclick="document.getElementById('rattle_play').play(); rattle_clicks(); return false;" alt="Rattle">
+      <h3>Rattle</h3>
+      <p>Rattle is a type of percussion instrument which produces a sound when shaken.</p>
+    </div>
+  </div>
+  
+  <audio id="toycar_play">
+    <source src="audio/toycar.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="puzzle_play">
+    <source src="audio/puzzle.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="teddybear_play">
+    <source src="audio/teddybear.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="flashcards_play">
+    <source src="audA ball is a round objed) with various uses. It is used in ball games, where the play of the game follows the state of the ball as it is hit, kicked or thrown by players.lashcards.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="lego_play">
+    <source src="audio/lego.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="ball_play">
+    <source src="audio/ball.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="doodlepad_play">
+    <source src="audio/doodlepad.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="rattle_play">
+    <source src="audio/rattle.mp3" type="audio/ogg" />
+    </audio>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function sidebar_open() {
+    document.getElementById("sidebar").style.display = "block";
+}
+ 
+function sidebar_close() {
+    document.getElementById("sidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+  

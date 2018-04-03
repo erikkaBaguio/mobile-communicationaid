@@ -36,50 +36,75 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
-      <img src="clothes pics/tshirt.jpg" alt="Shirt" style="width:100%">
-      <h3>Shirt</h3>
-      <p>TSHIRT</p>
+      <img src="clothes pics/tshirt.jpg" style="width:100%" onclick="document.getElementById('shirt_play').play(); shirt_clicks(); return false;" alt="Shirt">
+      <h3>T-Shirt</h3>
+      <p>T-shirt is a style of unisex fabric shirt named after the T shape of its body and sleeves.</p>
     </div>
     <div class="w3-quarter">
-      <img src="clothes pics/pants.jpg" alt="Pants" style="width:100%">
+      <img src="clothes pics/pants.jpg" style="width:100%" onclick="document.getElementById('pants_play').play(); pants_clicks(); return false;" alt="Pants"">
       <h3>Pants</h3>
-      <p>LEVI'S</p>
+      <p>Pants are an item of clothing worn from the waist to the ankles, covering both legs separately.</p>
     </div>
     <div class="w3-quarter">
-      <img src="clothes pics/brief.jpg" alt="Brief" style="width:100%">
-      <h3>Brief</h3>
-      <p>BENCH</p>
+      <img src="clothes pics/sweater.jpg" style="width:100%" onclick="document.getElementById('sweater_play').play(); sweater_clicks(); return false;" alt="Sweater">
+      <h3>Sweater</h3>
+      <p>Sweater is a garment intended to cover the torso and arms. A jumper is either a pullover or a cardigan, distinguished in that cardigans open at the front while pullovers do not.</p>
     </div>
     <div class="w3-quarter">
-      <img src="clothes pics/shorts.jpg" alt="Shorts" style="width:100%">
+      <img src="clothes pics/shorts.jpg" style="width:100%" onclick="document.getElementById('shorts_play').play(); shorts_clicks(); return false;" alt="Shorts">
       <h3>Shorts</h3>
-      <p>shorts</p>
+      <p>Shorts are a garment worn over the pelvic area, circling the waist and splitting to cover the upper part of the legs, sometimes extending down to the knees but not covering the entire length of the leg.</p>
     </div>
   </div>
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <div class="w3-quarter">
-      <img src="clothes pics/jacket.jpg" alt="Jacket" style="width:100%">
+      <img src="clothes pics/jacket.jpg" style="width:100%" onclick="document.getElementById('jacket_play').play(); jacket_clicks(); return false;" alt="Jacket">
       <h3>Jacket</h3>
-      <p>Jackeeeet</p>
+      <p>Jacket is a mid-stomach–length garment for the upper body. A jacket typically has sleeves, and fastens in the front or slightly on the side.</p>
     </div>
     <div class="w3-quarter">
-      <img src="clothes pics/skirt.jpg" alt="Skirt" style="width:100%">
+      <img src="clothes pics/skirt.jpg" style="width:100%" onclick="document.getElementById('skirt_play').play(); skirt_clicks(); return false;" alt="Skirt">
       <h3>Skirt</h3>
-      <p>skirts</p>
+      <p>Skirt is a woman's outer garment fastened around the waist and hanging down around the legs.</p>
     </div>
     <div class="w3-quarter">
-      <img src="clothes pics/panty.jpg" alt="Panty" style="width:100%">
+      <img src="clothes pics/panty.jpg" style="width:100%" onclick="document.getElementById('panty_play').play(); panty_clicks(); return false;" alt="Panty">
       <h3>Panty</h3>
-      <p>BENCH</p>
+      <p>Panty/panties is a legless underpants worn by women and girls.</p>
     </div>
     <div class="w3-quarter">
-      <img src="clothes pics/dress.jpg" alt="Dress" style="width:100%">
+      <img src="clothes pics/dress.jpg" style="width:100%" onclick="document.getElementById('dress_play').play(); dress_clicks(); return false;" alt="Dress">
       <h3>Dress</h3>
-      <p>dreeeeess</p>
+      <p>Dress is a one-piece garment for a woman or girl that covers the body and extends down over the legs</p>
     </div>
   </div>
+
+  <audio id="shirt_play">
+    <source src="audio/shirt.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="pants_play">
+    <source src="audio/pants.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="sweater_play">
+    <source src="audio/sweater.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="shorts_play">
+    <source src="audio/shorts.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="jacket_play">
+    <source src="audio/jacket.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="skirt_play">
+    <source src="audio/skirt.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="panty_play">
+    <source src="audio/panty.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="dress_play">
+    <source src="audio/dress.mp3" type="audio/ogg" />
+    </audio>
   
 
 <!-- End page content -->
