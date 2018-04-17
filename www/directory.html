@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<title>Directory</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Directory</title>
+    <script src="w3_bootstrap/js/enroll1.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<!--    <link rel="stylesheet" type="text/css" href="css/class.css">
+ -->    <link rel="stylesheet" type="text/css" href="w3_bootstrap/css/directory.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <table id="directory_table">
+        <tr>
+            <thead>
+                <tr>
+                    <th> <center><h2> Contact <button class="button button1" onclick="goto_directory()">ADD +</button></h2></center></th>
+    <!--                <th> Contact </th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </tbody>
+            
+            
+<!--                <td>1234</td>
+                <td>Alien</td>
+                <td>    
+                    <button class="button button2" >Edit</button>           
+                <a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                <a href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+                    <button class="button button2" >Delete</button>
+                </td> -->
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $.getJSON("http://127.0.0.1/directory",function(data){
+            var directory_data='';
+            $.each(data,function(key,value){
+                directory_data += '<tr>';
+                val = value.contact;
+                yu =value.address;
+                directory_data += '<td onclick="info('+val+')" location = "call.html"><h2>'+value.name+'</h2></td>';
+                // directory_data += '<td>'+value.contact+'</td>';
+                
+                // directory_data += '<td><h2><a onclick="alert_call(val)"><span class="glyphicon glyphicon-earphone"></span></a></h2></td>';
+                
+                directory_data += '</tr>';
+            });
+            $('#directory_table').append(directory_data);
+        });
+    });
+    // var table = document.getElementById("directory_table"),rIndex;
+    // for(var i = 0; i < table.rows.length; i++){
+    //  table.rows[i].onclick = function(){
+    //      rIndex = this.rowIndex;
+    //      console.log(rIndex);
+    //  };
+    // }
+</script>

@@ -1,86 +1,47 @@
 <!DOCTYPE html>
 <html>
-<title>Communication Aid</title>
-<head>
+<title>PIC-A-TALK</title>
+<link rel="shortcut icon" href="PATicon.png"/>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<script type="text/javascript" src="w3_bootstrap/js/jquery.min.js"></script>
+<script type="text/javascript" src="w3_bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="w3_bootstrap/css/bootstrap.min.css">
-	
-
-<style>
-	body {
-		background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(nav_bg.jpg);
+<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+	<style>
+		body {
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(origami.jpg);
         height: 100vh;
-		min-height: 100%;
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
+        min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+	</style>
+	<head>	
+		<div><img src="PATheader.png" alt="logo" width="90%" height="100%"/></div>
+	</head>
 
-	.btn {
-    border: none;
-    color: white;
-    padding: 20px 18px;
-    font-size: 20px;
-    cursor: pointer;
-    width: 200px;
-    font-family: "Karma", sans-serif;
-    border-radius: 15px;
-    margin: 10px;
-}
+	<body>
+		
+		<div class="container" style="text-align: center; margin-top: 20vh;" >
+			<div class="row" style="font-size:190%; color: white;">Welcome user :D</div>
+			<div class="row">
+					<a href="signup.html">
+						<button class="btn btn-success" style="font-size:170%;width:80%;height:50px;">
+							Sign up
+						</button>
+					</a>
+			</div>
+			<div class="row" style="color: white;">
+				Already have an account? <a href="login.html"<span style="color:blue;">Login</span></a>
+			</div>
+			<script type="text/javascript" src="cordova.js"></script>
+		</div>
 
-.home {
-    background-color: #778899;
-}
-.home:hover {
-    background-color: black; 
-    box-shadow: 0 25px 16px 0 rgba(0,0,0,0.25),0 17px 50px 0 rgba(0,0,0,0.25)
-}
-.food {
-    background-color: #008B8B;
-} 
-.food:hover {
-    background-color: gray; 
-    box-shadow: 0 25px 16px 0 rgba(0,0,0,0.25),0 17px 50px 0 rgba(0,0,0,0.25)
-}
-.clothes {
-    background-color: #00FF00;
-} 
-.clothes:hover {
-    background: gray; 
-    box-shadow: 0 25px 16px 0 rgba(0,0,0,0.25),0 17px 50px 0 rgba(0,0,0,0.25)
-}
-.toys {
-    background-color: #FF4500;
-} 
-.toys:hover {
-    background: gray; 
-    box-shadow: 0 25px 16px 0 rgba(0,0,0,0.25),0 17px 50px 0 rgba(0,0,0,0.25)
-}
-.place {
-    background-color: #DC143C;
-}  
-.place:hover {
-    background: gray; 
-    box-shadow: 0 25px 16px 0 rgba(0,0,0,0.25),0 17px 50px 0 rgba(0,0,0,0.25)
-}
 
-</style>
-
-<h1 style="font-size:40px; margin: 15px; font-family:"Karma", sans-serif;"> Categories</h1>
-
-<a href="#" class="btn btn-info btn-lg">
-<span class="glyphicon glyphicon-home">Home</span>
-</a><br><br>
-<a href = "food.html" class="btn food">Food</a><br><br>
-<a href = "clothes.html "class="btn clothes">Clothes</a><br><br>
-<a href = "toys.html" class="btn toys">Toys</a><br><br>
-<a href = "places.html" class="btn place">Place</a>
-
-</head>
+	</body>
 
 </html>
- 

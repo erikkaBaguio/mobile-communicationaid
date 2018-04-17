@@ -2,20 +2,32 @@
 <html>
 <title>Food</title>
 <meta charset="UTF-8">
+<link rel="shortcut icon" href="food pics/foodicon.png">
+<link rel="shortcut-icon" href="food pics/foodicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut-icon" href="food pics/foodicon.png">
 <link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
+body {
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(food_bg2.jpg);
+        height: 100vh;
+        min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
-<body>
+
 
 <!-- Sidebar Menu -->
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="sidebar">
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-right" style="display:none;right:0;z-index:2;width:40%;min-width:300px" id="sidebar">
   <a href="javascript:void(0)" onclick="sidebar_close()"
   class="w3-bar-item w3-button">Close Menu</a>
-  <a href="index.html" onclick="sidebar_close()" class="w3-bar-item w3-button">Categories</a>
+  <a href="categories.html" onclick="sidebar_close()" class="w3-bar-item w3-button">Categories</a>
   <a href="#thechild" onclick="sidebar_close()" class="w3-bar-item w3-button">The Child</a>
   <a href="#theparent" onclick="sidebar_close()" class="w3-bar-item w3-button">The Parent</a>
   <a href="#foodact" onclick="sidebar_close()" class="w3-bar-item w3-button">Child Activity: FOOD</a>
@@ -25,8 +37,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <!-- Top menu -->
 <div class="w3-top">
   <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-button w3-padding-16 w3-left" onclick="sidebar_open()">☰</div>
-    <div class="w3-center w3-padding-16">List of Food</div>
+    <div class="w3-button w3-padding-16 w3-right" onclick="sidebar_open()">☰</div>
+    <div class="w3-center w3-padding-16"><img src="food pics/foodicon.png" alt="logo" width="40px" height="auto"/>FOOD</div>
   </div>
 </div>
   
@@ -38,22 +50,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     <div class="w3-quarter">
       <img src="food pics/sandwich.jpg" style="width:100%" onclick="document.getElementById('sandwich_play').play(); sandwich_clicks(); return false;" alt="Sandwich">
       <h3>Sandwich</h3>
-      <p>A sandwich is a food typically consisting of vegetables, sliced cheese or meat, placed on or between slices of bread, or more generally any dish wherein two or more pieces of bread serve as a container or wrapper for another food type.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="food pics/chicken.jpg" style="width:100%" onclick="document.getElementById('chicken_play').play(); chicken_clicks(); return false;" alt="Chicken">
       <h3>Fried Chicken</h3>
-      <p>Fried chicken is a dish consisting of chicken pieces usually from broiler chickens which have been floured or battered and then pan-fried, deep fried, or pressure fried.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="food pics/hotdog.jpg" style="width:100%" onclick="document.getElementById('hotdog_play').play(); hotdog_clicks(); return false;" alt="Hot dog">
       <h3>Hot dog</h3>
-      <p>Hot dog, also known as a frankfurter, dog, or wiener, is a cooked sausage, traditionally grilled or steamed and served in a partially sliced bun. It is a type of sausage sandwich.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="food pics/pancakes.jpg" style="width:100%" onclick="document.getElementById('pancakes_play').play(); pancakes_clicks(); return false;" alt="Pancakes">
       <h3>Pancakes</h3>
-      <p>Pancake is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter.</p>
+      <p></p>
     </div>
   </div>
   
@@ -62,22 +74,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     <div class="w3-quarter">
       <img src="food pics/chocolate.jpg" style="width:100%" onclick="document.getElementById('chocolate_play').play(); chocolate_clicks(); return false;" alt="Chocolate">
       <h3>Chocolate</h3>
-      <p>Chocolates is a typically sweet, usually brown food preparation of Theobroma cacao seeds, roasted and ground. It is made in the form of a liquid, paste, or in a block, or used as a flavoring ingredient in other foods.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="food pics/cookies.jpg" style="width:100%" onclick="document.getElementById('cookies_play').play(); cookies_clicks(); return false;" alt="Cookies">
       <h3>Cookies</h3>
-      <p>Cookies is a baked or cooked food that is small, flat and sweet. It usually contains flour, sugar and some type of oil or fat.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="food pics/marshmallow.jpg" style="width:100%" onclick="document.getElementById('marshmallow_play').play(); marshmallow_clicks(); return false;" alt="Marshmallow">
       <h3>Marshmallow</h3>
-      <p>Marshmallow is a sugar-based candy or type of sweets that in its modern form typically consists of sugar, water and gelatin whipped to a spongy consistency, molded into small cylindrical pieces, and coated with corn starch.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="food pics/lollipop.jpg" style="width:100%" onclick="document.getElementById('lollipop_play').play(); lollipop_clicks(); return false;" alt="Lollipop">
       <h3>Lollipop</h3>
-      <p>Lollipop is a type of sugar candy usually consisting of hard candy mounted on a stick and intended for sucking or licking.</p>
+      <p></p>
     </div>
 
     <!-- Third Photo Grid-->
@@ -85,22 +97,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     <div class="w3-quarter">
       <img src="food pics/halo.jpg" style="width:100%" onclick="document.getElementById('halo_play').play(); halo_clicks(); return false;" alt="Halo-halo">
       <h3>Halo-halo</h3>
-      <p>Halo-halo is a popular Filipino dessert with mixtures of shaved ice and evaporated milk to which are added various ingredients, including boiled sweet beans, coconut, sago, gulaman, tubers and fruits.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="food pics/icecream.jpg" style="width:100%" onclick="document.getElementById('icecream_play').play(); icecream_clicks(); return false;" alt="Ice Cream">
       <h3>Ice Cream</h3>
-      <p>Ice cream is a sweetened frozen food typically eaten as a snack or dessert.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="food pics/eggs.jpg" style="width:100%" onclick="document.getElementById('eggs_play').play(); eggs_clicks(); return false;" alt="Eggs">
       <h3>Eggs</h3>
-      <p>Eggs are laid by female animals of many different species, including birds, reptiles, amphibians, mammals, and fish, and have been eaten by humans for thousands of years.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="food pics/fries.jpg" style="width:100%" onclick="document.getElementById('fries_play').play(); fries_clicks(); return false;" alt="French Fries">
       <h3>French Fries</h3>
-      <p>French fries, chips, finger chips, or French-fried potatoes are batonnet or allumette-cut deep-fried potatoes.</p>
+      <p></p>
     </div>
   </div>
   

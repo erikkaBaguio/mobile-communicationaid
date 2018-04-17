@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
-<title>Place</title>
+<title>Places</title>
+<link rel="shortcut icon" href="place pics/placesicon.png"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
 <style>
-body,h1,h2,h3,h4,h5,h6 {
-  font-family: "Karma", sans-serif
-}
-.w3-bar-block .w3-bar-item {
-  padding:20px
-}
+h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+body {
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(places_bg.jpg);
+        height: 100vh;
+        min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
-<body>
+
 
 <!-- Sidebar Menu -->
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="sidebar">
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-right" style="display:none;right:0;z-index:2;width:40%;min-width:300px" id="sidebar">
   <a href="javascript:void(0)" onclick="sidebar_close()"
   class="w3-bar-item w3-button">Close Menu</a>
-  <a href="index.html" onclick="sidebar_close()" class="w3-bar-item w3-button">Categories</a>
+  <a href="categories.html" onclick="sidebar_close()" class="w3-bar-item w3-button">Categories</a>
   <a href="#thechild" onclick="sidebar_close()" class="w3-bar-item w3-button">The Child</a>
   <a href="#theparent" onclick="sidebar_close()" class="w3-bar-item w3-button">The Parent</a>
   <a href="#foodact" onclick="sidebar_close()" class="w3-bar-item w3-button">Child Activity: PLACE</a>
@@ -29,8 +36,8 @@ body,h1,h2,h3,h4,h5,h6 {
 <!-- Top menu -->
 <div class="w3-top">
   <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-button w3-padding-16 w3-left" onclick="sidebar_open()">☰</div>
-    <div class="w3-center w3-padding-16">List of Places</div>
+    <div class="w3-button w3-padding-16 w3-right" onclick="sidebar_open()">☰</div>
+    <div class="w3-center w3-padding-16"><img src="place pics/placesicon.png" alt="logo" width="40px" height="auto"/>PLACES</div>
   </div>
 </div>
   
@@ -42,22 +49,22 @@ body,h1,h2,h3,h4,h5,h6 {
     <div class="w3-quarter">
       <img src="place pics/playground.jpg" style="width:100%" onclick="document.getElementById('playground_play').play(); playground_clicks(); return false;" alt="PlayGround">
       <h3>PlayGround</h3>
-      <p>Playground is an outdoor area provided for children to play on, especially at a school or public park.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="place pics/mall.jpg" style="width:100%" onclick="document.getElementById('mall_play').play(); mall_clicks(); return false;" alt="Shopping Mall">
       <h3>Shopping Mall</h3>
-      <p>Shopping mall a large building or series of connected buildings containing a variety of retail stores and typically also restaurants.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="place pics/church.jpg" style="width:100%" onclick="document.getElementById('church_play').play(); church_clicks(); return false;" alt="Church">
       <h3>Church</h3>
-      <p>Church is a building used for public Christian worship.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="place pics/school.jpg" style="width:100%" onclick="document.getElementById('school_play').play(); school_clicks(); return false;" alt="School">
       <h3>School</h3>
-      <p>School is a place where educating the children</p>
+      <p></p>
     </div>
   </div>
   
@@ -66,22 +73,22 @@ body,h1,h2,h3,h4,h5,h6 {
     <div class="w3-quarter">
       <img src="place pics/jollibee.jpg" style="width:100%" onclick="document.getElementById('jollibee_play').play(); jollibee_clicks(); return false;" alt="Jollibee">
       <h3>Jollibee</h3>
-      <p>Jollibee is a Filipino multinational chain of fast food restaurants owned by Jollibee Foods Corporation (JFC).</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="place pics/mcdo.jpg" style="width:100%" onclick="document.getElementById('mcdo_play').play(); mcdo_clicks(); return false;" alt="McDonald's">
       <h3>McDonald's</h3>
-      <p>McDonald's is a large group of US fast food restaurants in many countries of the world.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="place pics/beach.jpg" style="width:100%" onclick="document.getElementById('beach_play').play(); beach_clicks(); return false;" alt="Beach">
       <h3>Beach</h3>
-      <p>Beach is a pebbly or sandy shore, especially by the ocean between high- and low-water marks.</p>
+      <p></p>
     </div>
     <div class="w3-quarter">
       <img src="place pics/pool.jpg" style="width:100%" onclick="document.getElementById('pool_play').play(); pool_clicks(); return false;" alt="Swimming Pool">
       <h3>Swimming Pool</h3>
-      <p>Swimming pool is an artificial pool for people to swimming in</p>
+      <p></p>
     </div>
   </div>
   
