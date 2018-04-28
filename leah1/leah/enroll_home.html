@@ -29,17 +29,14 @@
                         </thead>
 
                         <tbody>
-                        
-                            {% for Class in manageclass %}
 
                     <tr>
                         <td>
                         	<a class="btn btn-sm btn-danger confirmation" href="/deleteClass/{{ Class.class_num }}"><span class="glyphicon glyphicon-trash"></span></a>
                         </td>  
                         <td style="cursor.pointer">
-                            <a href="/classPage/{{Class.class_name}}" style="text-align: center">{{ Class.class_name}}
+                            <a onclick="goto_classpage()" style="text-align: center">{{ Class.class_name}}
                         </td>    
-                            {% endfor %}
                     </form>
                     </tbody>
 
@@ -47,7 +44,7 @@
                     <br>
                     <br>                
                    <div class="col-md-6">
-                   		<input type="button" class="btn btn-primary pull-left" style="width: 20%; margin-top: 7px; background-color: lightblue; font-size: 15px;" onclick="goto_enroll()" class="submit" value="Add">
+                   		<input type="button" class="btn btn-primary pull-left" style="width: 20%; margin-top: 7px; background-color: lightblue; font-size: 15px;" onclick="goto_class2()" class="submit" value="Add">
                     </div> 
                 </div>
             </div>

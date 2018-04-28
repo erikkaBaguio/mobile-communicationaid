@@ -26,4 +26,10 @@ function goto_class2() {
 	location="index.html";
 }
 
+function goto_classpage() {
+    location="class_page.html";
+}
 
+function goto_enroll1() {
+    location="enroll.html";
+}
