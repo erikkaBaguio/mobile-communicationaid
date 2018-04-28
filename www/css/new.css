@@ -2,13 +2,13 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-/*    background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url(dis.jpg);
-    height: 100%;
-    min-height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;*/
+    background-color:gray;
+        /*background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(dis.jpg);
+        height: 100vh
+        
+        background-position: center;*/
+        /*background-repeat: no-repeat;*/
+        /*background-size: cover;*/
 
 
 }
@@ -18,16 +18,16 @@ body {
 
 
 h1 {
-    font-size:40px;
-    color:  steelblue;
+    font-size:65px;
+    color:  gray;
     font-weight:large;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
+    margin: 0 15px;
+    padding:12px;
     text-align:center;
+    background-color: lightblue;
 }
 
-.event {
+/*.event {
     border-radius:4px;
     -webkit-border-radius:4px;
     color:#FFFFFF;
@@ -56,79 +56,42 @@ h1 {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
-}
+}*/
  
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
-
-
-.login-page{
-    width:360px;
-    padding: 10% 0 0;
-    margin: auto;
-}
-
-.form{
-    position:relative;
-    z-index: 1;
-    background: #ffffff;
-    max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
-}
-
-.form input{
+input{
     font-family: "Roboto", sans-serif;
     outline: 1;
     background: #f2f2f2;
     width: 100%;
     border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
+    margin: 0 0 10px;
+    padding: 20px;
     box-sizing: border-box;
     font-size: 14px;
 }
 
-.form button{
-    font-family: "Robot",sans-serif;
-    text-transform: uppercase;
-    outline: 0;
-    background: #4CAF50;
-    width: 100%
-    border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    cursor: pointer; 
-
-}
-
-.form button: hover, .form button: active{
-    color: steelblue;
-    background: #43A047;
-}
-
-.form .message{
-    margin: 15px 0 0;
-    color: pink;
-}
-
-.form .message a{
-    
-    color: #4CAF50;
-}
-
-.form .register-form{
-    display: none;
-    text-decoration: none;
-}
 button{
     font-family: "Robot",sans-serif;
     text-transform: uppercase;
     outline: 0;
+    background: lightblue;
+    width: 100%
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    /*cursor: pointer; */
+    float: center;
+
+}
+
+
+
+
+/*button{
+    font-family: "Robot",sans-serif;
+    text-transform: uppercase;
+    outline: 0;
     background: #4CAF50;
     width: 100%
     border: 0;
@@ -137,4 +100,4 @@ button{
     font-size: 14px;
     cursor: pointer; 
 
-}
+}*/

@@ -9,9 +9,8 @@
 
 // }
 // change;
-function dir_back(){
-    alert("red alert")
-    location=("directory.html");
+function back(){
+    location=("index.html");
 }
 
 function pasuser(form) {
@@ -35,9 +34,11 @@ function pasuser(form) {
 }
 
 function register_user(form){
+
+
         
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1/user";
+    var url = "https://cryptic-fjord-60133.herokuapp.com/api/signup";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
@@ -50,7 +51,7 @@ function register_user(form){
     console.log(json)
     xhr.send(json);
 
-    location="login.html";
+    location="index.html";
     alert("Thanks " + form.id.value  + "! You are now Registered.");
        
 
@@ -66,7 +67,7 @@ function add_directory(form){
     
         
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:80/directory";
+    var url = "https://cryptic-fjord-60133.herokuapp.com/api/add_directory";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
