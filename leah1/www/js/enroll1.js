@@ -6,7 +6,7 @@ function goto_enroll(form) {
     xhr.onreadystatechange = function () { 
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            alert("hey");
+            alert("Thanks " + form.classname.value  + "! Successfully added.");
             console.log(json.form.classname.value);
         }
     }
@@ -14,8 +14,7 @@ function goto_enroll(form) {
     console.log(json)
     xhr.send(json);
 
-    location="enroll.html";
-    alert("Thanks " + form.classname.value  + "! Successfully added.");
+    location="enroll_home.html";
 }
 
 function goto_home() {
