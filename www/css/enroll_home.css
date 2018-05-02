@@ -22,14 +22,14 @@ h1 {
 }
 
 .button1{
-	float: right;
+    float: right;
     background-color: steelblue;
     background-size: cover;
     margin: 8px 4px;
 }
 
 .button2 {
-	background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; /* Green */
     border: none;
     color: white;
     padding: 10px 10px;
@@ -41,7 +41,7 @@ h1 {
 }
 
 table, th, td {
-     border: 3px solid gray;
+     border: solid black;
      text-align: center;
 }
 
@@ -52,7 +52,7 @@ table {
 }
 
 th {
-    height: 50px;
-    background-color: skyblue;
-    color: white;
+    height: 30px;
+    background-color: white;
+    color: black;
 }

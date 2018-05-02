@@ -5,17 +5,30 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 	<title>Enrollment Form</title>
 	<script src="js/enroll1.js"> </script>
-	
 	<link rel="stylesheet" type="text/css" href="css/class.css">
 	<link rel="stylesheet" type="text/css" href="css/enroll.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-	<h1>Class Name</h1> <br><br>
-<!-- 	<input type="text" placeholder="Enter student's Name or Id" id="search_id">
-	<button class="button button1">Search</button> <br> -->
-	<input type="text" placeholder="Enter student's Id" id="add_stu">
-	<input type="button" class="add" value="Add Student"><br><br><br>
-	<button class="button button1" onclick="goto_home()">Confirm</button>
+	<center>
+		<div class="container" style="text-align: center; margin-top: 30vh;">
+			<form>
+				Child ID:
+				<input type="integer" name="c_id" id="c_id">
+				First Name:
+				<input type="text" name="f_name" id="f_name">
+				Last Name:
+				<input type="text" name="l_name" id="l_name">
+
+			 	<br><br>
+                <button type="button" class="btn btn-primary btn-lg">Save</button>
+                <button type="button" class="btn btn-danger btn-lg" onclick="goto_class2()">X</button><br><br>
+                <button type="button" class="btn btn-success btn-lg" onclick="goto_home()">Success</button>   
+			</form>
+		</div>
+	</center>
 </body>
 </html>

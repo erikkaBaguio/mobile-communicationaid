@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<title>Parent Mode</title>
+<link rel="shortcut icon" href="PATicon.png"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3_bootstrap/css/navbar.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body {  
+      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(parent_bg2.jpg);
+      height: 100%;
+      min-height: 100%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+    
+
+h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif;}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xmedium w3-animate-right w3-black" style="display:none;right:0;z-index:2;width:40%;min-width:200px" id="sidebar">
+  <a href="javascript:void(0)" onclick="sidebar_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="mode.html" onclick="sidebar_close()" class="w3-bar-item w3-button">Change Mode</a>
+  <a href="#thechild" onclick="sidebar_close()" class="w3-bar-item w3-button">The Child</a>
+  <a href="#theparent" onclick="sidebar_close()" class="w3-bar-item w3-button">The Parent</a>
+  <a href="#foodact" onclick="sidebar_close()" class="w3-bar-item w3-button">Child Activity: FOOD</a>
+  <a href="#logout" onclick="sidebar_close()" class="w3-bar-item w3-button">Logout</a>
+</nav>
+
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">
+  <img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="sidebar_open()">☰</a>
+</header>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<!-- <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div> -->
+
+<!-- !PAGE CONTENT! -->
+
+
+   
+
+   <!-- <nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+    </ul>
+    <button class="btn btn-danger navbar-btn">Button</button>
+  </div>
+</nav>
+ -->
+
+ <style>
+body /*{margin:0;}*/
+
+.icon-bar {
+    width: 100%;
+    background-color: black;
+    
+}
+
+.icon-bar a {
+    float: center;
+    width: 16vw;
+    text-align: center;
+    padding: 3px 10px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 35px;
+}
+
+.icon-bar a:hover {
+    background-color: #4CAF50;
+}
+
+/*.active {
+    background-color: #4CAF50 !important;*/
+}
+</style>
+
+
+<body>
+
+  <div class="w3-main w3-content w3-padding" style="max-width:1600px;margin-top:80px; height: 527px;">
+
+  <!-- Photo grid -->
+  
+      <div class="row" style="margin-top:75px;">
+        <div class="col-xs-6" style="text-align: center;">
+          <a href = "#profile">
+            <img src="pics/profile.png" style="width:30vmin;" onclick="onClick(this)" alt="Profile">
+              <br>
+              <span style="color:white; font-size: 20px;">Profile</span>
+          </a>
+        </div>
+
+        <div class="col-xs-6" style="text-align: center;">
+          <a href = "#educational">
+            <img src="pics/educational.png" style="width:30vmin;" onclick="onClick(this)" alt="Educational">
+              <span style="color: white; font-size: 20px;">Educational</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+        <div class="col-xs-6" style="text-align: center;">
+          <a href = "enroll.html">
+            <img src="pics/editmode.png" style="width:30vmin;" onclick="onClick(this)" alt="Directory">
+            <span style="color: white; font-size: 20px;">EditMode</span>
+          </a>
+        </div>
+
+        <div class="col-xs-6" style="text-align: center;">
+          <a href = "directory.html">
+            <img src="pics/directory.png" style="width:30vmin;" onclick="onClick(this)" alt="Directory">
+            <span style="color: white; font-size: 20px;">Directory</span>
+          </a>
+        </div>
+      </div>
+
+<header class="w3-container w3-bottom w3-black w3-xlarge w3-padding-16 navbar-fixed-bottom">
+  <div class="icon-bar">
+      <span class="w3-padding">
+      <a href="#"><i class="fa fa-file-text-o"></i></a> 
+      <a href="#"><i class="fa fa-group"></i></a> 
+      <a href="#"><i class="fa fa-home"></i></a> 
+      <a href="#"><i class="fa fa-bar-chart"></i></a>
+      <a href="#"><i class="fa fa-bell-o"></i></a> 
+  </div>
+</header>
+
+</body>
+</html> 
+
+  <!-- Modal for full size images on click-->
+ <!--  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div> -->
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function sidebar_open() {
+    document.getElementById("sidebar").style.display = "block";
+    // document.getElementById("myOverlay").style.display = "block";
+}
+
+function sidebar_close() {
+    document.getElementById("sidebar").style.display = "none";
+    // document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+// function onClick(element) {
+//   document.getElementById("img01").src = element.src;
+//   document.getElementById("modal01").style.display = "block";
+//   var captionText = document.getElementById("caption");
+//   captionText.innerHTML = element.alt;
+// }
+
+</script>
+
+
+</body>
+</html>

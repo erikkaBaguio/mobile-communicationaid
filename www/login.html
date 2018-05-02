@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<title>Login</title>
+<link rel="shortcut icon" href="PATicon.png"/>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="w3_bootstrap/js/jquery.min.js"></script>
+		<script type="text/javascript" src="w3_bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="w3_bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+		<script type="text/javascript" src="w3_bootstrap/js/index.js"></script>
+		<link rel="stylesheet" href="w3_bootstrap/css/signup.css">
+	</head>
+	<style>
+		body {
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(login_bg.jpg);
+        height: 100vh;
+        min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+	</style>
+	<body>
+	
+		<div class="container" style="color:white; text-align: center; font-size:25px; padding-left:5px; padding-top:5px;"><a href="index.html">
+				<span style="float: left; padding-top: 15px; padding-left: 5px; font-size: 60%;">&lt; Back</span></a><div class="container" style="float:center; padding-right:50px; padding-top: 10px;">Log in</div>
+			</div>
+			
+			<form class="login-form" style="margin-top: 15%;text-align: center;">
+				<input type="text" name="id" id="id" placeholder="user name"><br>
+                <input type="password" name="pass" id="pass" placeholder="password"><br>
+				<input type="button" class="btn btn-success" style="width:90%;margin-top: 7px; background-color:lightgreen; font-size: 15px;" onclick="pasuser(form)" class="submit" value="Log in">
+				<p class="message" style="color: white;">Not yet Registered? <a href="signup.html"><span style="color:blue;">Sign up</span></a></p>
+			</form>
+		</div>
+
+
+	</body>
+
+</html>

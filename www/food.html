@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<title>Food</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="food pics/foodicon.png">
+<link rel="shortcut-icon" href="food pics/foodicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut-icon" href="food pics/foodicon.png">
+<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+body {
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(food_bg2.jpg);
+        height: 100vh;
+        min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+
+<!-- Sidebar Menu -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xmedium w3-animate-right w3-black" style="display:none;right:0;z-index:2;width:40%;min-width:200px" id="sidebar">
+  <a href="javascript:void(0)" onclick="sidebar_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="categories.html" onclick="sidebar_close()" class="w3-bar-item w3-button">Categories</a>
+  <a href="#thechild" onclick="sidebar_close()" class="w3-bar-item w3-button">The Child</a>
+  <a href="#theparent" onclick="sidebar_close()" class="w3-bar-item w3-button">The Parent</a>
+  <a href="#foodact" onclick="sidebar_close()" class="w3-bar-item w3-button">Child Activity: FOOD</a>
+  <a href="#logout" onclick="sidebar_close()" class="w3-bar-item w3-button">Logout</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-right" onclick="sidebar_open()">☰</div>
+    <div class="w3-center w3-padding-16"><img src="food pics/foodicon.png" alt="logo" width="40px" height="auto"/>FOOD</div>
+  </div>
+</div>
+  
+<!-- Page Content -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="food pics/sandwich.jpg" style="width:100%" onclick="document.getElementById('sandwich_play').play(); sandwich_clicks(); return false;" alt="Sandwich">
+      <h3>Sandwich</h3>
+      <p></p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/chicken.jpg" style="width:100%" onclick="document.getElementById('chicken_play').play(); chicken_clicks(); return false;" alt="Chicken">
+      <h3>Fried Chicken</h3>
+      <p></p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/hotdog.jpg" style="width:100%" onclick="document.getElementById('hotdog_play').play(); hotdog_clicks(); return false;" alt="Hot dog">
+      <h3>Hot dog</h3>
+      <p></p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/pancakes.jpg" style="width:100%" onclick="document.getElementById('pancakes_play').play(); pancakes_clicks(); return false;" alt="Pancakes">
+      <h3>Pancakes</h3>
+      <p></p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="food pics/chocolate.jpg" style="width:100%" onclick="document.getElementById('chocolate_play').play(); chocolate_clicks(); return false;" alt="Chocolate">
+      <h3>Chocolate</h3>
+      <p></p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/cookies.jpg" style="width:100%" onclick="document.getElementById('cookies_play').play(); cookies_clicks(); return false;" alt="Cookies">
+      <h3>Cookies</h3>
+      <p></p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/marshmallow.jpg" style="width:100%" onclick="document.getElementById('marshmallow_play').play(); marshmallow_clicks(); return false;" alt="Marshmallow">
+      <h3>Marshmallow</h3>
+      <p></p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/lollipop.jpg" style="width:100%" onclick="document.getElementById('lollipop_play').play(); lollipop_clicks(); return false;" alt="Lollipop">
+      <h3>Lollipop</h3>
+      <p></p>
+    </div>
+
+    <!-- Third Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="food pics/halo.jpg" style="width:100%" onclick="document.getElementById('halo_play').play(); halo_clicks(); return false;" alt="Halo-halo">
+      <h3>Halo-halo</h3>
+      <p></p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/icecream.jpg" style="width:100%" onclick="document.getElementById('icecream_play').play(); icecream_clicks(); return false;" alt="Ice Cream">
+      <h3>Ice Cream</h3>
+      <p></p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/eggs.jpg" style="width:100%" onclick="document.getElementById('eggs_play').play(); eggs_clicks(); return false;" alt="Eggs">
+      <h3>Eggs</h3>
+      <p></p>
+    </div>
+    <div class="w3-quarter">
+      <img src="food pics/fries.jpg" style="width:100%" onclick="document.getElementById('fries_play').play(); fries_clicks(); return false;" alt="French Fries">
+      <h3>French Fries</h3>
+      <p></p>
+    </div>
+  </div>
+  
+
+    <audio id="sandwich_play">
+    <source src="audio/sandwich.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="chicken_play">
+    <source src="audio/chicken.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="hotdog_play">
+    <source src="audio/hotdog.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="pancakes_play">
+    <source src="audio/pancakes.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="chocolate_play">
+    <source src="audio/chocolate.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="cookies_play">
+    <source src="audio/cookies.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="marshmallow_play">
+    <source src="audio/marshmallow.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="lollipop_play">
+    <source src="audio/lollipop.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="halo_play">
+    <source src="audio/halo-halo.mp3" type="audio/ogg">
+    </audio>
+    <audio id="icecream_play">
+    <source src="audio/ice_cream.mp3" type="audio/ogg">  
+    </audio>
+    <audio id="eggs_play">
+    <source src="audio/eggs.mp3" type="audio/ogg">
+    </audio>
+    <audio id="fries_play">
+    <source src="audio/fries.mp3" type="audio/ogg">  
+    </audio>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function sidebar_open() {
+    document.getElementById("sidebar").style.display = "block";
+}
+ 
+function sidebar_close() {
+    document.getElementById("sidebar").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
+  

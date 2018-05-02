@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<title>Sign Up</title>
+<link rel="shortcut icon" href="PATicon.png"/>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="w3_bootstrap/js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/dindex.js"></script>
+		<script type="text/javascript" src="w3_bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="w3_bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+		<script type="text/javascript" src=""></script>
+		<link rel="stylesheet" href="w3_bootstrap/css/signup.css">
+	</head>
+	<style>
+		body {
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(signup_bg.jpg);
+        height: 100vh;
+        min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+	</style>
+	<body>
+		
+		<div class="container" style="color:white; text-align: center; font-size:25px; padding-left:5px; padding-top:5px;"><a href="index.html">
+				<span style="float: left; padding-top: 15px; padding-left: 5px; font-size: 60%;">&lt; Back</span></a><div class="container" style="float:center; padding-right:50px; padding-top: 10px;">Sign up</div>
+			</div>
+			<form class="register-form" style="margin-top: 15%;text-align: center;">
+				<input type="text" name="id" placeholder="user name"><br>
+				<input type="text" name="acc_type" placeholder="account type"><br>
+				<input type="text" name="pass" placeholder="password"><br>
+				<input type="text" name="email" placeholder="email id"><br>
+				<button class="btn btn-success" style="width:90%;margin-top: 7px;" onclick="register_user(form)">Create</button>
+				<p class="message" style="color: white;">Already Registered? <a href="login.html"><span style="color:blue;">Login</span></a></p>
+			</form>
+		</div>
+
+
+	</body>
+
+</html>
