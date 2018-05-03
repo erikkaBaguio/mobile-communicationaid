@@ -54,20 +54,10 @@
 				val = value.contact;
 				yu =value.address;
 				directory_data += '<td onclick="info('+val+')" location = "call.html"><h2>'+value.name+'</h2></td>';
-				// directory_data += '<td>'+value.contact+'</td>';
-				
-				// directory_data += '<td><h2><a onclick="alert_call(val)"><span class="glyphicon glyphicon-earphone"></span></a></h2></td>';
-				
 				directory_data += '</tr>';
 			});
 			$('#directory_table').append(directory_data);
 		});
 	});
-	// var table = document.getElementById("directory_table"),rIndex;
-	// for(var i = 0; i < table.rows.length; i++){
-	// 	table.rows[i].onclick = function(){
-	// 		rIndex = this.rowIndex;
-	// 		console.log(rIndex);
-	// 	};
-	// }
+
 </script>
