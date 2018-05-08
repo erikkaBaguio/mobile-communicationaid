@@ -8,34 +8,82 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/class.css">
 	<link rel="stylesheet" type="text/css" href="css/enroll_home.css">
-	<!-- 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<link rel="stylesheet" href="{{ url_for('.static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/simple-line-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 <body>
-	<h1>Class Name</h1>
-	<button class="button button1" onclick="goto_enroll()">Add Student</button>
-	<h2>   </h2><br><br>
-	<table>
-		<thead>
-			<th> ID </th>
-			<th> Name </th>
-			<th>Option</th>
-		</thead>
-		
-		<tr>
-			<td>1234</td>
-			<td>Alien</td>
-			<td style="text-align: center;">	
-				<button class="button button2" >Edit</button>			
-<!-- 		<a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-			<a href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a> -->
+	<div class=" bgimg container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <div class="card">
+                    <br><br><br><br><br><br><br>
+                    <table class="table table-striped table-bordered table-hover" id="class">
+                        <tr>
+                            <thead> 
+                                <th >Action</th>
+                                <th >Class Name</th>  
+                            </thead>
 
-				<button class="button button2" >Delete</button> 
-			</td>
-		</tr>
-		
-	</table>
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+<!--                                 <td>
+                                    <a class="btn btn-sm btn-danger confirmation" href="/deleteClass/{{ Class.class_num }}"><span class="glyphicon glyphicon-trash"></span></a>
+                                </td>  
+                                <td style="cursor.pointer">
+                                    <a onclick="goto_classpage()" style="text-align: center">{{ Class.class_name}}
+                                </td>  -->              
+                            </tbody>  
+                        </tr>
+                    </table>
+                    <br>
+                    <br>                
+                   <div class="col-md-6">
+                        <button type="button" class="btn btn-primary btn-lg" onclick="goto_class2()">Add</button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $.getJSON("http://cryptic-fjord-60133.herokuapp.com/api/class",function(data){
+            var class_data='';
+            $.each(data,function(key,value){
+                class_data += '<tr>';
+                val = value.class_name;
+                yu =value.address;
+
+                class_data += '<td><a class="btn btn-sm btn-danger confirmation"><span class="glyphicon glyphicon-trash"></span></a></td>';
+
+            
+                class_data += '<td  onclick="classpage()" >'+val+'</td>';
+                
+                class_data += '</tr>';
+            });
+            $('#class').append(class_data);
+        });
+    });
+    // var table = document.getElementById("directory_table"),rIndex;
+    // for(var i = 0; i < table.rows.length; i++){
+    //  table.rows[i].onclick = function(){
+    //      rIndex = this.rowIndex;
+    //      console.log(rIndex);
+    //  };
+    // }
+</script>
