@@ -60,17 +60,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function(){
-        $.getJSON("http://cryptic-fjord-60133.herokuapp.com/api/class",function(data){
+        $.getJSON("http://mighty-badlands-16603.herokuapp.com/api/class",function(data){
             var class_data='';
             $.each(data,function(key,value){
                 class_data += '<tr>';
-                val = value.clas;
+                val = value.class_name;
                 yu =value.address;
 
                 class_data += '<td><a class="btn btn-sm btn-danger confirmation"><span class="glyphicon glyphicon-trash"></span></a></td>';
 
             
-                class_data += '<td  onclick="classpage()" >'+value.clas+'</td>';
+                class_data += '<td  onclick="classpage()" >'+value.class_name+'</td>';
                 
                 class_data += '</tr>';
             });
