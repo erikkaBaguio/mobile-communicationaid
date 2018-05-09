@@ -6,7 +6,6 @@ function goto_enroll(form) {
     xhr.onreadystatechange = function () { 
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            alert("Thanks " + form.classname.value  + "! Successfully added.");
             console.log(json.form.classname.value);
         }
     }
@@ -15,6 +14,7 @@ function goto_enroll(form) {
     xhr.send(json);
 
     location="enroll_home.html";
+    alert("Thanks " + form.classname.value  + "! Successfully added.");
 }
 
 function goto_home() {
@@ -22,8 +22,25 @@ function goto_home() {
 }
 
 function goto_class2() {
-	location="index.html";
+	location="addclass.html";
 }
+
+function delete_class(val){
+    var url  = "http://mighty-badlands-16603.herokuapp.com/api/del_class="+val;
+    var xhr  = new XMLHttpRequest()
+    xhr.open('GET', url, true)
+    xhr.onload = function () {
+        var users = JSON.parse(xhr.responseText);
+        if (xhr.readyState == 4 && xhr.status == "200") {
+            alert('Successfully deleted');
+            location = "enroll_home.html"
+        } else {
+            alert('error')
+        }
+    }
+    xhr.send(null);
+}
+
 
 function goto_classpage() {
     location="class_page.html";
