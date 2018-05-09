@@ -1,12 +1,11 @@
 function goto_enroll(form) {
 	xhr = new XMLHttpRequest();
-    var url = "https://cryptic-fjord-60133.herokuapp.com/api/add_class";
+    var url = "http://mighty-badlands-16603.herokuapp.com/api/add_class";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            alert("hey");
             console.log(json.form.classname.value);
         }
     }
@@ -14,7 +13,7 @@ function goto_enroll(form) {
     console.log(json)
     xhr.send(json);
 
-    location="enroll.html";
+    location="enroll_home.html";
     alert("Thanks " + form.classname.value  + "! Successfully added.");
 }
 
@@ -25,6 +24,23 @@ function goto_home() {
 function goto_class2() {
 	location="addclass.html";
 }
+
+function delete_class(val){
+    var url  = "http://mighty-badlands-16603.herokuapp.com/api/del_class="+val;
+    var xhr  = new XMLHttpRequest()
+    xhr.open('GET', url, true)
+    xhr.onload = function () {
+        var users = JSON.parse(xhr.responseText);
+        if (xhr.readyState == 4 && xhr.status == "200") {
+            alert('Successfully deleted');
+            location = "enroll_home.html"
+        } else {
+            alert('error')
+        }
+    }
+    xhr.send(null);
+}
+
 
 function goto_classpage() {
     location="class_page.html";

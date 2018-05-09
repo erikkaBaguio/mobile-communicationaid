@@ -14,51 +14,62 @@ function back(){
 }
 
 function pasuser(form) {
-    var uid = document.getElementById("id");
-    var pass = document.getElementById("pass");
+    var uid = form.id.value;
+    var pass = form.pass.value;
     
     xhr = new XMLHttpRequest();
     var url = "https://mighty-badlands-16603.herokuapp.com/api/login";
     xhr.open("POST", url, true);
+    xhr.setRequestHeader("Authorization", 'Basic ' + btoa(uid + ":" + pass));
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json.uid + ", " + json.pass);
+            alert(json.acc_id);
+            alert(json.token);
+            alert(" Successfully login");
+            location="mode.html";
+
+            console.log(json);
         }
     }
+    
     var json =JSON.stringify({"username": uid, "password":pass});
     console.log(json)
     xhr.send(json);
 
 
     
-    location="mode.html"  
-    alert("Thanks ! " + name  + " is successfully added to your Directory.");
+    
+    
 }
-function register_user(form){
+function register_user(form,acc_type){
 
 
         
     xhr = new XMLHttpRequest();
     var url = "https://mighty-badlands-16603.herokuapp.com/api/signup";
     xhr.open("POST", url, true);
+    xhr.setRequestHeader("Authorization", 'Basic ' + btoa(form.id.value + ":" + form.pass.value));
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
+        alert(xhr.status)
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json.form.id.value +", " + json.form.acc_type.value + ", " + json.form.email.value + ", " + json.form.pass.value);
+            alert("pugsit")
+            console.log(json.form.id.value +", " + acc_type + ", " + json.form.email.value + ", " + json.form.pass.value);
         }
     }
-    var json =JSON.stringify({"username": form.id.value,"acc_type":form.acc_type.value, "email":form.email.value, "password":form.pass.value});
+    var json =JSON.stringify({"username": form.id.value,"acc_type":acc_type, "email":form.email.value, "password":form.pass.value});
     console.log(json)
     xhr.send(json);
 
-    location="index.html";
+    
     alert("Thanks " + form.id.value  + "! You are now Registered.");
-       
+    location="mode.html";  
 
 }
+
 
 
 function add_directory(form){
