@@ -1,6 +1,6 @@
 function goto_enroll(form) {
 	xhr = new XMLHttpRequest();
-    var url = "https://cryptic-fjord-60133.herokuapp.com/api/add_class";
+    var url = "http://mighty-badlands-16603.herokuapp.com/api/add_class";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
