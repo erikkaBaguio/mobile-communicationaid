@@ -65,6 +65,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
+
+    function kick(c_id){
+        
+        alert("IN")
+        xhr = new XMLHttpRequest();
+        var url = "http://127.0.0.1:5000/api/kick_student="+c_id;
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var json = JSON.parse(xhr.responseText);
+                location="class_page.html"  
+                alert("Deleted");
+            }
+        }
+        
+        xhr.send();
+
+    }
+
+
     var classname = localStorage.getItem('class_name');
     document.getElementById("class_belong").innerHTML = classname;
     $(document).ready(function(){
@@ -72,10 +93,10 @@
             var class_data='';
             $.each(data,function(key,value){
                 class_data += '<tr>';
-                val = value.fname_c;
-                yu =value.class_num;
+                val = value.full_name;
+                yu =value.c_id;
 
-                class_data += '<td><a class="btn btn-sm btn-danger confirmation""><span class="glyphicon glyphicon-trash"></span></a></td>';
+                class_data += '<td><a class="btn btn-sm btn-danger confirmation"onclick="kick('+yu+')""><span class="glyphicon glyphicon-trash"></span></a></td>';
 
             
                 class_data += '<td>'+val+'</td>';
