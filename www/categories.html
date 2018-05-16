@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<title>Categories</title>
+<link rel="shortcut icon" href="PATicon.png"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="w3_bootstrap/css/navbar.css"> 
+<link rel="stylesheet" href="css/thumbnail.css">
+
+<style>
+
+@media only all and (max-width: 600px){
+body {  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(nav_bg.jpg);
+        /*  height: 100%;
+        min-height: 100%;*/
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <h3 class="w3-padding-64 w3-center"><img src="PATicon.png">PIC-A-TALK</b></h3>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <a href="mode.html" onclick="w3_close()" class="w3-bar-item w3-button">CHANGE MODE</a> 
+  <a href="#child" onclick="w3_close()" class="w3-bar-item w3-button">THE CHILD</a> 
+  <a href="#parent" onclick="w3_close()" class="w3-bar-item w3-button">THE PARENT</a>
+  <a href="#childactivity" onclick="w3_close()" class="w3-bar-item w3-button">CHILD ACTIVITY</a>
+  <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button">LOGOUT</a>
+</nav>
+<!-- 
+  <a href="mode.html" onclick="sidebar_close()" class="w3-bar-item btn-group-vertical">Change Mode</a>
+  <a href="#thechild" onclick="sidebar_close()" class="w3-bar-item w3-button">The Child</a>
+  <a href="#theparent" onclick="sidebar_close()" class="w3-bar-item w3-button">The Parent</a>
+  <a href="#foodact" onclick="sidebar_close()" class="w3-bar-item w3-button">Child Activity: FOOD</a>
+  <a href="#logout" onclick="sidebar_close()" class="w3-bar-item w3-button">Logout</a> -->
+
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+  <div class="w3-left w3-padding-16"><img src="/PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</div>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<body>
+<div class="w3-main w3-content w3-padding" style="max-width:1600px;margin-top:80px; height: 527px;">
+
+  <!-- Photo grid -->
+  <div class="row" style="margin-top:75px;">
+        <div class="col-xs-6" style="text-align: center;">
+          <a href = "food.html">
+            <img src="food pics/foodicon.png" style="width:30vmin;" onclick="onClick(this)" alt="Food">
+              <br>
+              <!-- <span style="color:white; font-size: 20px;">Food</span> -->
+          </a>
+        </div>
+
+        <div class="col-xs-6" style="text-align: center;">
+          <a href = "toys.html">
+            <img src="toy pics/toyicon.png" style="width:30vmin;" onclick="onClick(this)" alt="Toys">
+              <!-- <span style="color: white; font-size: 20px;">Toys</span>
+          </a> -->
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 40px;">
+        <div class="col-xs-6" style="text-align: center;">
+          <a href = "places.html">
+            <img src="place pics/placesicon.png" style="width:30vmin;" onclick="onClick(this)" alt="Places">
+            <!-- <span style="color: white; font-size: 20px;">Places</span> -->
+          </a>
+        </div>
+
+        <div class="col-xs-6" style="text-align: center;">
+          <a href = "clothes.html">
+            <img src="clothes pics/clothesicon.png" style="width:30vmin;" onclick="onClick(this)" alt="Clothes">
+            <!-- <span style="color: white; font-size: 20px;">Clothes</span> -->
+          </a>
+        </div>
+      </div>
+</body>
+
+  <!-- Modal for full size images on click-->
+ <!--  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div> -->
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+// function onClick(element) {
+//   document.getElementById("img01").src = element.src;
+//   document.getElementById("modal01").style.display = "block";
+//   var captionText = document.getElementById("caption");
+//   captionText.innerHTML = element.alt;
+// }
+
+
+</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Home</title>
+    <script src="js/enroll1.js"> </script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/class.css">
+    <link rel="stylesheet" type="text/css" href="css/enroll_home.css">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/simple-line-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+
+</head>
+
+        <div class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">
+        <img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span><a href="enroll_home.html">
+        <span style="float: right; padding-top: 15px; padding-right: 5px; font-size: 60%;">&lt; Back</span></a>
+        </div>
+
+
+<body>
+    <div class=" bgimg container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <div class="card">
+                    <br><br><br><br><br><br><br>    
+                   <div class="col-lg-12">
+                        <h1 id="class_belong"></h1>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="goto_enroll1()" style="margin-left: 55%;">Add Student</button><br><br>
+                    </div> 
+                    
+                    <table class="table table-striped table-bordered table-hover" id="class">
+                        <tr>
+                            <thead> 
+                                <th >Action</th>
+                                <th >Student Name</th>  
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                   
+                                </tr>
+<!--                                 <td>
+                                    <a class="btn btn-sm btn-danger confirmation" href="/deleteClass/{{ Class.class_num }}"><span class="glyphicon glyphicon-trash"></span></a>
+                                </td>  
+                                <td style="cursor.pointer">
+                                    <a onclick="goto_classpage()" style="text-align: center">{{ Class.class_name}}
+                                </td>  -->              
+                            </tbody>  
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    var classname = localStorage.getItem('class_name');
+    document.getElementById("class_belong").innerHTML = classname;
+    $(document).ready(function(){
+        $.getJSON("http://127.0.0.1:5000/api/child_belong="+classname,function(data){
+            var class_data='';
+            $.each(data,function(key,value){
+                class_data += '<tr>';
+                val = value.fname_c;
+                yu =value.class_num;
+
+                class_data += '<td><a class="btn btn-sm btn-danger confirmation""><span class="glyphicon glyphicon-trash"></span></a></td>';
+
+            
+                class_data += '<td>'+val+'</td>';
+                
+                class_data += '</tr>';
+            });
+            $('#class').append(class_data);
+        });
+    });
+    // var table = document.getElementById("directory_table"),rIndex;
+    // for(var i = 0; i < table.rows.length; i++){
+    //  table.rows[i].onclick = function(){
+    //      rIndex = this.rowIndex;
+    //      console.log(rIndex);
+    //  };
+    // }
+
+</script>
