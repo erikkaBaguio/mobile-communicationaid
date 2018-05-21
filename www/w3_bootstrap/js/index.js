@@ -48,19 +48,19 @@ function register_user(form,acc_type){
 
         
     xhr = new XMLHttpRequest();
-    var url = "https://mighty-badlands-16603.herokuapp.com/api/signup";
+    var url = "http://127.0.0.1:5000/api/signup";
     xhr.open("POST", url, true);
-    xhr.setRequestHeader("Authorization", 'Basic ' + btoa(form.id.value + ":" + form.pass.value));
+    // xhr.setRequestHeader("Authorization", 'Basic ' + btoa(form.id.value + ":" + form.pass.value));
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
         alert(xhr.status)
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
             alert("pugsit")
-            console.log(json.form.id.value +", " + acc_type + ", " + json.form.email.value + ", " + json.form.pass.value);
+            console.log(json.form.id.value +", " + json.form.acc_type.value + ", " + json.form.email.value + ", " + json.form.pass.value);
         }
     }
-    var json =JSON.stringify({"username": form.id.value,"acc_type":acc_type, "email":form.email.value, "password":form.pass.value});
+    var json =JSON.stringify({"username": form.id.value,"acc_type":form.acc_type.value, "email":form.email.value, "password":form.pass.value});
     console.log(json)
     xhr.send(json);
 

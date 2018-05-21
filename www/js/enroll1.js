@@ -1,6 +1,6 @@
 function goto_enroll(form) {
 	xhr = new XMLHttpRequest();
-    var url = "http://mighty-badlands-16603.herokuapp.com/api/add_class";
+    var url = "http://127.0.0.1:5000/api/add_class";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
@@ -25,8 +25,12 @@ function goto_class2() {
 	location="addclass.html";
 }
 
+function goto_classpage() {
+    location="class_page.html";
+}
+
 function delete_class(val){
-    var url  = "http://mighty-badlands-16603.herokuapp.com/api/del_class="+val;
+    var url  = "http://127.0.0.1:5000/api/del_class="+val;
     var xhr  = new XMLHttpRequest()
     xhr.open('GET', url, true)
     xhr.onload = function () {
@@ -41,10 +45,6 @@ function delete_class(val){
     xhr.send(null);
 }
 
-
-function goto_classpage() {
-    location="class_page.html";
-}
 
 function goto_enroll1() {
     location="enroll.html";

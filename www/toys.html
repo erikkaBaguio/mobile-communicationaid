@@ -12,7 +12,7 @@
 
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
+.w3-third img{margin-bottom: -326px; opacity: 0.8; cursor: pointer}
 .w3-third img:hover{opacity: 1}
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
@@ -47,21 +47,21 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Photo grid -->
   <div class="w3-row">
     <div class="w3-third">
-      <img src="toy pics/puzzle.jpg" style="width:100%" onclick="onClick(this);document.getElementById('puzzle_play').play(); return false;" alt="Puzzle">
-      <img src="toy pics/rattle.jpg" style="width:100%" onclick="onClick(this);document.getElementById('rattle_play').play(); return false;" alt="Rattle">
-      <img src="toy pics/slide.jpg" style="width:100%" onclick="onClick(this);document.getElementById('slide_play').play(); return false;" alt="Slide">
+      <img src="toy pics/puzzle.jpg" style="width:32%" onclick="onClick(this);document.getElementById('puzzle_play').play(); return false;" alt="Puzzle">
+      <img src="toy pics/rattle.jpg" style="width:32%" onclick="onClick(this);document.getElementById('rattle_play').play(); return false;" alt="Rattle">
+      <img src="toy pics/slide.jpg" style="width:32%" onclick="onClick(this);document.getElementById('slide_play').play(); return false;" alt="Slide">
     </div>
 
     <div class="w3-third">
-      <img src="toy pics/car.jpg" style="width:100%" onclick="onClick(this);document.getElementById('toycar_play').play(); return false;" alt="Toy Car">
-      <img src="toy pics/ball.jpg" style="width:100%" onclick="onClick(this);document.getElementById('ball_play').play(); return false;" alt="Ball">
-      <img src="toy pics/doll.jpg" style="width:100%" onclick="onClick(this);document.getElementById('doll_play').play(); return false;" alt="Doll">
+      <img src="toy pics/car.jpg" style="width:32%" onclick="onClick(this);document.getElementById('toycar_play').play(); return false;" alt="Toy Car">
+      <img src="toy pics/ball.jpg" style="width:32%" onclick="onClick(this);document.getElementById('ball_play').play(); return false;" alt="Ball">
+      <img src="toy pics/doll.jpg" style="width:32%" onclick="onClick(this);document.getElementById('doll_play').play(); return false;" alt="Doll">
     </div>
     
     <div class="w3-third">
-      <img src="toy pics/doodlepad.jpg" style="width:100%" onclick="onClick(this);document.getElementById('doodlepad_play').play(); return false;" alt="Doodle Pad">
-      <img src="toy pics/flashcards.jpg" style="width:100%" onclick="onClick(this);document.getElementById('flashcards_play').play(); return false;" alt="Flash Cards">
-      <img src="toy pics/lego.jpg" style="width:100%" onclick="onClick(this);document.getElementById('lego_play').play(); return false;" alt="Lego">
+      <img src="toy pics/doodlepad.jpg" style="width:32%" onclick="onClick(this);document.getElementById('doodlepad_play').play(); return false;" alt="Doodle Pad">
+      <img src="toy pics/flashcards.jpg" style="width:32%" onclick="onClick(this);document.getElementById('flashcards_play').play(); return false;" alt="Flash Cards">
+      <img src="toy pics/lego.jpg" style="width:32%" onclick="onClick(this);document.getElementById('lego_play').play(); return false;" alt="Lego">
     </div>  
   </div>
 
@@ -262,6 +262,29 @@ function onClick(element) {
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
+
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+  xhr = new XMLHttpRequest();
+    var url = "http://127.0.0.1:5000/api/rec_logs";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(xhr.responseText);
+        }
+    }
+    var json =JSON.stringify({"clicks": "1", "log_date":date, "log_time":time, "category_type":"Toys", "image_name":element.alt});
+    console.log(json)
+    xhr.send(json);
+
+
+    
+    
+    alert("counted");
 }
 
 function logout(){

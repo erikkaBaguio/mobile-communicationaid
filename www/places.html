@@ -46,21 +46,21 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Photo grid -->
   <div class="w3-row">
     <div class="w3-third">
-      <img src="place pics/beach.jpg" style="width:100%" onclick="onClick(this);document.getElementById('beach_play').play(); return false;" alt="Beach">
-      <img src="place pics/church.jpg" style="width:100%" onclick="onClick(this);document.getElementById('church_play').play(); return false;" alt="Church">
-      <img src="place pics/jollibee.jpg" style="width:100%" onclick="onClick(this);document.getElementById('jollibee_play').play(); return false;" alt="Jollibee">
+      <img src="place pics/beach.jpg" style="width:32%" onclick="onClick(this);document.getElementById('beach_play').play(); return false;" alt="Beach">
+      <img src="place pics/church.jpg" style="width:32%" onclick="onClick(this);document.getElementById('church_play').play(); return false;" alt="Church">
+      <img src="place pics/jollibee.jpg" style="width:32%" onclick="onClick(this);document.getElementById('jollibee_play').play(); return false;" alt="Jollibee">
     </div>
 
     <div class="w3-third">
-      <img src="place pics/Mall.jpg" style="width:100%" onclick="onClick(this);document.getElementById('mall_play').play(); return false;" alt="Mall">
-      <img src="place pics/mcdo.jpg" style="width:100%" onclick="onClick(this);document.getElementById('mcdo_play').play(); return false;" alt="McDonalds">
-      <img src="place pics/playground.jpg" style="width:100%" onclick="onClick(this);document.getElementById('playground_play').play(); return false;" alt="Playground">
+      <img src="place pics/Mall.jpg" style="width:32%" onclick="onClick(this);document.getElementById('mall_play').play(); return false;" alt="Mall">
+      <img src="place pics/mcdo.jpg" style="width:32%" onclick="onClick(this);document.getElementById('mcdo_play').play(); return false;" alt="McDonalds">
+      <img src="place pics/playground.jpg" style="width:32%" onclick="onClick(this);document.getElementById('playground_play').play(); return false;" alt="Playground">
     </div>
     
     <div class="w3-third">
-      <img src="place pics/pool.jpg" style="width:100%" onclick="onClick(this);document.getElementById('pool_play').play(); return false;" alt="Swimming Pool">
-      <img src="place pics/school.jpg" style="width:100%" onclick="onClick(this);document.getElementById('school_play').play(); return false;" alt="School">
-      <img src="place pics/lego.jpg" style="width:100%" onclick="onClick(this);document.getElementById('lego_play').play(); return false;" alt="Lego">
+      <img src="place pics/pool.jpg" style="width:32%" onclick="onClick(this);document.getElementById('pool_play').play(); return false;" alt="Swimming Pool">
+      <img src="place pics/school.jpg" style="width:32%" onclick="onClick(this);document.getElementById('school_play').play(); return false;" alt="School">
+      <img src="place pics/lego.jpg" style="width:32%" onclick="onClick(this);document.getElementById('lego_play').play(); return false;" alt="Lego">
     </div>  
   </div>
 
@@ -249,6 +249,29 @@ function onClick(element) {
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
+
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+  xhr = new XMLHttpRequest();
+    var url = "http://127.0.0.1:5000/api/rec_logs";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(xhr.responseText);
+        }
+    }
+    var json =JSON.stringify({"clicks": "1", "log_date":date, "log_time":time, "category_type":"Places", "image_name":element.alt});
+    console.log(json)
+    xhr.send(json);
+
+
+    
+    
+    alert("counted");
 }
 
 function logout(){

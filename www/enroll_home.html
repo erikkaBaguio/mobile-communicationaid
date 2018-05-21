@@ -18,7 +18,7 @@
 
         <div class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
         <span class="w3-left w3-padding">
-        <img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span><a href="addclass.html">
+        <img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span><a href="parentmode.html">
         <span style="float: right; padding-top: 15px; padding-right: 5px; font-size: 60%;">&lt; Back</span></a>
         </div>
 
@@ -42,12 +42,7 @@
                             <tbody>
 
                                 <tr>
-                                    <td>
-                                        
-                                    </td>
-                                    <td>
-                                        
-                                    </td>
+                                  
                                 </tr>
 <!--                                 <td>
                                     <a class="btn btn-sm btn-danger confirmation" href="/deleteClass/{{ Class.class_num }}"><span class="glyphicon glyphicon-trash"></span></a>
@@ -68,8 +63,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
+
+    function classpage(yu) {
+        alert(yu);
+
+        var url  = "http://127.0.0.1:5000/api/search_class="+yu;
+        var xhr  = new XMLHttpRequest()
+        xhr.open('GET', url, true)
+        xhr.onload = function () {
+            
+            if (xhr.readyState == 4 && xhr.status == "200") {
+                var json = JSON.parse(xhr.responseText);
+                console.log(json)
+                localStorage.setItem('class_name', json.class_name);
+
+                location = "class_page.html"
+            } else {
+                alert('igit')
+            }
+        }
+        xhr.send(null);
+
+    }
+
+
+
     $(document).ready(function(){
-        $.getJSON("http://mighty-badlands-16603.herokuapp.com/api/class",function(data){
+        $.getJSON("http://127.0.0.1:5000/api/class",function(data){
             var class_data='';
             $.each(data,function(key,value){
                 class_data += '<tr>';
@@ -79,7 +99,7 @@
                 class_data += '<td><a class="btn btn-sm btn-danger confirmation" onclick="delete_class('+yu+')""><span class="glyphicon glyphicon-trash"></span></a></td>';
 
             
-                class_data += '<td  onclick="classpage()" >'+val+'</td>';
+                class_data += '<td  onclick="classpage('+yu+')" >'+val+'</td>';
                 
                 class_data += '</tr>';
             });

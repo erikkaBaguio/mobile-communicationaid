@@ -46,21 +46,21 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Photo grid -->
   <div class="w3-row">
     <div class="w3-third">
-      <img src="clothes pics/dress.jpg" style="width:100%" onclick="onClick(this);document.getElementById('dress_play').play(); return false;" alt="Dress">
-      <img src="clothes pics/jacket.jpg" style="width:100%" onclick="onClick(this);document.getElementById('jacket_play').play(); return false;" alt="Jacket">
-      <img src="clothes pics/pants.jpg" style="width:100%" onclick="onClick(this);document.getElementById('pants_play').play(); return false;" alt="Pants">
+      <img src="clothes pics/dress.jpg" style="width:32%" onclick="onClick(this);document.getElementById('dress_play').play(); return false;" alt="Dress">
+      <img src="clothes pics/jacket.jpg" style="width:32%" onclick="onClick(this);document.getElementById('jacket_play').play(); return false;" alt="Jacket">
+      <img src="clothes pics/pants.jpg" style="width:32%" onclick="onClick(this);document.getElementById('pants_play').play(); return false;" alt="Pants">
     </div>
 
     <div class="w3-third">
-      <img src="clothes pics/shirt.jpg" style="width:100%" onclick="onClick(this);document.getElementById('shirt_play').play(); return false;" alt="Shirt">
-      <img src="clothes pics/brief.jpg" style="width:100%" onclick="onClick(this);document.getElementById('brief_play').play(); return false;" alt="Brief">
-      <img src="clothes pics/panty.jpg" style="width:100%" onclick="onClick(this);document.getElementById('panty_play').play(); return false;" alt="Panty">
+      <img src="clothes pics/shirt.jpg" style="width:32%" onclick="onClick(this);document.getElementById('shirt_play').play(); return false;" alt="Shirt">
+      <img src="clothes pics/brief.jpg" style="width:32%" onclick="onClick(this);document.getElementById('brief_play').play(); return false;" alt="Brief">
+      <img src="clothes pics/panty.jpg" style="width:32%" onclick="onClick(this);document.getElementById('panty_play').play(); return false;" alt="Panty">
     </div>
     
     <div class="w3-third">
-      <img src="clothes pics/skirt.jpg" style="width:100%" onclick="onClick(this);document.getElementById('skirt_play').play(); return false;" alt="Skirt">
-      <img src="clothes pics/sweater.jpg" style="width:100%" onclick="onClick(this);document.getElementById('sweater_play').play(); return false;" alt="Sweater">
-      <img src="clothes pics/shorts.jpg" style="width:100%" onclick="onClick(this);document.getElementById('shorts_play').play(); return false;" alt="Shorts">
+      <img src="clothes pics/skirt.jpg" style="width:32%" onclick="onClick(this);document.getElementById('skirt_play').play(); return false;" alt="Skirt">
+      <img src="clothes pics/sweater.jpg" style="width:32%" onclick="onClick(this);document.getElementById('sweater_play').play(); return false;" alt="Sweater">
+      <img src="clothes pics/shorts.jpg" style="width:32%" onclick="onClick(this);document.getElementById('shorts_play').play(); return false;" alt="Shorts">
     </div>  
   </div>
 
@@ -252,6 +252,29 @@ function onClick(element) {
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
+
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+  xhr = new XMLHttpRequest();
+    var url = "http://127.0.0.1:5000/api/rec_logs";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(xhr.responseText);
+        }
+    }
+    var json =JSON.stringify({"clicks": "1", "log_date":date, "log_time":time, "category_type":"Clothes", "image_name":element.alt});
+    console.log(json)
+    xhr.send(json);
+
+
+    
+    
+    alert("counted");
 }
 
 function logout(){
