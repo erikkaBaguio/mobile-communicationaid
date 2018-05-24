@@ -72,7 +72,7 @@ function add_directory(form){
     
         
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/api/add_directory";
+    var url = "https://cryptic-fjord-60133.herokuapp.com/api/add_directory";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
@@ -102,7 +102,7 @@ function update_directory(form){
         var dir_id= localStorage.getItem("dir_id");
             
         xhr = new XMLHttpRequest();
-        var url = "http://127.0.0.1:5000/api/edit_directory="+dir_id;
+        var url = "https://cryptic-fjord-60133.herokuapp.com/api/edit_directory="+dir_id;
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.onreadystatechange = function () { 

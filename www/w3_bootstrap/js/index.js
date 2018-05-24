@@ -12,7 +12,7 @@
 function get_info(){
     var acc_id = localStorage.getItem("acc_id");
     alert(acc_id+"heloooooooo")
-    var url  = "http://127.0.0.1:5000/api/user/"+acc_id;
+    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/user/"+acc_id;
     var xhr  = new XMLHttpRequest()
     xhr.open('GET', url, true)
     xhr.onreadystatechange = function () { 
@@ -59,7 +59,7 @@ function pasuser(form) {
     var pass = form.pass.value;
     
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/api/login";
+    var url = "https://cryptic-fjord-60133.herokuapp.com/api/login";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Authorization", 'Basic ' + btoa(uid + ":" + pass));
     xhr.setRequestHeader("Content-type", "application/json");
@@ -81,7 +81,8 @@ function pasuser(form) {
     var json =JSON.stringify({"username": uid, "password":pass});
     console.log(json)
     xhr.send(json);
-
+    alert(" Successfully login");
+    location="mode.html";
 
 
     
@@ -89,21 +90,17 @@ function pasuser(form) {
 
 
 function register_user(form,acc_type){
-    alert(form.id.value)
-    alert(form.acc_type.value)
-    alert(form.email.value)
-    alert(form.pass.value)
-        
+       
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/api/signup";
+    var url = "https://cryptic-fjord-60133.herokuapp.com/api/signup";
     xhr.open("POST", url, true);
     // xhr.setRequestHeader("Authorization", 'Basic ' + btoa(form.id.value + ":" + form.pass.value));
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
-        alert(xhr.status)
+        // alert(xhr.status)
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            alert("pugsit")
+            location="mode.html";  
             console.log(json.form.id.value +", " + json.form.acc_type.value + ", " + json.form.email.value + ", " + json.form.pass.value);
         }
     }
@@ -113,7 +110,7 @@ function register_user(form,acc_type){
 
     
     alert("Thanks " + form.id.value  + "! You are now Registered.");
-    location="mode.html";  
+    
 
 }
 
@@ -128,7 +125,7 @@ function add_directory(form){
     
         
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:80/directory";
+    var url = "https://cryptic-fjord-60133.herokuapp.com/directory";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 

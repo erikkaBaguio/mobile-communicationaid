@@ -271,7 +271,7 @@ function onClick(element) {
   var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
   xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/api/rec_logs";
+    var url = "https://cryptic-fjord-60133.herokuapp.com/api/rec_logs";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 

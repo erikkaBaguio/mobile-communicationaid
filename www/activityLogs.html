@@ -68,7 +68,7 @@
 <script>
 
 	$(document).ready(function(){
-		$.getJSON("http://127.0.0.1:5000/api/logs",function(data){
+		$.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/logs",function(data){
 			var directory_data='';
 			$.each(data,function(key,value){
 				directory_data += '<tr>';

@@ -42,7 +42,7 @@
         if (confirm("Are you sure you want DELETE?")) {
             var dir= localStorage.getItem("dir_id");
             alert(dir)
-            var url  = "http://127.0.0.1:5000/api/del_directory="+dir;
+            var url  = "https://cryptic-fjord-60133.herokuapp.com/api/del_directory="+dir;
             var xhr  = new XMLHttpRequest()
             xhr.open('POST', url, true)
             xhr.onload = function () {

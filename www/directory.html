@@ -69,7 +69,7 @@
 	function info(val){
 
 	    alert(val)
-	    var url  = "http://127.0.0.1:5000/api/directory="+val;
+	    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/directory="+val;
 	    var xhr  = new XMLHttpRequest()
 	    xhr.open('GET', url, true)
 	    xhr.onload = function () {
@@ -99,7 +99,7 @@
 	}
 
 	$(document).ready(function(){
-		$.getJSON("http://127.0.0.1:5000/api/directory",function(data){
+		$.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/directory",function(data){
 			var directory_data='';
 			$.each(data,function(key,value){
 				directory_data += '<tr>';

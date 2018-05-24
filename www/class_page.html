@@ -240,7 +240,7 @@ function autocomplete(inp, arr) {
 var countries = [];
 
     $(document).ready(function(){
-        $.getJSON("http://127.0.0.1:5000/api/child",function(data){
+        $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/child",function(data){
             $.each(data,function(key,value){
                 
 
@@ -270,7 +270,7 @@ autocomplete(document.getElementById("myInput"), countries);
         if (confirm("Are you sure you want to Remove this Student?")) {
             
             xhr = new XMLHttpRequest();
-            var url = "http://127.0.0.1:5000/api/kick_student="+c_id;
+            var url = "https://cryptic-fjord-60133.herokuapp.com/api/kick_student="+c_id;
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.onreadystatechange = function () { 
@@ -288,7 +288,7 @@ autocomplete(document.getElementById("myInput"), countries);
 
     function about(val){
         alert(val)
-        var url  = "http://127.0.0.1:5000/api/child/"+val;
+        var url  = "https://cryptic-fjord-60133.herokuapp.com/api/child/"+val;
         var xhr  = new XMLHttpRequest()
         xhr.open('GET', url, true)
         xhr.onload = function () {
@@ -296,11 +296,11 @@ autocomplete(document.getElementById("myInput"), countries);
             if (xhr.readyState == 4 && xhr.status == "200") {
                 var json = JSON.parse(xhr.responseText);
                 console.log(json)
-                var fullname = json.fname_c +" "+ json.lname_c
+                var fullname = json.user.fname_c +" "+ json.user.lname_c
                 localStorage.setItem('childid', val);
                 localStorage.setItem('name', fullname);
-                localStorage.setItem('diagnosis', json.diagnosis);
-                localStorage.setItem('bday_c', json.bday_c);
+                localStorage.setItem('diagnosis', json.user.diagnosis);
+                localStorage.setItem('bday_c', json.user.bday_c);
                 
 
                 alert(xhr.responseText)
@@ -317,7 +317,7 @@ autocomplete(document.getElementById("myInput"), countries);
     var classname = localStorage.getItem('class_name');
     document.getElementById("class_belong").innerHTML = classname;
     $(document).ready(function(){
-        $.getJSON("http://127.0.0.1:5000/api/child_belong="+classname,function(data){
+        $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/child_belong="+classname,function(data){
             var class_data='';
             $.each(data,function(key,value){
                 class_data += '<tr>';
@@ -349,7 +349,7 @@ autocomplete(document.getElementById("myInput"), countries);
        alert(search+" "+class_name)
             
         xhr = new XMLHttpRequest();
-        var url = "http://127.0.0.1:5000/api/enroll_student="+search;
+        var url = "https://cryptic-fjord-60133.herokuapp.com/api/enroll_student="+search;
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.onreadystatechange = function () { 
@@ -373,7 +373,7 @@ autocomplete(document.getElementById("myInput"), countries);
 
 
     $(document).ready(function(){
-        $.getJSON("http://127.0.0.1:5000/api/child",function(data){
+        $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/child",function(data){
             var directory_data='';
             $.each(data,function(key,value){
                 directory_data += '<ul>';
