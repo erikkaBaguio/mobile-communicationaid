@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+    <title>Blank App</title>
+</head>
+
+<body>
+    <div style="position:absolute; z-index: 1; background-color:#59e059; height:25%; width:100%; box-shadow:0px 0px 10px 1px #00000094;">
+
+    </div>
+    <img src="F_prof.jpg" style="position: absolute; z-index: 2; top:13%; left:5%; height:130px; width:130px; background-color:#fbfbeafc; border-radius:50%; box-shadow: 0px 0px 3px 0px #00000094; border:5px solid #ececec;">
+    
+    <span style="position:absolute;left: 9%;top: 0%;font-size: 35px;color:white;z-index:  2;">
+        &lt;
+    </span>
+    
+    <span style="position: absolute;z-index: 3;left: 0%;top:1%;font-size: 24px;color:white;width:  100%;text-align:  center;">
+        Parent's Profile
+    </span>
+    
+        <div style="z-index: 1;display:  table;left: 31%;padding-left: 7%;top: 14%;width: 68%;height: 10%;text-align:  center;font-size: 23px;color:white;position: absolute;border: 1px solid;">
+        <div id="name" style="display:table-cell;vertical-align: middle;"></div>
+    </div>
+    
+    <div class="container" style="position: absolute;padding-top: 60px;top:25%;height:100%;font-size:  20px;width:100%;">
+        <div class="row">
+            <div class="col-xs-5">
+                Child:
+            </div>
+            <div class="col-xs-7">
+                Baby Damulag
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-5">
+                Address:
+            </div>
+            <div class="col-xs-7">
+                Somewhere down the road bruh
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-5">
+                Cell#:
+            </div>
+            <div class="col-xs-7">
+                09184412707
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-5">
+                Child Class:
+            </div>
+            <div class="col-xs-7">
+                IDK Class
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-5">
+                email:
+            </div>
+            <div id="email" class="col-xs-7" style="font-size: 15px;">
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-5">
+                occupation:
+            </div>
+            <div class="col-xs-7">
+                Tig salo ug durian
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="..\platforms\browser\www\cordova.js"></script>
+
+</body>
+
+</html>
+<script>
+    
+
+    document.getElementById("name").innerHTML = localStorage.getItem("acc_name");
+    document.getElementById("email").innerHTML = localStorage.getItem("acc_email");
+    
+
+</script>

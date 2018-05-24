@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Enrollment Form</title>
+	<script src="js/enroll1.js"> </script>
+	<link rel="stylesheet" type="text/css" href="css/class.css">
+	<link rel="stylesheet" type="text/css" href="css/enroll.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="{{ url_for('.static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/simple-line-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+
+
+</head>
+
+<body>
+
+	<div class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">
+        <img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span><a href="class_page.html">
+        <span style="float: right; padding-top: 15px; padding-right: 5px; font-size: 60%;">&lt; Back</span></a>
+    </div>
+
+<!-- 	<center>
+
+
+#####Make sure the form has the autocomplete function switched off:
+<form autocomplete="off" action="/action_page.php">
+  <div class="autocomplete" style="width:300px;">
+    <input id="myInput" type="text" placeholder="Enter fullname">
+
+	<button type="button" class="btn btn-primary btn-lg" onclick="enroll_that_shit()">Save</button>
+	<button type="button" class="btn btn-danger btn-lg" onclick="classpage()">Cancel</button><br><br>
+	<button type="button" class="btn btn-success btn-lg" onclick="classpage()">Submit</button> 
+  </div>
+  
+</form>
+
+</center> -->
+      
+	
+		<div class="container" style="margin-top: 30vh;">
+      <center><h1 id="class_belong" style="font-size: 40px; color: #011344;"></h1></center>
+      <h3 id="fullname" style="color:#9342bc;"></h3>
+      <h3 id="diagnose"></h3>
+      <h4 id="bday_child"></h4>
+      <center>
+			<form>
+				  
+					<center>
+              <textarea id="details" rows="10" cols="30" placeholder="Enter Student Report here ..." style = "background : LavenderBlush; margin: 5%;"></textarea>
+              <input type="text" id="rating" placeholder="Ratings"><br>
+          </center>
+	
+
+				 	
+	                <button type="button" class="btn btn-primary btn-lg" onclick="post_progress()">Save</button>
+<!-- 	                <button type="button" class="btn btn-danger btn-lg" onclick="classpage()">Cancel</button><br><br>
+	                <button type="button" class="btn btn-success btn-lg" onclick="post_progress()">Submit</button>   -->
+
+      
+
+			</form>
+      </center>
+		</div>
+	
+
+</body>
+</html>
+
+
+<script>
+    function post_progress(){
+        
+        var details = document.getElementById('details').value;
+        var rating = document.getElementById('rating').value;
+        var childid = localStorage.getItem('childid');
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+
+        
+            
+        xhr = new XMLHttpRequest();
+        var url = "http://127.0.0.1:5000/api/progress";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var json = JSON.parse(xhr.responseText);
+                alert("Thanks ! successfully Posted!");
+            }
+        }
+        var json =JSON.stringify({"details": details, "prog_date":date, "prog_time":time, "score":rating,"childid":childid});
+        console.log(json)
+        xhr.send(json);
+        
+
+    }
+
+
+
+    var classname = localStorage.getItem('class_name');
+    document.getElementById("class_belong").innerHTML = classname;
+
+
+    document.getElementById("fullname").innerHTML = "Name: " + localStorage.getItem('name');
+
+    
+    document.getElementById("diagnose").innerHTML = "Diagnosis:" + localStorage.getItem('diagnosis');
+
+
+    document.getElementById("bday_child").innerHTML = "Birthday:" + localStorage.getItem('bday_c');
+
+
+
+
+
+</script>

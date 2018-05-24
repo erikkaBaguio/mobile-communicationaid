@@ -94,33 +94,33 @@ function add_directory(form){
 }
 
 function update_directory(form){
+    if (confirm("Do you want to save Changes?")) {
+        var name = form.name.value;
+        var contact = form.contact.value;
+        var address = form.address.value;
 
-    var name = form.name.value;
-    var contact = form.contact.value;
-    var address = form.address.value;
-
-    var dir_id= localStorage.getItem("dir_id");
-        
-    xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/api/edit_directory="+dir_id;
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/json");
-    xhr.onreadystatechange = function () { 
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var json = JSON.parse(xhr.responseText);
-            console.log(json.name + ", " + json.contact + ", " + json.address);
+        var dir_id= localStorage.getItem("dir_id");
+            
+        xhr = new XMLHttpRequest();
+        var url = "http://127.0.0.1:5000/api/edit_directory="+dir_id;
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var json = JSON.parse(xhr.responseText);
+                console.log(json.name + ", " + json.contact + ", " + json.address);
+            }
         }
+        var json =JSON.stringify({"name": name, "contact":contact, "address":address});
+        console.log(json)
+        xhr.send(json);
+
+
+        
+        location="directory.html"  
+        alert("Thanks ! " + name  + " is successfully added to your Directory.");
+        
     }
-    var json =JSON.stringify({"name": name, "contact":contact, "address":address});
-    console.log(json)
-    xhr.send(json);
-
-
-    
-    location="directory.html"  
-    alert("Thanks ! " + name  + " is successfully added to your Directory.");
-    
-
 }
 
 

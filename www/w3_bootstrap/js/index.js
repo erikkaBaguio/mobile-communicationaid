@@ -9,6 +9,47 @@
 
 // }
 // change;
+function get_info(){
+    var acc_id = localStorage.getItem("acc_id");
+    alert(acc_id+"heloooooooo")
+    var url  = "http://127.0.0.1:5000/api/user/"+acc_id;
+    var xhr  = new XMLHttpRequest()
+    xhr.open('GET', url, true)
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var json = JSON.parse(xhr.responseText);
+            alert(json.user)
+            console.log(json);
+            localStorage.setItem('acc_name', json.user.username);
+            localStorage.setItem('acc_email', json.user.email);
+            console.table(json);
+            alert("success")
+        } else {
+            console.error(json);
+        }
+    }
+    xhr.send(null);
+    // var url  = "https://mighty-badlands-16603.herokuapp.com/api/user/"+acc_id;
+    // var xhr  = new XMLHttpRequest()
+    // xhr.open('GET', url, true)
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState == 4 && xhr.status == "200") {
+    //         var users = JSON.parse(xhr.responseText);
+    //         localStorage.setItem('acc_name', json.username);
+    //         localStorage.setItem('acc_email', json.email);
+    //         console.log(json);
+    //         alert("success")
+    //     } else {
+    //         alert('igit')
+    //         console.log("FAIL");
+    //     }
+    // }
+
+    // xhr.send();
+    
+}
+
+
 function back(){
     location=("index.html");
 }
@@ -18,7 +59,7 @@ function pasuser(form) {
     var pass = form.pass.value;
     
     xhr = new XMLHttpRequest();
-    var url = "https://mighty-badlands-16603.herokuapp.com/api/login";
+    var url = "http://127.0.0.1:5000/api/login";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Authorization", 'Basic ' + btoa(uid + ":" + pass));
     xhr.setRequestHeader("Content-type", "application/json");
@@ -26,7 +67,10 @@ function pasuser(form) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
             alert(json.acc_id);
+            localStorage.setItem('acc_id', json.acc_id);
+            localStorage.setItem('token', json.token);
             alert(json.token);
+            // get_info();
             alert(" Successfully login");
             location="mode.html";
 
@@ -39,13 +83,16 @@ function pasuser(form) {
     xhr.send(json);
 
 
-    
-    
+
     
 }
+
+
 function register_user(form,acc_type){
-
-
+    alert(form.id.value)
+    alert(form.acc_type.value)
+    alert(form.email.value)
+    alert(form.pass.value)
         
     xhr = new XMLHttpRequest();
     var url = "http://127.0.0.1:5000/api/signup";

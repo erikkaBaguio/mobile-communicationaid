@@ -30,19 +30,21 @@ function goto_classpage() {
 }
 
 function delete_class(val){
-    var url  = "http://127.0.0.1:5000/api/del_class="+val;
-    var xhr  = new XMLHttpRequest()
-    xhr.open('GET', url, true)
-    xhr.onload = function () {
-        var users = JSON.parse(xhr.responseText);
-        if (xhr.readyState == 4 && xhr.status == "200") {
-            alert('Successfully deleted');
-            location = "enroll_home.html"
-        } else {
-            alert('error')
+    if (confirm("Are you sure you want to DELETE?")) {
+        var url  = "http://127.0.0.1:5000/api/del_class="+val;
+        var xhr  = new XMLHttpRequest()
+        xhr.open('GET', url, true)
+        xhr.onload = function () {
+            var users = JSON.parse(xhr.responseText);
+            if (xhr.readyState == 4 && xhr.status == "200") {
+                alert('Successfully deleted');
+                location = "enroll_home.html"
+            } else {
+                alert('error')
+            }
         }
+        xhr.send(null);
     }
-    xhr.send(null);
 }
 
 
