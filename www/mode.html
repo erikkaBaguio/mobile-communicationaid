@@ -46,17 +46,20 @@
 </head>
 
 	<body>
-		<div class="container" style="text-align: center; margin-top: 50%;" >
+		<div class="container" style="text-align: center; margin-top: 40%;" >
 			<div class="row" style="font-size:190%; color: black;">Select Mode</div><br>
-			<div class="row">
-					<a href="parentmode.html">
-						<button class="btn btn-primary" style="font-size:170%;width:80%;height:50px;">Parent mode</button></a><br><br>
-					<a href="childmode.html">
-						<button class="btn btn-success" style="font-size:170%;width:80%;height:50px;">
-							Child mode
-						</button>
-					</a>			
-			</div>
+			<div class="row" style="margin-top:20px;">
+        	<div class="col-xs-6" style="text-align: center;">
+          	<a href = "p_mode.html">
+            <img src="pics/parent.png" style="width:40vmin;" onclick="onClick(this)" alt="Parent">
+          	</a>
+        	</div>
+
+        	<div class="col-xs-6" style="text-align: center;">
+          	<a href = "childmode.html">
+            <img src="pics/child.png" style="width:40vmin;" onclick="onClick(this)" alt="Child">
+        </div>
+      </div>
 			<script type="text/javascript" src="cordova.js"></script>
 		</div>
 

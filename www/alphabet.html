@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<title>ALPHABET</title>
+<link rel="shortcut icon" href="static/images/PATicon.png" />
+<meta charset="UTF-8"><link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/font.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-grid.css">
+<link rel="stylesheet" href="css/bootstrap-reboot.css">
+<link rel="stylesheet" href="js/bootstrap.bundle.js">
+<link rel="stylesheet" href="js/bootstrap.js">
+<link rel="stylesheet" href="css/agency.min.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+<body class="w3-light-grey">
+
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-blue w3-xlarge w3-padding-32">
+  <span class="w3-left w3-padding" style="font-size: 50px">
+  <img src="static/food/foodicon.png" alt="logo" width="30px" height="auto"/>ALPHABETS</span>
+  <a href="#">
+    <span style="float: right; padding-top: 15px; padding-right: 20px; font-size: 200%; color:black;">&lt; Back</span>
+  </a>
+</header>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:150px">
+
+  <!-- ALPHABETS -->
+  <div class="w3-container w3-light-grey w3-center w3-text-light-grey w3-padding-32" id="food">
+    <div class="w3-quarter hover">
+        <img src="ALPHABET/A.jpg" style="width:100%" id="A" onclick="document.getElementById('A_play').play();return false;" alt="A">
+        <img src="ALPHABET/E.png" style="width:100%" id="E" onclick="document.getElementById('E_play').play();return false;" alt="E">
+        <img src="ALPHABET/I.png" style="width:100%" id="I" onclick="document.getElementById('I_play').play();return false;" alt="I">
+        <img src="ALPHABET/M.png" style="width:100%" id="M" onclick="document.getElementById('M_play').play();return false;" alt="M">
+        <img src="ALPHABET/Q.png" style="width:100%" id="Q" onclick="document.getElementById('Q_play').play();return false;" alt="Q">
+        <img src="ALPHABET/U.png" style="width:100%" id="U" onclick="document.getElementById('U_play').play();return false;" alt="U">
+        
+   </div>
+
+   <div class="w3-quarter hover">
+      <img src="ALPHABET/B.png" style="width:100%" id="B" onclick="document.getElementById('B_play').play();return false;" alt="B">
+      <img src="ALPHABET/F.png" style="width:100%" id="F" onclick="document.getElementById('F_play').play();return false;" alt="F">
+      <img src="ALPHABET/J.png" style="width:100%" id="J" onclick="document.getElementById('J_play').play();return false;" alt="J">
+      <img src="ALPHABET/N.png" style="width:100%" id="N" onclick="document.getElementById('N_play').play();return false;" alt="N">
+      <img src="ALPHABET/R.png" style="width:100%" id="R" onclick="document.getElementById('R_play').play();return false;" alt="R">
+      <img src="ALPHABET/V.png" style="width:100%" id="V" onclick="document.getElementById('V_play').play();return false;" alt="V">
+      <img src="ALPHABET/Y.png" style="width:100%" id="Y" onclick="document.getElementById('Y_play').play();return false;" alt="Y">
+      
+
+    </div>
+
+    <div class="w3-quarter hover">
+      <img src="ALPHABET/C.png" style="width:100%" id="C" onclick="document.getElementById('C_play').play();return false;" alt="C">
+      <img src="ALPHABET/G.png" style="width:100%" id="G" onclick="document.getElementById('G_play').play();return false;" alt="G">
+      <img src="ALPHABET/K.png" style="width:100%" id="K" onclick="document.getElementById('K_play').play();return false;" alt="K">
+      <img src="ALPHABET/O.png" style="width:100%" id="O" onclick="document.getElementById('O_play').play();return false;" alt="O">
+      <img src="ALPHABET/S.png" style="width:100%" id="S" onclick="document.getElementById('S_play').play();return false;" alt="S">
+      <img src="ALPHABET/W.png" style="width:100%" id="W" onclick="document.getElementById('W_play').play();return false;" alt="W">
+      <img src="ALPHABET/Z.png" style="width:100%" id="Z" onclick="document.getElementById('Z_play').play();return false;" alt="Z">
+    </div>
+
+    <div class="w3-quarter hover">
+      <img src="ALPHABET/D.png" style="width:100%" id="C" onclick="document.getElementById('D_play').play();return false;" alt="D">
+      <img src="ALPHABET/H.png" style="width:100%" id="H" onclick="document.getElementById('H_play').play();return false;" alt="H">
+      <img src="ALPHABET/L.png" style="width:100%" id="L" onclick="document.getElementById('L_play').play();return false;" alt="L">
+      <img src="ALPHABET/P.png" style="width:100%" id="P" onclick="document.getElementById('P_play').play();return false;" alt="P">
+      <img src="ALPHABET/T.png" style="width:100%" id="T" onclick="document.getElementById('T_play').play();return false;" alt="T">
+      <img src="ALPHABET/X.png" style="width:100%" id="X" onclick="document.getElementById('X_play').play();return false;" alt="X">
+    </div>
+
+    <!--<div class="w3-quarter">-->
+      <!--<img src= "{{ url_for('static', filename='image_name' ) }}">-->
+      <!--</div>-->
+
+
+    <audio id="A_play">
+    <source src="audio/A.mp3"/>
+    </audio>
+    <audio id="B_play">
+    <source src="audio/B.mp3" />
+    </audio>
+    <audio id="C_play">
+    <source src="audio/C.mp3" />
+    </audio>
+    <audio id="D_play">
+    <source src="audio/D.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="E_play">
+    <source src="audio/E.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="F_play">
+    <source src="audio/F.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="G_play">
+    <source src="audio/G.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="H_play">
+    <source src="audio/H.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="I_play">
+    <source src="audio/I.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="J_play">
+    <source src="audio/J.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="K_play">
+    <source src="audio/K.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="L_play">
+    <source src="audio/L.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="M_play">
+    <source src="audio/M.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="N_play">
+    <source src="audio/N.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="O_play">
+    <source src="audio/O.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="P_play">
+    <source src="audio/P.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="Q_play">
+    <source src="audio/Q.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="R_play">
+    <source src="audio/R.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="S_play">
+    <source src="audio/S.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="T_play">
+    <source src="audio/T.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="U_play">
+    <source src="audio/U.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="V_play">
+    <source src="audio/V.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="W_play">
+    <source src="audio/W.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="X_play">
+    <source src="audio/X.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="Y_play">
+    <source src="audio/Y.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="Z_play">
+    <source src="audio/Z.mp3" type="audio/ogg" />
+    </audio>
+
+
+  </div>
+
+</div>
+
+
+<script>
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
+
+ <script src="jQuery-2.1.4.min.js"></script>
+ <script src="../static/js/app.js"></script>
+
+
+</body>
+</html>

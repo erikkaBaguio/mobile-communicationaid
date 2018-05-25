@@ -45,10 +45,10 @@ function pasuser(form) {
 }
 function register_user(form,acc_type){
 
-
-        
+    alert("yo")
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/api/signup";
+        
+    var url = "http://localhost:54321/api/signup";
     xhr.open("POST", url, true);
     // xhr.setRequestHeader("Authorization", 'Basic ' + btoa(form.id.value + ":" + form.pass.value));
     xhr.setRequestHeader("Content-type", "application/json");
@@ -60,13 +60,15 @@ function register_user(form,acc_type){
             console.log(json.form.id.value +", " + json.form.acc_type.value + ", " + json.form.email.value + ", " + json.form.pass.value);
         }
     }
+    alert("numbawan")
     var json =JSON.stringify({"username": form.id.value,"acc_type":form.acc_type.value, "email":form.email.value, "password":form.pass.value});
+    alert("numato")
     console.log(json)
     xhr.send(json);
 
     
     alert("Thanks " + form.id.value  + "! You are now Registered.");
-    location="mode.html";  
+    location="pform.html";  
 
 }
 

@@ -1,6 +1,6 @@
 function goto_enroll(form) {
 	xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/api/add_class";
+    var url = "http://127.0.0.1:54321/api/add_class";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
@@ -30,7 +30,7 @@ function goto_classpage() {
 }
 
 function delete_class(val){
-    var url  = "http://127.0.0.1:5000/api/del_class="+val;
+    var url  = "http://127.0.0.1:54321/api/del_class="+val;
     var xhr  = new XMLHttpRequest()
     xhr.open('GET', url, true)
     xhr.onload = function () {

@@ -72,7 +72,7 @@ function add_directory(form){
     
         
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/api/add_directory";
+    var url = "http://127.0.0.1:54321/api/add_directory";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
