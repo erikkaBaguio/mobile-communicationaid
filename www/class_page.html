@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Home</title>
-    <script src="js/enroll1.js"> </script>
+    <!-- <script src="js/enroll1.js"> </script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" type="text/css" href="css/class.css">
@@ -357,15 +357,17 @@ autocomplete(document.getElementById("myInput"), countries);
                 var json = JSON.parse(xhr.responseText);
                 alert("enrolled")
                 console.log(json.message);
+                location="class_page.html"  
             }
         }
+
         var json =JSON.stringify({"class_name": class_name});
         console.log(json)
         xhr.send(json);
 
 
         
-        location="class_page.html"  
+        
         
        
 

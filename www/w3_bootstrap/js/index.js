@@ -12,7 +12,7 @@
 function get_info(){
     var acc_id = localStorage.getItem("acc_id");
     alert(acc_id+"heloooooooo")
-    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/user/"+acc_id;
+    var url  = "https://api-pic-a-talk.herokuapp.com/api/user/"+acc_id;
     var xhr  = new XMLHttpRequest()
     xhr.open('GET', url, true)
     xhr.onreadystatechange = function () { 
@@ -59,7 +59,7 @@ function pasuser(form) {
     var pass = form.pass.value;
     
     xhr = new XMLHttpRequest();
-    var url = "https://cryptic-fjord-60133.herokuapp.com/api/login";
+    var url = "https://api-pic-a-talk.herokuapp.com/api/login";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Authorization", 'Basic ' + btoa(uid + ":" + pass));
     xhr.setRequestHeader("Content-type", "application/json");
@@ -92,13 +92,14 @@ function pasuser(form) {
 function register_user(form,acc_type){
        
     xhr = new XMLHttpRequest();
-    var url = "https://cryptic-fjord-60133.herokuapp.com/api/signup";
+    var url = "https://api-pic-a-talk.herokuapp.com/api/signup";
     xhr.open("POST", url, true);
     // xhr.setRequestHeader("Authorization", 'Basic ' + btoa(form.id.value + ":" + form.pass.value));
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
-        // alert(xhr.status)
+        alert(xhr.status)
         if (xhr.readyState == 4 && xhr.status == 200) {
+            alert("success")
             var json = JSON.parse(xhr.responseText);
             location="mode.html";  
             console.log(json.form.id.value +", " + json.form.acc_type.value + ", " + json.form.email.value + ", " + json.form.pass.value);
