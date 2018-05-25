@@ -9,6 +9,56 @@
 
 // }
 // change;
+function get_info(){
+    var acc_id = localStorage.getItem("acc_id");
+    alert(acc_id+"heloooooooo")
+    var url  = "https://api-pic-a-talk.herokuapp.com/api/user/"+acc_id;
+    var xhr  = new XMLHttpRequest()
+    xhr.open('GET', url, true)
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var json = JSON.parse(xhr.responseText);
+            alert(json.user)
+            console.log(json);
+            localStorage.setItem('acc_name', json.user.username);
+            localStorage.setItem('acc_email', json.user.email);
+            localStorage.setItem('acc_type', json.user.acc_type);
+            var acc_type = localStorage.getItem("acc_type");
+            if (acc_type = 1){
+                location = "mode.html"
+            }
+            if (acc_type = 2) {
+                location = "t_mode.html"
+            }  
+
+            console.table(json);
+            alert("success")
+        } else {
+            console.error(json);
+        }
+    }
+    xhr.send(null);
+    // var url  = "https://mighty-badlands-16603.herokuapp.com/api/user/"+acc_id;
+    // var xhr  = new XMLHttpRequest()
+    // xhr.open('GET', url, true)
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState == 4 && xhr.status == "200") {
+    //         var users = JSON.parse(xhr.responseText);
+    //         localStorage.setItem('acc_name', json.username);
+    //         localStorage.setItem('acc_email', json.email);
+    //         console.log(json);
+    //         alert("success")
+    //     } else {
+    //         alert('igit')
+    //         console.log("FAIL");
+    //     }
+    // }
+
+    // xhr.send();
+    
+}
+
+
 function back(){
     location=("index.html");
 }
@@ -18,7 +68,7 @@ function pasuser(form) {
     var pass = form.pass.value;
     
     xhr = new XMLHttpRequest();
-    var url = "https://mighty-badlands-16603.herokuapp.com/api/login";
+    var url = "https://api-pic-a-talk.herokuapp.com/api/login";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Authorization", 'Basic ' + btoa(uid + ":" + pass));
     xhr.setRequestHeader("Content-type", "application/json");
@@ -26,9 +76,12 @@ function pasuser(form) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
             alert(json.acc_id);
+            localStorage.setItem('acc_id', json.acc_id);
+            localStorage.setItem('token', json.token);
             alert(json.token);
+            get_info();
             alert(" Successfully login");
-            location="mode.html";
+            
 
             console.log(json);
         }
@@ -37,38 +90,36 @@ function pasuser(form) {
     var json =JSON.stringify({"username": uid, "password":pass});
     console.log(json)
     xhr.send(json);
+    
 
 
-    
-    
     
 }
-function register_user(form,acc_type){
 
-    alert("yo")
+
+function register_user(form,acc_type){
+       
     xhr = new XMLHttpRequest();
-        
-    var url = "http://localhost:54321/api/signup";
+    var url = "https://api-pic-a-talk.herokuapp.com/api/signup";
     xhr.open("POST", url, true);
     // xhr.setRequestHeader("Authorization", 'Basic ' + btoa(form.id.value + ":" + form.pass.value));
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
         alert(xhr.status)
         if (xhr.readyState == 4 && xhr.status == 200) {
+            alert("success")
             var json = JSON.parse(xhr.responseText);
-            alert("pugsit")
+            location="mode.html";  
             console.log(json.form.id.value +", " + json.form.acc_type.value + ", " + json.form.email.value + ", " + json.form.pass.value);
         }
     }
-    alert("numbawan")
     var json =JSON.stringify({"username": form.id.value,"acc_type":form.acc_type.value, "email":form.email.value, "password":form.pass.value});
-    alert("numato")
     console.log(json)
     xhr.send(json);
 
     
     alert("Thanks " + form.id.value  + "! You are now Registered.");
-    location="pform.html";  
+    
 
 }
 
@@ -83,7 +134,7 @@ function add_directory(form){
     
         
     xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:80/directory";
+    var url = "https://cryptic-fjord-60133.herokuapp.com/directory";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
