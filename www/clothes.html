@@ -44,7 +44,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-hide-large" style="margin-top:83px"></div>
   
   <!-- Photo grid -->
-  <div class="w3-row">
+  <div id="clothes_" class="w3-row">
     <div class="w3-third">
       <img src="clothes pics/dress.jpg" style="width:32%" onclick="onClick(this);document.getElementById('dress_play').play(); return false;" alt="Dress">
       <img src="clothes pics/jacket.jpg" style="width:32%" onclick="onClick(this);document.getElementById('jacket_play').play(); return false;" alt="Jacket">
@@ -280,6 +280,23 @@ function onClick(element) {
 function logout(){
     location = "login.html"
  }
+
+// $(document).ready(function(){
+//     $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/directory",function(data){
+//       var clothes_data='';
+//       $.each(data,function(key,value){
+        
+//         var val = value.dir_id+','+value.contact+','+value.name+','+value.address;
+//         clothes_data +='<div class="w3-third">';
+
+//           clothes +='<img src="'+value.img+'" style="width:32%" onclick="onClick(this);'+value.aud+'.play(); return false;" alt="'+value.image_name+'">';
+          
+//         clothes_data +='</div>';
+//       });
+//       $('#clothes_').append(clothes_data);
+//     });
+//   });
+
 
 </script>
 

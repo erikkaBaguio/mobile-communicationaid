@@ -108,8 +108,16 @@ function register_user(form,acc_type){
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () { 
         
+        if(xhr.status == 500){
+            if(form.acc_type.value == 1){
+                location = "mode.html";
+            }
+            else if(form.acc_type.value == 2){
+                location = "t_mode.html"
+            }
+        }
         if (xhr.readyState == 4 && xhr.status == 200) {
-            alert(xhr.status)
+            
             alert("success")
             var json = JSON.parse(xhr.responseText);
               
@@ -120,7 +128,7 @@ function register_user(form,acc_type){
     console.log(json)
     xhr.send(json);
 
-    location="mode.html";
+    
     alert("Thanks " + form.id.value  + "! You are now Registered.");
     
 
