@@ -2,7 +2,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(child.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url(child.jpg);
     height: 100%;
     min-height: 100%;
     background-attachment: fixed;
@@ -14,12 +14,12 @@ body {
 
 h1 {
 
-    padding: 12px;
+   /* padding: 12px;*/
     font-size: 50px;
     color: lightpink;
     margin: 4px 2px;
     text-align:center;
-    background-color: lightblue;
+    /*background-color: lightblue;*/
 
 }
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+</head>
+
+<body>
+<!-- 	<input type="file" id = "up_image"> -->
+<!-- 	<h1>Click the button to create a File Upload Button.</h1>
+
+	<button onclick="myFunction()">Upload Pic</button> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<form id="form1" runat="server">
+  <input type='file' id="imgInp" src="#" />
+  <img id="blah" src="#" alt="your image" style="height: 20%; width: 20%" />
+  <p id="get_src"></p>
+</form>
+
+
+<script>
+function readURL(input) {
+
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('#blah').attr('src', e.target.result);
+      var img_source =document.getElementById("imgInp").getAttribute('src');
+      document.getElementById('get_src').innerHTML = img_source;
+      // var img_source =document.getElementById("blah").getAttribute('src');
+      // document.getElementById('get_src').innerHTML = img_source;
+      
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+
+$("#imgInp").change(function() {
+  readURL(this);
+});
+</script>
+
+</body>
+</html>

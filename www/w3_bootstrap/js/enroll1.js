@@ -23,3 +23,4 @@ function info(val){
 	location = "call.html?"+val;
 
 }
+
