@@ -28,18 +28,18 @@
   <body>
     
       <div class="container" style="color:white; text-align: center; font-size:25px; padding-left:5px; padding-top:5px;">
-          <div class="container" style="float:center; padding-right:50px; padding-top: 10px;">Parent Info</div>
+          <div class="container" style="float:center; padding-right:50px; padding-top: 10px;">Child Info</div>
       </div>
       <form class="register-form" style="margin-top: 15%;text-align: center;">
-        <input type="text" name="fname" placeholder="first name" required><br>
-        <input type="text" name="lname" placeholder="last name" required><br>
+        <input type="text" name="fname_c" placeholder="first name" required><br>
+        <input type="text" name="lname_c" placeholder="last name" required><br>
+    
         <select name="gender_p" class="form-control" style="margin: auto; width: 90%; margin-bottom:10px; margin-top: 10px; ">              
               <option value="M">Male</option>
               <option value="F">Female</option>
         <input type="date" name="birthday" ><br>
-        <input type="text" name="bio_p" placeholder="enter bio" required><br>
-        <input type="text" name="address" placeholder="address" required><br>
-        <button class="btn btn-success" style="width:90%;margin-top: 7px;" onclick="parent_info(form)">Next</button>
+        <input type="text" name="diagnosis" placeholder="diagnosis" required><br>
+        <button class="btn btn-success" style="width:90%;margin-top: 7px;" onclick="child_info(form)">Next</button>
         <p class="message" style="color: white;">Already Registered? <a href="login.html"><span style="color:blue;">Login</span></a></p>
       </form>
     </div>
@@ -47,35 +47,36 @@
 
   </body>
   <script>
-    function parent_info(form){
-      alert("tra")
-      var acc_id = localStorage.getItem("acc_id");
-      var fname = form.fname.value;
-      var lname = form.lname.value;
-      var gender_p = form.gender_p.value;
-      var birthday = form.birthday.value;
-      var bio_p = form.bio_p.value;
-      var address = form.address.value;
-
+    function child_info(form){
       
-          
-      xhr = new XMLHttpRequest();
-      var url = "https://cryptic-fjord-60133.herokuapp.com/api/add_parent";
+      var p_id = localStorage.getItem("p_id");
+      
+      var fname = form.fname_c.value;
+      var lname = form.lname_c.value;
+      
+      var bday_c = form.birthday.value;
+      var gender_p = form.gender_p.value;
+      
+      var diagnosis = form.diagnosis.value;
+      
+       
+    xhr = new XMLHttpRequest();
+      var url = "https://cryptic-fjord-60133.herokuapp.com/api/add_child";
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.onreadystatechange = function () { 
           alert(xhr.status)
           if (xhr.readyState == 4 && xhr.status == 200) {
               var json = JSON.parse(xhr.responseText);
-
-              localStorage.setItem('p_id', json.p_id);
-              var p_id = localStorage.getItem("p_id");
-              alert(p_id)
-              location="cform.html"  
+              localStorage.setItem('c_id', json.c_id);
+              var c_id = localStorage.getItem("c_id");
+              alert(c_id)
+              location="mode.html"  
               alert("Thanks ! " + fname  + "!")
           }
       }
-      var json =JSON.stringify({'fname_p':fname,'lname_p':lname,'gender_p':gender_p, 'bio_p':bio_p,'bday_p':birthday,'add_p':address,'acc_id':acc_id});
+
+      var json =JSON.stringify({'fname_c':fname, 'lname_c':lname,'full_name':fname+" "+lname,'bday_c':bday_c,'gender':gender_p,'classes':"Not Yet Enrolled",'diagnosis':diagnosis,'p_id':p_id});
       console.log(json)
       xhr.send(json);
 
@@ -88,3 +89,11 @@
   </script>
 
 </html>
+
+
+
+
+
+
+
+

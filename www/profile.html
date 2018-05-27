@@ -33,10 +33,10 @@
     <div class="container" style="position: absolute;padding-top: 60px;top:25%;height:100%;font-size:  20px;width:100%;">
         <div class="row">
             <div class="col-xs-5">
-                Child:
+                Bio:
             </div>
-            <div class="col-xs-7">
-                Baby Damulag
+            <div id="bio_p" class="col-xs-7">
+                
             </div>
         </div>
 
@@ -44,26 +44,26 @@
             <div class="col-xs-5">
                 Address:
             </div>
-            <div class="col-xs-7">
-                Somewhere down the road bruh
+            <div id="address" class="col-xs-7">
+                
             </div>
         </div>
         
         <div class="row">
             <div class="col-xs-5">
-                Cell#:
+                Gender:
             </div>
-            <div class="col-xs-7">
-                09184412707
+            <div id="gender_p" class="col-xs-7">
+                
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-5">
-                Child Class:
+                Child:
             </div>
             <div class="col-xs-7">
-                IDK Class
+                Babu Damulag
             </div>
         </div>
 
@@ -78,10 +78,10 @@
 
         <div class="row">
             <div class="col-xs-5">
-                occupation:
+                contact no.:
             </div>
             <div class="col-xs-7">
-                Tig salo ug durian
+                _____________
             </div>
         </div>
     </div>
@@ -94,8 +94,11 @@
 <script>
     
 
-    document.getElementById("name").innerHTML = localStorage.getItem("acc_name");
-    document.getElementById("email").innerHTML = localStorage.getItem("acc_email");
+    document.getElementById("name").innerHTML = localStorage.getItem("fname_p") + " " + localStorage.getItem("lname_p");
+    document.getElementById("address").innerHTML = localStorage.getItem("address");
+    document.getElementById("email").innerHTML = localStorage.getItem("email");
+    document.getElementById("gender_p").innerHTML = localStorage.getItem("gender_p");
+    document.getElementById("bio_p").innerHTML = localStorage.getItem("bio_p");
     
 
 </script>

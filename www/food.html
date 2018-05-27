@@ -263,6 +263,7 @@ function onClick(element) {
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
+  var c_id = localStorage.getItem("c_id");
   var d_image = document.getElementById('caption').getAttribute("src");
   captionText.innerHTML = element.alt;
 
@@ -280,7 +281,7 @@ function onClick(element) {
             console.log(xhr.responseText);
         }
     }
-    var json =JSON.stringify({"clicks": "1", "log_date":date, "log_time":time, "category_type":"Food", "image_name":element.alt});
+    var json =JSON.stringify({"clicks": "1",'c_id':c_id, "log_date":date, "log_time":time, "category_type":"Food", "image_name":element.alt});
     console.log(json)
     xhr.send(json);
 
