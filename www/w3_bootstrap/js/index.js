@@ -35,13 +35,30 @@ function get_info(){
 
                 var p_id = localStorage.getItem("p_id");
                 alert(p_id)
+
+
                 
-                if (acc_type == 1){
-                    location = "mode.html"
+                var d = new Date();
+                var n = d.getSeconds();
+                if(n==10 || n == 20 || n == 30 || n==40 || n==50  || n==0 ){
+                    
+                    if (acc_type == 1){
+                            location = "mode.html"
+                        }
+                        else if(acc_type == 2) {
+                            location = "t_mode.html"
+                        } 
                 }
-                else if(acc_type == 2) {
-                    location = "t_mode.html"
-                }  
+                else{
+                    console.log(n)
+                    
+                }
+            
+            
+            
+
+                
+ 
 
                 console.table(json);
             }
@@ -136,6 +153,7 @@ function register_user(form,acc_type){
             
             localStorage.clear();
             localStorage.setItem('acc_id', json.acc_id);
+            localStorage.setItem('acc_type', json.acc_type);
             localStorage.setItem('token', json.token);
             localStorage.setItem('email', json.email);
 
@@ -143,7 +161,7 @@ function register_user(form,acc_type){
                 location = "pform.html"
             }
             else if(form.acc_type.value == 2){
-                location = "t_mode.html"
+                location = "edit_t.html"
             }
               
         }

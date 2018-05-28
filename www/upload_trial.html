@@ -52,9 +52,9 @@ $("#imgInp").change(function() {
 
 
 <script>
-  function formCreate(img_name, img_type, filetype1, fileVal1,filetype2,fileVal2){
+  function formCreate(p_id,img_name, img_type, filetype1, fileVal1,filetype2,fileVal2){
       var form = new FormData();
-
+      form.append('p_id', p_id);
       form.append('img_name', img_name);
       form.append('img_type', img_type);
       form.append('type1',filetype1);
@@ -67,10 +67,11 @@ $("#imgInp").change(function() {
   }
 
   function uploadImage(){
+    p_id = localStorage.getItem("name");
     $.ajax({
       type: 'POST',
           url: 'https://cryptic-fjord-60133.herokuapp.com/api/v3/upload',
-          data: formCreate($('input[name="img_name"]').val(),$('input[name="img_type"]').val(),'image', $('input[name="image"]')[0].files[0],'audio', $('input[name="audio"]')[0].files[0]),
+          data: formCreate(p_id, $('input[name="img_name"]').val(),$('input[name="img_type"]').val(),'image', $('input[name="image"]')[0].files[0],'audio', $('input[name="audio"]')[0].files[0]),
           cache: false,
           contentType: false,
           processData: false,
