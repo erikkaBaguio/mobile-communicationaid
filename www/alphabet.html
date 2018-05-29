@@ -2,7 +2,8 @@
 <html>
 <title>ALPHABET</title>
 <link rel="shortcut icon" href="static/images/PATicon.png" />
-<meta charset="UTF-8"><link rel="stylesheet" href="css/w3.css">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/font.css">
 <link rel="stylesheet" href="css/font-awesome.css">
 <link rel="stylesheet" href="css/bootstrap.css">
@@ -20,21 +21,21 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-blue w3-xlarge w3-padding-32">
+<header class="w3-container w3-top w3-blue w3-xlarge w3-padding-64">
   <span class="w3-left w3-padding" style="font-size: 50px">
-  <img src="static/food/foodicon.png" alt="logo" width="30px" height="auto"/>ALPHABETS</span>
+  <img src="pics/alphabets.png" alt="logo" width="50px" height="50px"/> ALPHABETS</span>
   <a href="educational.html">
     <span style="float: right; padding-top: 15px; padding-right: 20px; font-size: 200%; color:black;">&lt; Back</span>
   </a>
 </header>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content" style="max-width:1600px;margin-top:150px">
+<div class="w3-main w3-content" style="max-width:1600px; margin-top:200px">
 
   <!-- ALPHABETS -->
   <div class="w3-container w3-light-grey w3-center w3-text-light-grey w3-padding-32" id="food">
     <div class="w3-quarter hover">
-        <img src="ALPHABET/A.jpg" style="width:100%" id="A" onclick="document.getElementById('A_play').play();return false;" alt="A">
+        <img src="ALPHABET/A.jpg" style="width:100%" onclick="onClick(this);document.getElementById('A_play').play();return false;" alt="A">
         <img src="ALPHABET/E.png" style="width:100%" id="E" onclick="document.getElementById('E_play').play();return false;" alt="E">
         <img src="ALPHABET/I.png" style="width:100%" id="I" onclick="document.getElementById('I_play').play();return false;" alt="I">
         <img src="ALPHABET/M.png" style="width:100%" id="M" onclick="document.getElementById('M_play').play();return false;" alt="M">
@@ -176,11 +177,20 @@ function w3_close() {
     document.getElementById("myOverlay").style.display = "none";
 }
 
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+
+}
+
 </script>
 
- <script src="jQuery-2.1.4.min.js"></script>
+ <!-- <script src="jQuery-2.1.4.min.js"></script>
  <script src="../static/js/app.js"></script>
-
+ -->
 
 </body>
 </html>
+

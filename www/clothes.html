@@ -16,26 +16,14 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
-  <h3 class="w3-padding-64 w3-center"><img src="PATicon.png">PIC-A-TALK</b></h3>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-  <a href="mode.html" onclick="w3_close()" class="w3-bar-item w3-button">CHANGE MODE</a>
-  <a href="categories.html" onclick="w3_close()" class="w3-bar-item w3-button">CATEGORIES</a> 
-  <a href="#child" onclick="w3_close()" class="w3-bar-item w3-button">THE CHILD</a> 
-  <a href="#parent" onclick="w3_close()" class="w3-bar-item w3-button">THE PARENT</a>
-  <a href="#childactivity" onclick="w3_close()" class="w3-bar-item w3-button">CHILD ACTIVITY</a>
-  <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button">LOGOUT</a>
-</nav>
-
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
   <div class="w3-left w3-padding-16"><img src="clothes pics/clothesicon.png" alt="logo" width="40px" height="auto"/>CLOTHES</div>
-  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  <a href="categories.html">
+      <span style="float: right; padding-top: 15px; padding-right: 5px; font-size: 90%;">&lt; Back</span></a>
+    </div>
 </header>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
@@ -63,18 +51,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <img src="clothes pics/shorts.jpg" style="width:32%" onclick="onClick(this);document.getElementById('shorts_play').play(); return false;" alt="Shorts">
     </div>  
   </div>
-
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-    </div>
-  </div>
   
   <!-- Modal for full size images on click-->
   <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
@@ -85,121 +61,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
   </div>
 
-  <!-- About section -->
-  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
-    <h4><b>About Me</b></h4>
-   
-    <div class="w3-content w3-justify" style="max-width:600px">
-      <h4>My Name</h4>
-      <p>
-      </p>
-      <p>mail: example@example.com</p>
-      <p>tel: 5353 35531</p>
-      <!-- <hr class="w3-opacity">
-      <h4 class="w3-padding-16">Technical Skills</h4>
-      <p class="w3-wide">Photography</p>
-      <div class="w3-white">
-        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:95%">95%</div>
-      </div>
-      <p class="w3-wide">Web Design</p>
-      <div class="w3-white">
-        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:85%">85%</div>
-      </div>
-      <p class="w3-wide">Photoshop</p>
-      <div class="w3-white">
-        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
-      </div>
-      <p><button class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom">Download Resume</button></p>
-      <hr class="w3-opacity">
-
-      <h4 class="w3-padding-16">How much I charge</h4>
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half w3-margin-bottom">
-          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-            <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-            <li class="w3-padding-16">Web Design</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">5GB Storage</li>
-            <li class="w3-padding-16">Mail Support</li>
-            <li class="w3-padding-16">
-              <h2>$ 10</h2>
-              <span class="w3-opacity">per month</span>
-            </li>
-            <li class="w3-light-grey w3-padding-24"> -->
-              <button class="w3-button w3-white w3-padding-large" onclick="logout()">Logout</button>
-            </li>
-          </ul>
-        </div>
-        
-        <!-- <div class="w3-half">
-          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-            <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
-            <li class="w3-padding-16">Web Design</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">50GB Storage</li>
-            <li class="w3-padding-16">Endless Support</li>
-            <li class="w3-padding-16">
-              <h2>$ 25</h2>
-              <span class="w3-opacity">per month</span>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large">Sign Up</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- Contact section -->
-  <!-- <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
-    <div class="w3-content" style="max-width:600px">
-      <h4 class="w3-center"><b>Contact Me</b></h4>
-      <p>Do you want me to photograph you? Fill out the form and fill me in with the details :) I love meeting new people!</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-section">
-          <label>Name</label>
-          <input class="w3-input w3-border" type="text" name="Name" required>
-        </div>
-        <div class="w3-section">
-          <label>Email</label>
-          <input class="w3-input w3-border" type="text" name="Email" required>
-        </div>
-        <div class="w3-section">
-          <label>Message</label>
-          <input class="w3-input w3-border" type="text" name="Message" required>
-        </div>
-        <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
-      </form>
-    </div>
-  </div> -->
-
-  <!-- Footer -->
-  <!-- <footer class="w3-container w3-padding-32 w3-grey">  
-    <div class="w3-row-padding">
-      <div class="w3-third">
-        <h3>INFO</h3>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>      
-      </div>
-    
-      <div class="w3-third">
-        <h3>BLOG POSTS</h3>
-        <ul class="w3-ul">
-          <li class="w3-padding-16 w3-hover-black">
-            <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Lorem</span><br>
-            <span>Sed mattis nunc</span>
-          </li>
-          <li class="w3-padding-16 w3-hover-black">
-            <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Ipsum</span><br>
-            <span>Praes tinci sed</span>
-          </li> 
-        </ul>
-      </div> -->
-
-
-    <!-- audio -->
     
     <audio id="shirt_play">
     <source src="audio/shirt.mp3" type="audio/ogg" />
@@ -228,7 +89,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <audio id="brief_play">
     <source src="audio/brief.mp3" type="audio/ogg" />
     </audio>
-
 
 
 <!-- End page content -->
@@ -271,10 +131,6 @@ function onClick(element) {
     console.log(json)
     xhr.send(json);
 
-
-    
-    
-    alert("counted");
 }
 
 function logout(){
