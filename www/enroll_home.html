@@ -69,7 +69,7 @@
 <script>
 
     function back(){
-        alert("tra")
+        
         var acc_type = localStorage.getItem("acc_type");
         if (acc_type == 1){
             location = "p_mode.html"
@@ -80,7 +80,7 @@
     }
 
     function classpage(yu) {
-        alert(yu);
+        
 
         var url  = "https://cryptic-fjord-60133.herokuapp.com/api/search_class="+yu;
         var xhr  = new XMLHttpRequest()

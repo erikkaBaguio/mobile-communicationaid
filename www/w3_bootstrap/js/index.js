@@ -12,82 +12,93 @@
 function get_info(){
     var acc_id = localStorage.getItem("acc_id");
     var acc_type = localStorage.getItem("acc_type");
-    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/parent/"+acc_id;
-    var xhr  = new XMLHttpRequest()
-    xhr.open('GET', url, true)
-    xhr.onreadystatechange = function () { 
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var json = JSON.parse(xhr.responseText);
+    
+    if(acc_type == 1){
+        var url  = "https://cryptic-fjord-60133.herokuapp.com/api/parent/"+acc_id;
+        var xhr  = new XMLHttpRequest()
+        xhr.open('GET', url, true)
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var json = JSON.parse(xhr.responseText);
 
-            if (json.message == "no user found" && acc_type == 1){
-                location = "pform.html"
-            }
-            
-            else{
-                console.log(json);
-                localStorage.setItem('fname_p', json.fname_p);
-                localStorage.setItem('lname_p', json.lname_p);
-                localStorage.setItem('address', json.add_p);
-                localStorage.setItem('birthday', json.bday_p);
-                localStorage.setItem('bio_p', json.bio_p);
-                localStorage.setItem('gender_p', json.gender_p);
-                localStorage.setItem('p_id', json.p_id);
-
-                var p_id = localStorage.getItem("p_id");
-                alert(p_id)
-
-
-                
-                var d = new Date();
-                var n = d.getSeconds();
-                if(n==10 || n == 20 || n == 30 || n==40 || n==50  || n==0 ){
-                    
-                    if (acc_type == 1){
-                            location = "mode.html"
-                        }
-                        else if(acc_type == 2) {
-                            location = "t_mode.html"
-                        } 
+                if (json.message == "no user found" && acc_type == 1){
+                    location = "pform.html"
                 }
+                
                 else{
-                    console.log(n)
-                    
+                    console.log(json);
+                    localStorage.setItem('fname_p', json.fname_p);
+                    localStorage.setItem('lname_p', json.lname_p);
+                    localStorage.setItem('address', json.add_p);
+                    localStorage.setItem('birthday', json.bday_p);
+                    localStorage.setItem('bio_p', json.bio_p);
+                    localStorage.setItem('gender_p', json.gender_p);
+                    localStorage.setItem('p_id', json.p_id);
+
+                    var p_id = localStorage.getItem("p_id");
+                    var bio_p = localStorage.getItem("bio_p");
+                    alert(bio_p)
+
+                    if (acc_type == 1){
+                                location = "mode.html"
+                            }
+                    else if(acc_type == 2) {
+                        location = "t_mode.html"
+                    } 
+            
+                    console.table(json);
                 }
-            
-            
-            
-
                 
- 
+            } 
 
-                console.table(json);
-            }
             
-        } 
-        else if(acc_type == 2) {
-            location = "t_mode.html"
         }
-
-        
+        xhr.send(null);
     }
-    xhr.send(null);
-    // var url  = "https://mighty-badlands-16603.herokuapp.com/api/user/"+acc_id;
-    // var xhr  = new XMLHttpRequest()
-    // xhr.open('GET', url, true)
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState == 4 && xhr.status == "200") {
-    //         var users = JSON.parse(xhr.responseText);
-    //         localStorage.setItem('acc_name', json.username);
-    //         localStorage.setItem('acc_email', json.email);
-    //         console.log(json);
-    //         alert("success")
-    //     } else {
-    //         alert('igit')
-    //         console.log("FAIL");
-    //     }
-    // }
+    else if(acc_type == 2){
+        var url  = "https://cryptic-fjord-60133.herokuapp.com/api/teacher/"+acc_id;
+        var xhr  = new XMLHttpRequest()
+        xhr.open('GET', url, true)
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var json = JSON.parse(xhr.responseText);
 
-    // xhr.send();
+                if (json.message == "no user found" && acc_type == 2){
+                    location = "edit_form.html"
+                }
+                
+                else{
+                    console.log(json);
+                    localStorage.setItem('t_id', json.t_id);
+                    localStorage.setItem('fname_t', json.fname_t);
+                    localStorage.setItem('lname_t', json.lname_t);
+                    localStorage.setItem('bday_t', json.bday_t);
+                    localStorage.setItem('specialty', json.specialty);
+                    localStorage.setItem('tel_num', json.tel_num);
+                    localStorage.setItem('add_t', json.add_t);
+                    localStorage.setItem('bio_t', json.bio_t);
+                    localStorage.setItem('acc_id', json.acc_id);
+
+                    var p_id = localStorage.getItem("t_id");
+                    var bio_p = localStorage.getItem("bio_t");
+                    alert(bio_p)
+
+                    if (acc_type == 1){
+                                location = "mode.html"
+                            }
+                    else if(acc_type == 2) {
+                        location = "t_mode.html"
+                    } 
+            
+                    console.table(json);
+                }
+                
+            } 
+
+            
+        }
+        xhr.send(null);
+    }
     
 }
 

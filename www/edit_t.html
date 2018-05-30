@@ -91,14 +91,14 @@
         var tel_num = form.tel_num.value;
         var add_t = form.add_t.value;
         var bio_t = form.bio_t.value;
-        alert(fname_t)
+        
         var acc_id = localStorage.getItem("acc_id");
           xhr = new XMLHttpRequest();
           var url = "https://cryptic-fjord-60133.herokuapp.com/api/teacher/info/"+acc_id;
           xhr.open("POST", url, true);
           xhr.setRequestHeader("Content-type", "application/json");
           xhr.onreadystatechange = function () { 
-              alert(xhr.status)
+              
               if (xhr.readyState == 4 && xhr.status == 200) {
                   var json = JSON.parse(xhr.responseText);
 
@@ -123,7 +123,7 @@
 
 
           
-          alert("hulat 1o sec.")
+          alert("please wait ...")
       }
 </script>
 

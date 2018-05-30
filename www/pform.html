@@ -48,7 +48,7 @@
   </body>
   <script>
     function parent_info(form){
-      alert("tra")
+      
       var acc_id = localStorage.getItem("acc_id");
       var fname = form.fname.value;
       var lname = form.lname.value;
@@ -64,23 +64,27 @@
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.onreadystatechange = function () { 
-          alert(xhr.status)
+          
           if (xhr.readyState == 4 && xhr.status == 200) {
               var json = JSON.parse(xhr.responseText);
 
               localStorage.setItem('p_id', json.p_id);
               localStorage.setItem('acc_id', json.acc_id);
-              localStorage.setItem('add_p', json.add_p);
-              localStorage.setItem('bday_p', json.bday_p);
+              localStorage.setItem('address', json.add_p);
+              localStorage.setItem('birthday', json.bday_p);
               localStorage.setItem('bio_p', json.bio_p);
               localStorage.setItem('add_p', json.add_p);
               localStorage.setItem('fname_p', json.fname_p);
               localStorage.setItem('lname_p', json.lname_p);
               localStorage.setItem('gender_p', json.gender_p);
+
+
+
+
               var p_id = localStorage.getItem("p_id");
               var fname_p = localStorage.getItem("fname_p");
 
-              alert(p_id+fname_p)
+              
               location="cform.html"  
               alert("Thanks ! " + fname  + "!")
           }
@@ -91,7 +95,7 @@
 
 
       
-      alert("hulat 1o sec.")
+      alert("please wait ...")
       
 
   }

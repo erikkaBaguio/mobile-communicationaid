@@ -65,14 +65,14 @@
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.onreadystatechange = function () { 
-          alert(xhr.status)
+          
           if (xhr.readyState == 4 && xhr.status == 200) {
               var json = JSON.parse(xhr.responseText);
               localStorage.setItem('c_id', json.c_id);
               var c_id = localStorage.getItem("c_id");
-              alert(c_id)
+              
               location="mode.html"  
-              alert("Thanks ! " + fname  + "!")
+              alert("Thanks ! your child is now also registered!")
           }
       }
 
@@ -82,7 +82,7 @@
 
 
       
-      alert("hulat 1o sec.")
+      alert("please wait ...")
       
 
   }
