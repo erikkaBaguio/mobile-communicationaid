@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+</head>
+
+<body>
+<!--  <input type="file" id = "up_image"> -->
+<!--  <h1>Click the button to create a File Upload Button.</h1>
+
+  <button onclick="myFunction()">Upload Pic</button> -->
+<input onclick="back()" type="button" class="submit" value="◄" style="height: 50px; width: 100px; color: green;">
+<script>
+  function back(){
+  
+    location = "ParentProfile.html"
+  }
+</script>
+
+<form id="form1" runat="server">
+  <h1>Image</h1>
+  
+  
+  <input type='file' id="imgInp" name="image" src="#" />
+  
+  <img id="blah" src="#" alt="your image" style="height: 20%; width: 20%" />
+  <p id="get_src"></p>
+</form>
+<center><input onclick="uploadImage()" type="button" class="submit" value="Upload" style="height: 50px; width: 100px; color: green;"></center>
+<script>
+function formCreate(acc_id, img_type, filetype1, fileVal1){
+  alert("here")
+  var form = new FormData();
+  form.append('acc_id', acc_id);
+      
+  form.append('img_type', img_type);
+  form.append('type1',filetype1);
+  form.append('image', fileVal1);
+      
+      
+
+  return form;
+}
+
+
+
+  function uploadImage(){
+    alert("in")
+  var acc_id = localStorage.getItem('acc_id');
+    
+    
+      $.ajax({
+      type: 'POST',
+      url: 'https://cryptic-fjord-60133.herokuapp.com/api/v3/profilepic',
+      data: formCreate(acc_id,'Profile','image', $('input[name="image"]')[0].files[0]),
+      cache: false,
+      contentType: false,
+      processData: false,
+      async: false,
+      success: function(response) {
+        if(response.msg=='ok'){
+          alert("successfully uploaded")
+          location="ParentProfile.html";
+              
+        }
+        else{
+          console.log(response.msg);
+          alert(response.msg);
+        }
+      },
+  });
+  alert(acc_id)
+}
+</script>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  
+function readURL(input) {
+
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('#blah').attr('src', e.target.result);
+      var img_source =document.getElementById("imgInp").getAttribute('src');
+      document.getElementById('get_src').innerHTML = img_source;
+      // var img_source =document.getElementById("blah").getAttribute('src');
+      // document.getElementById('get_src').innerHTML = img_source;
+      
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#imgInp").change(function() {
+  readURL(this);
+});
+
+
+
+</script>
+
+</body>
+</html>

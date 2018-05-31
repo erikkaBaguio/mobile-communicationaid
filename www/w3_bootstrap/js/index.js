@@ -22,7 +22,7 @@ function get_info(){
                 var json = JSON.parse(xhr.responseText);
 
                 if (json.message == "no user found" && acc_type == 1){
-                    location = "pform.html"
+                    location = "edit_p.html"
                 }
                 
                 else{
@@ -173,7 +173,7 @@ function register_user(form,acc_type){
             localStorage.setItem('email', json.email);
 
             if(form.acc_type.value == 1){
-                location = "pform.html"
+                location = "edit_p.html"
             }
             else if(form.acc_type.value == 2){
                 location = "edit_t.html"

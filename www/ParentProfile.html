@@ -32,7 +32,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-container w3-center">
           <div class="w3-container pull-left" style="text-align:left;">
             <br>
-            <h2 class="w3-disply-bottomleft w3-container w3-text-black"><img src="user.png" style="width:50%" alt="Avatar"></h2>
+            <h2 class="w3-disply-bottomleft w3-container w3-text-black"><img id="pic" src="user.png" style="width:50%" alt="Avatar"></h2>
+            <input onclick="upload()" type="button" class="submit" name="image" value="Edit" style="margin-left: 9%; width: 100px;height: 30px; font-size: 15px; color: green;" src="#" />
              <h2 class="w3-disply-bottomleft w3-container w3-text-black" id="name"> Name</h2>
              
              <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-blue w3-round">Bio</i></b></p>
@@ -45,7 +46,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <p><i class="fa fa-venus-mars fa-fw w3-margin-right w3-large w3-text-blue"></i><b id="gender_p"></b></p>
           <!-- <p><i class="fa fa-star fa-fw w3-margin-right w3-large w3-text-blue"></i>di ko musaba</p> -->
           <hr>
-          <a href="pform.html" class="w3-bar-item w3-button w3-center w3-padding-10 w3-blue   w3-round">Edit Profile</a>
+          <a onclick="edit()" class="w3-bar-item w3-button w3-center w3-padding-10 w3-blue w3-round">Edit Profile</a>
            </div> 
            <br><br><br><br>
          <div class="w3-container" style="margin-right:0; text-align:left; width: 50%;">    
@@ -82,17 +83,26 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
 <script>
-
-    var bio = localStorage.getItem("bio_p");
     
-
+    var bio = localStorage.getItem("bio_p");
+    document.getElementById("pic").innerHTML="http://res.cloudinary.com/dli6inpmi/raw/upload/v1527771901/fuf7opnrbn2uq9gqh3tq.jpg";
     document.getElementById("name").innerHTML = localStorage.getItem("fname_p") + " " + localStorage.getItem("lname_p");
     document.getElementById("address").innerHTML = localStorage.getItem("address");
     document.getElementById("birthday").innerHTML = localStorage.getItem("birthday");
     document.getElementById("email").innerHTML = localStorage.getItem("email");
     document.getElementById("gender_p").innerHTML = localStorage.getItem("gender_p");
     document.getElementById("bio").innerHTML = bio
-    
+    document.getElementById('pic').src = localStorage.getItem('parent_pic');
+    function edit(){
+      
+      localStorage.setItem('edit', 'true');
+      location = "edit_p.html";
+    }
+
+    function upload(){
+      location = "prof_upload.html"
+    }
+
 
 
  </script>

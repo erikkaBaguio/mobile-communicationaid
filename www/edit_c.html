@@ -18,18 +18,16 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <title>Pic-A-Talk</title>
     <style>
     body {
-
         background-image: url('/static/images/PATbg5.jpg');
         min-height: 100%;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-color:skyblue;
+        background-color: #b3ffb3;
         font-family:Roboto;
     }
     .pad-50 {
@@ -54,77 +52,82 @@
     }
     </style>
 </head>
-<body>
-
+  <body>
     <div class="w3-top">
- <div class="w3-bar w3-right-align w3-large w3-blue">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-sky-blue" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-    <a class="w3-bar-item w3-left-align w3-large w3-blue">Child's Information</a>
-  <a href="/dashboard" class="w3-bar-item w3-button w3-right w3-padding-large w3-blue"></i>Home</a>
-   <a href="/team" class="w3-bar-item w3-button w3-right w3-padding-large w3-blue"></i>Contact Us</a>
+ <div class="w3-bar w3-center-align w3-large w3-green">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-center w3-padding-large w3-hover-white w3-large w3-green" href="javascript:void(0);" onclick="openNav()"><i style="text-align: center;"><center><h3>Child's Information</h3></center></i></a>
+    
+
   </a>
  </div>
 </div>
 
-    <div class="container mar-50">
-        <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad-50" style="margin-left: 396px;">
-                    <div class="input-group mb-3">
-                      <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
-                         <input id="file-picker" type="file" name="file" accept="image/*" multiple>
-                        <div id="msg"></div>
-                        <br>
-                        <br>
-                    </form>
-                    <form method = "post" action="/edit_child/{{ p_id }}">
-                        <input type="text" id="fname_c" class="form-control mb-3" placeholder="First Name">
-                        <input type="text" id="lname_c" class="form-control mb-3" placeholder="Last Name">
-                        <input type="date" id="bday_c" class="form-control mb-3" placeholder="Birthdate">
-                        <input type="text" id="diagnosis" class="form-control mb-3" placeholder="Diagnosis">
-                    <div class="form-group">
-                    <select class="form-control">
-                        <option value="m">Male</option>
-                        <option value="f">Female</option>
-                        </select>
-                    </div>
-                    </form>
-                    <button type="button" class="btn btn-primary" id="upload-button">SAVE</button>
-                </div>
+  <div class="container mar-50">
+      <div class="row" style="margin: 1%; margin-top: 25%;">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad-50">
+            <div class="input-group mb-3">
+      <form class="register-form" style="margin-top: 15%; margin-left: 20%; text-align: center;">
+          <input type="text" name = "fname_c" class="form-control mb-3" placeholder="First Name">
+          <input type="text" name = "lname_c" class="form-control mb-3" placeholder="Last Name">
+          <select name="gender_p" class="form-control mb-3" style="margin: auto; width: 100%; margin-bottom:10px; margin-top: 10px; ">              
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+          <input type="date" name="birthday" class="form-control mb-3" placeholder="Birthdate">
+          <input type="diagnosis" name="diagnosis" class="form-control mb-3" placeholder="Diagnosis">
+       
+          <button onclick="child_info(form)" type="button" class="btn btn-success" style="width: 100%;" id="upload-button">SAVE</button>
+      </form>
+          </div>
         </div>
     </div>
+  </div>
 </body>
+  <script>
+    function child_info(form){
+      
+      var p_id = localStorage.getItem("p_id");
+      
+      var fname = form.fname_c.value;
+      var lname = form.lname_c.value;
+      
+      var bday_c = form.birthday.value;
+      var gender_p = form.gender_p.value;
+      
+      var diagnosis = form.diagnosis.value;
+      
+       
+    xhr = new XMLHttpRequest();
+      var url = "https://cryptic-fjord-60133.herokuapp.com/api/add_child";
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-type", "application/json");
+      xhr.onreadystatechange = function () { 
+          
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              var json = JSON.parse(xhr.responseText);
+              localStorage.setItem('c_id', json.c_id);
+              var c_id = localStorage.getItem("c_id");
+              var edit_c = localStorage.getItem('edit_c');
+              if(edit_c == 'true'){
+                
+                    location = "TeacherProfile.html";
+                  }  
+                  
+                  
+                  else{
+                    location="mode.html"  
+                    alert("Thanks ! your child is now also registered!")
+                  }
+              
+              
+          }
+      }
+      var json =JSON.stringify({'fname_c':fname, 'lname_c':lname,'full_name':fname+" "+lname,'bday_c':bday_c,'gender':gender_p,'classes':"Not Yet Enrolled",'diagnosis':diagnosis,'p_id':p_id});
+      console.log(json)
+      xhr.send(json);
+      
+      alert("please wait ...")
+      
+  }
+  </script>
 
-</div>
-<script
-<script src="/static/bootstrap3/js/bootstrap.min.js"></script>
-<!--<script src="/static/bootstrap3/js/jquery-1.11.1.min.js"></script>-->
-<script src="/static/js/app.js"></script>
-<script src="/static/js/jQuery-3.2.1.min.js"></script>
-
-<script>
-
-    $("#file-picker").change(function(){
-
-        var input = document.getElementById('file-picker');
-
-        for (var i=0; i<input.files.length; i++)
-        {
-        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
-            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
-
-            if ((ext == 'jpg') || (ext == 'png'))
-            {
-                $("#msg").text("Files are supported")
-            }
-            else
-            {
-                $("#msg").text("Files are NOT supported")
-                document.getElementById("file-picker").value ="";
-            }
-
-        }
-
-
-    } );
-
-</script>
+</html>

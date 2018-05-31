@@ -21,14 +21,13 @@
     <title>Pic-A-Talk</title>
     <style>
     body {
-
         background-image: url('/static/images/PATbg5.jpg');
         min-height: 100%;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-color:skyblue;
+        background-color:  #ffb3b3;
         font-family:Roboto;
     }
     .pad-50 {
@@ -55,7 +54,7 @@
 </head>
   <body>
     <div class="w3-top">
- <div class="w3-bar w3-center-align w3-large w3-blue">
+ <div class="w3-bar w3-center-align w3-large w3-pink">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-center w3-padding-large w3-hover-white w3-large w3-sky-blue" href="javascript:void(0);" onclick="openNav()"><i style="text-align: center;"><center><h3>Teacher's Information</h3></center></i></a>
     
 
@@ -75,7 +74,7 @@
           <input type="text" name="tel_num" class="form-control mb-3" placeholder="Contact Number">
           <input type="text" name="bio_t" class="form-control mb-3" placeholder="Enter Bio">
           <input type="text" name="add_t" class="form-control mb-3" placeholder="Address">
-          <button onclick="add_teacher(form)" type="button" class="btn btn-primary" id="upload-button">SAVE</button>
+          <button onclick="add_teacher(form)" type="button" class="btn btn-danger" style="width: 100%;" id="upload-button">SAVE</button>
       </form>
           </div>
         </div>
@@ -101,7 +100,6 @@
               
               if (xhr.readyState == 4 && xhr.status == 200) {
                   var json = JSON.parse(xhr.responseText);
-
                   localStorage.setItem('t_id', json.t_id);
                   localStorage.setItem('fname_t', json.fname_t);
                   localStorage.setItem('lname_t', json.lname_t);
@@ -111,21 +109,27 @@
                   localStorage.setItem('add_t', json.add_t);
                   localStorage.setItem('bio_t', json.bio_t);
                   localStorage.setItem('acc_id', json.acc_id);
-
+                  var edit_t = localStorage.getItem('edit_t');
+                  if(edit_t == 'true'){
+                
+                    location = "TeacherProfile.html";
+                  }  
                   
-                  location="t_mode.html"  
-                  alert("Thanks ! " + fname_t  + "!")
+                  
+                  else{
+                    location="t_mode.html"  
+                    alert("Thanks ! " + fname_t  + "!")
+                  }
+                  
+                  
               }
           }
           var json =JSON.stringify({'fname_t':fname_t,'lname_t':lname_t,'bday_t':bday_t, 'specialty':specialty,'tel_num':tel_num,'add_t':add_t,'bio_t':bio_t});
           console.log(json)
           xhr.send(json);
-
-
           
           alert("please wait ...")
       }
 </script>
 
 </html>
-

@@ -44,7 +44,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           
           <p><i class="fa fa-star fa-fw w3-margin-right w3-large w3-text-pink"></i><b id="specialty"></b></p>
           <hr>
-          <a href="/edit" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-10 w3-pink   w3-round">Edit Profile</a>
+          <a onclick="edit()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-10 w3-pink   w3-round">Edit Profile</a>
            </div> 
            <br><br><br><br>
          <div class="w3-container" style="margin-right:0; text-align:left; width: 50%;">    
@@ -96,7 +96,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     document.getElementById("tel_num").innerHTML = localStorage.getItem("tel_num");
     document.getElementById("add_t").innerHTML = localStorage.getItem("add_t");
     document.getElementById("email").innerHTML = localStorage.getItem("email");
+    function edit(){
+      
+      localStorage.setItem('edit_t', 'true');
+      location = "edit_t.html";
+    }
 
+    function upload(){
+      location = "prof_upload.html"
+    } 
 
 </script>
 
