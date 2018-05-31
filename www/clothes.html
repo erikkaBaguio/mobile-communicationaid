@@ -30,8 +30,18 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
-  <div class="w3-left w3-padding-16"><img src="clothes pics/clothesicon.png" alt="logo" width="40px" height="auto"/>CLOTHES</div>
+  <div class="w3-left w3-padding-16"><img onclick="back()" src="clothes pics/clothesicon.png" alt="logo" width="40px" height="auto"/>CLOTHES</div><center><input onclick="upload()" type="button" class="submit" value="Upload" style="height: 50px; width: 100px; color: green;"></center>
   <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  <script>
+        function upload(){
+          localStorage.setItem('Cat_type', "Clothes");
+          location="upload_trial.html";
+
+        }
+        function back(){
+          location = "categories.html";
+        }
+      </script>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -61,7 +71,12 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <img src="clothes pics/skirt.jpg" style="width:32%" onclick="onClick(this);document.getElementById('skirt_play').play(); return false;" alt="Skirt">
       <img src="clothes pics/sweater.jpg" style="width:32%" onclick="onClick(this);document.getElementById('sweater_play').play(); return false;" alt="Sweater">
       <img src="clothes pics/shorts.jpg" style="width:32%" onclick="onClick(this);document.getElementById('shorts_play').play(); return false;" alt="Shorts">
-    </div>  
+    </div>
+    <div id="loadpics" class="w3-third">
+    
+  </div>
+
+
   </div>
 
   <!-- Pagination -->
@@ -233,7 +248,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- End page content -->
 </div>
-
+<script src="js/jquery-3.3.1.min.js"></script>
 <script>
 // Script to open and close sidebar
 function w3_open() {
@@ -274,9 +289,29 @@ function onClick(element) {
 
 
     
-    
-    alert("counted");
+
 }
+
+
+$(document).ready(function(){
+  var acc_id = localStorage.getItem('acc_id');
+    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/v3/spec_categories/"+acc_id+"/Clothes",function(data){
+      var pictures='';
+      $.each(data,function(key,value){
+
+        pictures += '<img src="'+value.img+'" style="width:32%" onclick="onClick(this); adiioplay(\''+value.aud+'\'); return false;" alt="'+value.image_name+'">';
+
+      });
+      $('#loadpics').append(pictures);
+    });
+  });
+
+function adiioplay(val){
+  audio = new Audio(val);
+  audio.play();
+}
+
+
 
 function logout(){
     location = "login.html"

@@ -78,8 +78,7 @@
 </html>
 <script>
 	function info(val){
-
-	    
+	
 	    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/directory="+val;
 	    var xhr  = new XMLHttpRequest()
 	    xhr.open('GET', url, true)
@@ -92,23 +91,16 @@
 				localStorage.setItem('contact', json.contact);
 				localStorage.setItem('address', json.address);
 				localStorage.setItem('dir_id', json.dir_id);
-
-
 	            location = "call.html"
 	        } else {
 	            alert('igit')
 	        }
 	    }
 	    xhr.send(null);
-
-
 	}
-
-
 	function goto_directory(){
 		location = "add_directory.html"
 	}
-
 	$(document).ready(function(){
 		$.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/directory",function(data){
 			var directory_data='';
@@ -116,13 +108,10 @@
 				directory_data += '<tr>';
 				var val = value.dir_id+','+value.contact+','+value.name+','+value.address;
 				//store
-
-
 				directory_data += '<td onclick="info('+value.dir_id+')"><h2>'+value.name+'</h2></td>';
 				directory_data += '</tr>';
 			});
 			$('#directory_table').append(directory_data);
 		});
 	});
-
 </script>

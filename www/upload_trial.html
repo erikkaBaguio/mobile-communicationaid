@@ -10,12 +10,13 @@
 <!-- 	<h1>Click the button to create a File Upload Button.</h1>
 
 	<button onclick="myFunction()">Upload Pic</button> -->
-
+<input onclick="back()" type="button" class="submit" value="◄" style="height: 50px; width: 100px; color: green;">
+<center><h1 id="cats" style="color: Blue">Categoty_Type</h1></center>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <form id="form1" runat="server">
   <h1>Image</h1>
   <input type="text" name="img_name" placeholder="Image Name">
-  <input type="text" name="img_type" placeholder="Image Type">
+  
   <input type='file' id="imgInp" name="image" src="#" />
   <h1>Audio</h1>
   <input type='file' id="audInp" name="audio" src="#" />
@@ -25,6 +26,7 @@
 <center><input onclick="uploadImage()" type="button" class="submit" value="Upload" style="height: 50px; width: 100px; color: green;"></center>
 
 <script>
+  $("#cats").html(localStorage.getItem('Cat_type'));
 function readURL(input) {
 
 
@@ -52,9 +54,9 @@ $("#imgInp").change(function() {
 
 
 <script>
-  function formCreate(p_id,img_name, img_type, filetype1, fileVal1,filetype2,fileVal2){
+  function formCreate(acc_id,img_name, img_type, filetype1, fileVal1,filetype2,fileVal2){
       var form = new FormData();
-      form.append('p_id', p_id);
+      form.append('acc_id', acc_id);
       form.append('img_name', img_name);
       form.append('img_type', img_type);
       form.append('type1',filetype1);
@@ -66,28 +68,52 @@ $("#imgInp").change(function() {
       return form;
   }
 
+  function back(){
+    var cat_type = localStorage.getItem('Cat_type');
+    if(cat_type == "Places"){
+      location = "places.html";
+    }else if(cat_type == "Clothes"){
+      location = "clothes.html";
+    }else if(cat_type == "Toys"){
+      location = "toys.html";
+    }else if(cat_type == "Food"){
+      location = "food.html";
+    }
+  }
+
   function uploadImage(){
-    p_id = localStorage.getItem("name");
+    var acc_id = localStorage.getItem('acc_id');
+    var cat_type = localStorage.getItem('Cat_type');
+    
     $.ajax({
       type: 'POST',
           url: 'https://cryptic-fjord-60133.herokuapp.com/api/v3/upload',
-          data: formCreate(p_id, $('input[name="img_name"]').val(),$('input[name="img_type"]').val(),'image', $('input[name="image"]')[0].files[0],'audio', $('input[name="audio"]')[0].files[0]),
+          data: formCreate(acc_id, $('input[name="img_name"]').val(),cat_type,'image', $('input[name="image"]')[0].files[0],'audio', $('input[name="audio"]')[0].files[0]),
           cache: false,
           contentType: false,
           processData: false,
           async: false,
           success: function(response) {
             if(response.msg=='ok'){
-                  alert("red")
-                  console.log('Welcome Home im')
-                  window.location.assign(response.next_node);
+              alert("successfully uploaded "+cat_type+" Category")
+              if(cat_type == "Places"){
+                location = "places.html";
+              }else if(cat_type == "Clothes"){
+                location = "clothes.html";
+              }else if(cat_type == "Toys"){
+                location = "toys.html";
+              }else if(cat_type == "Food"){
+                location = "food.html";
               }
-              else{
-                  console.log(response.msg);
-                  alert(response.msg);
-              }
+              
+            }
+            else{
+              console.log(response.msg);
+              alert(response.msg);
+            }
           },
   });
+
 }
 </script>
 

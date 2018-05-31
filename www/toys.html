@@ -31,8 +31,18 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
-  <div class="w3-left w3-padding-16"><img src="toy pics/toyicon.png" alt="logo" width="40px" height="auto"/>TOYS</div>
+  <div class="w3-left w3-padding-16"><img onclick="back()" src="toy pics/toyicon.png" alt="logo" width="40px" height="auto"/>TOYS</div><center><input onclick="upload()" type="button" class="submit" value="Upload" style="height: 50px; width: 100px; color: green;"></center>
   <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  <script>
+        function upload(){
+          localStorage.setItem('Cat_type', "Toys");
+          location="upload_trial.html";
+
+        }
+        function back(){
+          location = "categories.html";
+        }
+      </script>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -47,22 +57,26 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Photo grid -->
   <div class="w3-row">
     <div class="w3-third">
-      <img src="toy pics/puzzle.jpg" style="width:100%" onclick="onClick(this);document.getElementById('puzzle_play').play(); return false;" alt="Puzzle">
-      <img src="toy pics/rattle.jpg" style="width:100%" onclick="onClick(this);document.getElementById('rattle_play').play(); return false;" alt="Rattle">
-      <img src="toy pics/slide.jpg" style="width:100%" onclick="onClick(this);document.getElementById('slide_play').play(); return false;" alt="Slide">
+      <img src="toy pics/puzzle.jpg" style="width:32%" onclick="onClick(this);document.getElementById('puzzle_play').play(); return false;" alt="Puzzle">
+      <img src="toy pics/rattle.jpg" style="width:32%" onclick="onClick(this);document.getElementById('rattle_play').play(); return false;" alt="Rattle">
+      <img src="toy pics/slide.jpg" style="width:32%" onclick="onClick(this);document.getElementById('slide_play').play(); return false;" alt="Slide">
     </div>
 
     <div class="w3-third">
-      <img src="toy pics/car.jpg" style="width:100%" onclick="onClick(this);document.getElementById('toycar_play').play(); return false;" alt="Toy Car">
-      <img src="toy pics/ball.jpg" style="width:100%" onclick="onClick(this);document.getElementById('ball_play').play(); return false;" alt="Ball">
-      <img src="toy pics/doll.jpg" style="width:100%" onclick="onClick(this);document.getElementById('doll_play').play(); return false;" alt="Doll">
+      <img src="toy pics/car.jpg" style="width:32%" onclick="onClick(this);document.getElementById('toycar_play').play(); return false;" alt="Toy Car">
+      <img src="toy pics/ball.jpg" style="width:32%" onclick="onClick(this);document.getElementById('ball_play').play(); return false;" alt="Ball">
+      <img src="toy pics/doll.jpg" style="width:32%" onclick="onClick(this);document.getElementById('doll_play').play(); return false;" alt="Doll">
     </div>
     
     <div class="w3-third">
-      <img src="toy pics/doodlepad.jpg" style="width:100%" onclick="onClick(this);document.getElementById('doodlepad_play').play(); return false;" alt="Doodle Pad">
-      <img src="toy pics/flashcards.jpg" style="width:100%" onclick="onClick(this);document.getElementById('flashcards_play').play(); return false;" alt="Flash Cards">
-      <img src="toy pics/lego.jpg" style="width:100%" onclick="onClick(this);document.getElementById('lego_play').play(); return false;" alt="Lego">
-    </div>  
+      <img src="toy pics/doodlepad.jpg" style="width:32%" onclick="onClick(this);document.getElementById('doodlepad_play').play(); return false;" alt="Doodle Pad">
+      <img src="toy pics/flashcards.jpg" style="width:32%" onclick="onClick(this);document.getElementById('flashcards_play').play(); return false;" alt="Flash Cards">
+      <img src="toy pics/lego.jpg" style="width:32%" onclick="onClick(this);document.getElementById('lego_play').play(); return false;" alt="Lego">
+    </div> 
+    <div id="loadpics" class="w3-third">
+    
+  </div>
+ 
   </div>
 
   <!-- Pagination -->
@@ -243,7 +257,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- End page content -->
 </div>
-
+<script src="js/jquery-3.3.1.min.js"></script>
 <script>
 // Script to open and close sidebar
 function w3_open() {
@@ -285,8 +299,34 @@ function onClick(element) {
 
     
     
-    alert("counted");
+
 }
+
+
+
+
+$(document).ready(function(){
+    var acc_id = localStorage.getItem('acc_id');
+    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/v3/spec_categories/"+acc_id+"/Toys",function(data){
+
+      var pictures='';
+      $.each(data,function(key,value){
+
+        pictures += '<img src="'+value.img+'" style="width:32%" onclick="onClick(this); adiioplay(\''+value.aud+'\'); return false;" alt="'+value.image_name+'">';
+
+      });
+      $('#loadpics').append(pictures);
+    });
+  });
+
+function adiioplay(val){
+  audio = new Audio(val);
+  audio.play();
+}
+
+
+
+
 
 function logout(){
     location = "login.html"

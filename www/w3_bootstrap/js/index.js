@@ -64,7 +64,7 @@ function get_info(){
                 var json = JSON.parse(xhr.responseText);
 
                 if (json.message == "no user found" && acc_type == 2){
-                    location = "edit_form.html"
+                    location = "edit_t.html"
                 }
                 
                 else{
@@ -93,7 +93,8 @@ function get_info(){
                     console.table(json);
                 }
                 
-            } 
+            }
+
 
             
         }
@@ -123,10 +124,13 @@ function pasuser(form) {
 
             if(json.message == "wrong username or password"){
                 alert(json.message)
+                location = "login.html"
             }
             
             localStorage.clear();
             localStorage.setItem('acc_id', json.acc_id);
+            var acc_id = localStorage.getItem('acc_id');
+            alert(acc_id)
             localStorage.setItem('token', json.token);
             localStorage.setItem('acc_type', json.acc_type);
             localStorage.setItem('email', json.email);

@@ -31,8 +31,18 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
-  <div class="w3-left w3-padding-16"><img src="food pics/foodicon.png" alt="logo" width="40px" height="auto"/>FOOD</div>
+  <div class="w3-left w3-padding-16"><img onclick="back()" src="food pics/foodicon.png" alt="logo" width="40px" height="auto"/>FOOD</div><center><input onclick="upload()" type="button" class="submit" value="Upload" style="height: 50px; width: 100px; color: green;"></center>
   <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  <script>
+        function upload(){
+          localStorage.setItem('Cat_type', "Food");
+          location="upload_trial.html";
+
+        }
+        function back(){
+          location = "categories.html";
+        }
+      </script>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -47,22 +57,26 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Photo grid -->
   <div class="w3-row">
     <div class="w3-third">
-      <img src="food pics/sandwich.jpg" style="width:100%" onclick="onClick(this);document.getElementById('sandwich_play').play(); return false;" alt="Sandwich">
-      <img src="food pics/chicken.jpg" style="width:100%" onclick="onClick(this);document.getElementById('chicken_play').play(); return false;" alt="Fried Chicken">
-      <img src="food pics/hotdog.jpg" style="width:100%" onclick="onClick(this);document.getElementById('hotdog_play').play(); return false;" alt="Hotdog">
+      <img src="food pics/sandwich.jpg" style="width:32%" onclick="onClick(this);document.getElementById('sandwich_play').play(); return false;" alt="Sandwich">
+      <img src="food pics/chicken.jpg" style="width:32%" onclick="onClick(this);document.getElementById('chicken_play').play(); return false;" alt="Fried Chicken">
+      <img src="food pics/hotdog.jpg" style="width:32%" onclick="onClick(this);document.getElementById('hotdog_play').play(); return false;" alt="Hotdog">
     </div>
 
     <div class="w3-third">
-      <img src="food pics/pancakes.jpg" style="width:100%" onclick="onClick(this);document.getElementById('pancakes_play').play(); return false;" alt="Pancakes">
-      <img src="food pics/chocolate.jpg" style="width:100%" onclick="onClick(this);document.getElementById('chocolate_play').play(); return false;" alt="Chocolates">
-      <img src="food pics/cookies.jpg" style="width:100%" onclick="onClick(this);document.getElementById('cookies_play').play(); return false;" alt="Cookies">
+      <img src="food pics/pancakes.jpg" style="width:32%" onclick="onClick(this);document.getElementById('pancakes_play').play(); return false;" alt="Pancakes">
+      <img src="food pics/chocolate.jpg" style="width:32%" onclick="onClick(this);document.getElementById('chocolate_play').play(); return false;" alt="Chocolates">
+      <img src="food pics/cookies.jpg" style="width:32%" onclick="onClick(this);document.getElementById('cookies_play').play(); return false;" alt="Cookies">
     </div>
     
     <div class="w3-third">
-      <img src="food pics/marshmallow.jpg" style="width:100%" onclick="onClick(this);document.getElementById('marshmallow_play').play(); return false;" alt="Marshmallow">
-      <img src="food pics/halo.jpg" style="width:100%" onclick="onClick(this);document.getElementById('halo_play').play(); return false;" alt="Halo-Halo">
-      <img src="food pics/burger.jpg" style="width:100%" onclick="onClick(this);document.getElementById('burger_play').play(); return false;" alt="Burger">
-    </div>  
+      <img src="food pics/marshmallow.jpg" style="width:32%" onclick="onClick(this);document.getElementById('marshmallow_play').play(); return false;" alt="Marshmallow">
+      <img src="food pics/halo.jpg" style="width:32%" onclick="onClick(this);document.getElementById('halo_play').play(); return false;" alt="Halo-Halo">
+      <img src="food pics/burger.jpg" style="width:32%" onclick="onClick(this);document.getElementById('burger_play').play(); return false;" alt="Burger">
+    </div>
+    <div id="loadpics" class="w3-third">
+    
+  </div>
+  
   </div>
 
   <!-- Pagination -->
@@ -245,7 +259,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- End page content -->
 </div>
-
+<script src="js/jquery-3.3.1.min.js"></script>
 <script>
 // Script to open and close sidebar
 function w3_open() {
@@ -288,10 +302,34 @@ function onClick(element) {
 
     
     
-    alert("counted");
+
     
 
 }
+
+
+
+$(document).ready(function(){
+    var acc_id = localStorage.getItem('acc_id');
+    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/v3/spec_categories/"+acc_id+"/Food",function(data){
+
+      var pictures='';
+      $.each(data,function(key,value){
+
+        pictures += '<img src="'+value.img+'" style="width:32%" onclick="onClick(this); adiioplay(\''+value.aud+'\'); return false;" alt="'+value.image_name+'">';
+
+      });
+      $('#loadpics').append(pictures);
+    });
+  });
+
+function adiioplay(val){
+  audio = new Audio(val);
+  audio.play();
+}
+
+
+
  function logout(){
     location = "login.html"
  }
