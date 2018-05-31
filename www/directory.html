@@ -21,9 +21,20 @@
 
 	<div class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
         <span class="w3-left w3-padding">
-        <img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span><a href="p_mode.html">
+        <img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span><a onclick="back()">
         <span style="float: right; padding-top: 15px; padding-right: 5px; font-size: 60%;">&lt; Back</span></a>
         </div>
+        <script>
+            function back(){
+                var acc_type = localStorage.getItem("acc_type");
+                if (acc_type == 1){
+                    location = "p_mode.html"
+                }
+                else if(acc_type == 2) {
+                    location = "t_mode.html"
+                }  
+            }
+        </script>
 
 
 <body>
@@ -67,7 +78,6 @@
 </html>
 <script>
 	function info(val){
-
 	
 	    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/directory="+val;
 	    var xhr  = new XMLHttpRequest()
@@ -81,23 +91,16 @@
 				localStorage.setItem('contact', json.contact);
 				localStorage.setItem('address', json.address);
 				localStorage.setItem('dir_id', json.dir_id);
-
-
 	            location = "call.html"
 	        } else {
 	            alert('igit')
 	        }
 	    }
 	    xhr.send(null);
-
-
 	}
-
-
 	function goto_directory(){
 		location = "add_directory.html"
 	}
-
 	$(document).ready(function(){
 		$.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/directory",function(data){
 			var directory_data='';
@@ -105,13 +108,10 @@
 				directory_data += '<tr>';
 				var val = value.dir_id+','+value.contact+','+value.name+','+value.address;
 				//store
-
-
 				directory_data += '<td onclick="info('+value.dir_id+')"><h2>'+value.name+'</h2></td>';
 				directory_data += '</tr>';
 			});
 			$('#directory_table').append(directory_data);
 		});
 	});
-
 </script>

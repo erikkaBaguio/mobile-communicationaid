@@ -118,7 +118,7 @@ function update_directory(form){
 
         
         location="directory.html"  
-        alert("Thanks ! " + name  + " is successfully added to your Directory.");
+        alert("Thanks for your help! " + name  + " is now successfully updated.");
         
     }
 }

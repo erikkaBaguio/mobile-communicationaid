@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/w3.css">
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="/static/bootstrap/js/bootstrap.bundle.js">
+    <link rel="stylesheet" href="/static/bootstrap/js/bootstrap.js">
+    <link rel="stylesheet" href="/static/css/agency.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pic-A-Talk</title>
+    <style>
+    body {
+
+        background-image: url('/static/images/PATbg5.jpg');
+        min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color:skyblue;
+        font-family:Roboto;
+    }
+    .pad-50 {
+        background-color: #fff;
+        padding: 10% 5%;
+    }
+    .pad-50:first-child {
+        background-color:#f8f9fa;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+    .pad-50:last-child {
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .btn-primary {
+        width:100%;
+        margin-top: 13%;
+    }
+    .mar-50 {
+        margin-top: 8%;
+    }
+    </style>
+</head>
+  <body>
+    <div class="w3-top">
+ <div class="w3-bar w3-center-align w3-large w3-blue">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-center w3-padding-large w3-hover-white w3-large w3-sky-blue" href="javascript:void(0);" onclick="openNav()"><i style="text-align: center;"><center><h3>Parent's Information</h3></center></i></a>
+    
+
+  </a>
+ </div>
+</div>
+  <div class="container mar-50">
+      <div class="row" style="margin: 1%; margin-top: 25%;">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad-50">
+            <div class="input-group mb-3">
+      <form class="register-form" style="margin-top: 15%; margin-left: 20%; text-align: center;">
+        <input type="text" name="fname" class="form-control mb-3" placeholder="first name" required>
+        <input type="text" name="lname" class="form-control mb-3" placeholder="last name" required>
+        <select name="gender_p" class="form-control mb-3" style="margin: auto; width: 100%; margin-bottom:10px; margin-top: 10px; ">              
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+        <input type="date" class="form-control mb-3" name="birthday" >
+        <input type="text" class="form-control mb-3" name="bio_p" placeholder="enter bio" required>
+        <input type="text" class="form-control mb-3" name="address" placeholder="address" required>
+        <button class="btn btn-success" style="width:100%;margin-top: 7px;" onclick="parent_info(form)">Next</button>
+      </form>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+  <script>
+    function parent_info(form){
+      
+      var acc_id = localStorage.getItem("acc_id");
+      var fname = form.fname.value;
+      var lname = form.lname.value;
+      var gender_p = form.gender_p.value;
+      var birthday = form.birthday.value;
+      var bio_p = form.bio_p.value;
+      var address = form.address.value;
+
+      
+          
+      xhr = new XMLHttpRequest();
+      var url = "https://cryptic-fjord-60133.herokuapp.com/api/add_parent";
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-type", "application/json");
+      xhr.onreadystatechange = function () { 
+          
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              var json = JSON.parse(xhr.responseText);
+
+              localStorage.setItem('p_id', json.p_id);
+              localStorage.setItem('acc_id', json.acc_id);
+              localStorage.setItem('address', json.add_p);
+              localStorage.setItem('birthday', json.bday_p);
+              localStorage.setItem('bio_p', json.bio_p);
+              localStorage.setItem('add_p', json.add_p);
+              localStorage.setItem('fname_p', json.fname_p);
+              localStorage.setItem('lname_p', json.lname_p);
+              localStorage.setItem('gender_p', json.gender_p);
+
+              var edit = localStorage.getItem('edit');
+              var p_id = localStorage.getItem("p_id");
+              var fname_p = localStorage.getItem("fname_p");
+              if(edit == 'true'){
+                alert(edit);
+                location = "ParentProfile.html";
+              }  
+
+
+              
+
+              
+              else{
+                location="edit_c.html"  
+                alert("Thanks ! " + fname  + "!")
+              }
+          }
+      }
+      var json =JSON.stringify({'fname_p':fname,'lname_p':lname,'gender_p':gender_p, 'bio_p':bio_p,'bday_p':birthday,'add_p':address,'acc_id':acc_id});
+      console.log(json)
+      xhr.send(json);
+
+
+      
+      alert("please wait ...")
+      
+
+
+  }
+  </script>
+
+</html>
+

@@ -18,9 +18,10 @@
 
         <div class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
         <span class="w3-left w3-padding">
-        <img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span><a href="p_mode.html">
+        <img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span><a onclick="back()">
         <span style="float: right; padding-top: 15px; padding-right: 5px; font-size: 60%;">&lt; Back</span></a>
         </div>
+
 
 
 <body>
@@ -38,7 +39,7 @@
                         </div>
                         </div>  
                         </form>
-                        <!-- <button type="button" class="btn btn-primary btn-lg" onclick="goto_class2()" style="margin-left: 80%;">Add</button><br><br> -->
+
                     </div> 
                     <table class="table table-striped table-bordered table-hover" id="class">
                         <tr>
@@ -52,12 +53,7 @@
                                 <tr>
                                   
                                 </tr>
-<!--                                 <td>
-                                    <a class="btn btn-sm btn-danger confirmation" href="/deleteClass/{{ Class.class_num }}"><span class="glyphicon glyphicon-trash"></span></a>
-                                </td>  
-                                <td style="cursor.pointer">
-                                    <a onclick="goto_classpage()" style="text-align: center">{{ Class.class_name}}
-                                </td>  -->              
+            
                             </tbody>  
                         </tr>
                     </table>
@@ -72,8 +68,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 
+    function back(){
+        
+        var acc_type = localStorage.getItem("acc_type");
+        if (acc_type == 1){
+            location = "p_mode.html"
+        }
+        else if(acc_type == 2) {
+            location = "t_mode.html"
+        }  
+    }
+
     function classpage(yu) {
-        alert(yu);
+        
 
         var url  = "https://cryptic-fjord-60133.herokuapp.com/api/search_class="+yu;
         var xhr  = new XMLHttpRequest()

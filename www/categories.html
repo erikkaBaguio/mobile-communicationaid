@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="w3_bootstrap/css/navbar.css"> 
 <link rel="stylesheet" href="css/thumbnail.css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <style>
 
@@ -32,10 +34,12 @@ h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
   <h3 class="w3-padding-64 w3-center"><img src="PATicon.png">PIC-A-TALK</b></h3>
+
+
   <!-- <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a> -->
   <a href="mode.html" onclick="w3_close()" class="w3-bar-item w3-button">CHANGE MODE</a> 
-  <a href="#child" onclick="w3_close()" class="w3-bar-item w3-button">THE CHILD</a> 
-  <a href="#parent" onclick="w3_close()" class="w3-bar-item w3-button">THE PARENT</a>
+  <a href="ChildProfile.html" onclick="w3_close()" class="w3-bar-item w3-button">THE CHILD</a> 
+  <a href="ParentProfile.html" onclick="w3_close()" class="w3-bar-item w3-button">THE PARENT</a>
   <a href="#childactivity" onclick="w3_close()" class="w3-bar-item w3-button">CHILD ACTIVITY</a>
   <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button">LOGOUT</a>
 </nav>
@@ -49,7 +53,19 @@ h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
-  <div class="w3-left w3-padding-16"><img src="/PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</div>
+  <div class="w3-left w3-padding-16"><img onclick="back()" src="/PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</div>
+  <script>
+    function back(){
+        var acc_type = localStorage.getItem("acc_type");
+        if (acc_type == 1){
+            location = "p_mode.html"
+        }
+        else if(acc_type == 2) {
+            location = "t_mode.html"
+        }  
+    }
+  </script>
+
   <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
 </header>
 
@@ -65,7 +81,7 @@ h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <div class="row" style="margin-top:75px;">
         <div class="col-xs-6" style="text-align: center;">
           <a href = "food.html">
-            <img src="food pics/foodicon.png" style="width:40vmin;" onclick="onClick(this)" alt="Food">
+            <img src="food pics/foodicon.png" style="width:30vmin;" onclick="onClick(this)" alt="Food">
               <br>
               <!-- <span style="color:white; font-size: 20px;">Food</span> -->
           </a>
@@ -73,7 +89,7 @@ h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
         <div class="col-xs-6" style="text-align: center;">
           <a href = "toys.html">
-            <img src="toy pics/toyicon.png" style="width:40vmin;" onclick="onClick(this)" alt="Toys">
+            <img src="toy pics/toyicon.png" style="width:30vmin;" onclick="onClick(this)" alt="Toys">
               <!-- <span style="color: white; font-size: 20px;">Toys</span>
           </a> -->
         </div>
@@ -82,18 +98,19 @@ h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <div class="row" style="margin-top: 40px;">
         <div class="col-xs-6" style="text-align: center;">
           <a href = "places.html">
-            <img src="place pics/placesicon.png" style="width:40vmin;" onclick="onClick(this)" alt="Places">
+            <img src="place pics/placesicon.png" style="width:30vmin;" onclick="onClick(this)" alt="Places">
             <!-- <span style="color: white; font-size: 20px;">Places</span> -->
           </a>
         </div>
 
         <div class="col-xs-6" style="text-align: center;">
           <a href = "clothes.html">
-            <img src="clothes pics/clothesicon.png" style="width:40vmin;" onclick="onClick(this)" alt="Clothes">
+            <img src="clothes pics/clothesicon.png" style="width:30vmin;" onclick="onClick(this)" alt="Clothes">
             <!-- <span style="color: white; font-size: 20px;">Clothes</span> -->
           </a>
         </div>
       </div>
+
 </body>
 
   <!-- Modal for full size images on click-->
@@ -127,6 +144,8 @@ function w3_close() {
 //   var captionText = document.getElementById("caption");
 //   captionText.innerHTML = element.alt;
 // }
+
+
 
 
 </script>

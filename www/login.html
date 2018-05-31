@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
 		<script type="text/javascript" src="w3_bootstrap/js/index.js"></script>
 		<link rel="stylesheet" href="w3_bootstrap/css/signup.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<style>
 		body {
@@ -23,6 +25,7 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+	    
 	</style>
 	<body>
 	
@@ -33,12 +36,71 @@
 			<form class="login-form" style="margin-top: 15%;text-align: center;">
 				<input type="text" name="id" id="id" placeholder="user name"><br>
                 <input type="password" name="pass" id="pass" placeholder="password"><br>
-				<input type="button" class="btn btn-success" style="width:90%;margin-top: 7px; background-color:lightgreen; font-size: 15px;" onclick="pasuser(form)" class="submit" value="Log in">
+				<input type="button" class="btn btn-success" style="width:90%;margin-top: 7px; background-color:lightgreen; font-size: 15px;" onclick="pasuser(form);document.getElementById('id01').style.display='block'" class="submit" value="Log in">
 				<p class="message" style="color: white;">Not yet Registered? <a href="signup.html"><span style="color:blue;">Sign up</span></a></p>
 			</form>
 		</div>
 
+		<div id="id01" class="w3-modal" style = "background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));">
+    
+	      <div class="w3-container">
+	        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+	        <center><i class="fa fa-spinner fa-spin" style="font-size:75px; margin:30%; color:pink"></i></center>
+	      </div>
+	    </div>
 
 	</body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--	<!DOCTYPE html>
+
+
+
+<html>
+<body>
+
+<p>Click the button to display the seconds of the time right now.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+
+
+
+function myFunction() {
+	
+	
+    
+    var target = 10
+    
+    
+    do{
+    	var d = new Date();
+    	var n = d.getSeconds();
+    	if(n==10 || n == 20 || n == 30 || n==40 || n==50  || n==0 ){
+    		document.getElementById('demo').innerHTML = n;
+        	alert("mana")
+        }
+        else{
+        	document.getElementById('demo').innerHTML = n;
+        	
+        }
+    
+    
+    }while(1<10);
+}
+</script>

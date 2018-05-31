@@ -16,7 +16,7 @@
   </head>
   <style>
     body {
-        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(signup_bg.jpg);
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(login_bg.jpg);
         height: 100vh;
         min-height: 100%;
         background-attachment: fixed;
@@ -31,12 +31,12 @@
         <span style="float: left; padding-top: 15px; padding-left: 5px; font-size: 60%;">&lt; Back</span></a><div class="container" style="float:center; padding-right:50px; padding-top: 10px;">Sign up</div>
       </div>
       <form class="register-form" style="margin-top: 15%;text-align: center;">
-        <input type="text" name="id" placeholder="user name"><br>
-        <select name="acc_type" class="form-control" style="margin: auto; width: 90%; margin-bottom:10px; margin-top: 10px; ">              
+        <input type="text" name="id" placeholder="user name" required><br>
+        <select name="acc_type" class="form-control" style="margin: auto; width: 90%; height: 50px; margin-bottom:10px; margin-top: 10px; ">              
               <option value="1">Parent</option>
               <option value="2">Teacher</option>
-        <input type="password" name="pass" placeholder="password"><br>
-        <input type="text" name="email" placeholder="email id"><br>
+        <input type="password" name="pass" placeholder="password" required><br>
+        <input type="text" name="email" placeholder="email id" required><br>
         <button class="btn btn-success" style="width:90%;margin-top: 7px;" onclick="register_user(form)">Create</button>
         <p class="message" style="color: white;">Already Registered? <a href="login.html"><span style="color:blue;">Login</span></a></p>
       </form>

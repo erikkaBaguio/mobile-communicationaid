@@ -35,11 +35,9 @@
     margin-top: 8%;
     border-radius:  50px;
     box-shadow: 0px 0px 11px 0px #023258;
-
     /*-webkit-box-shadow: 2px 4px 18px -4px rgba(222,182,222,0.7);*/
     /*-moz-box-shadow: 2px 4px 18px -4px rgba(222,182,222,0.7);*/
      /*box-shadow: 2px 4px 18px -4px rgba(222,182,222,0.7);*/
-
 /*      display: flex;
       justify-content: center;
       align-items: center;
@@ -80,7 +78,6 @@
     font-weight: 900;
     font-size: 30px;
     text-shadow: 5px 5px 10px #343a40;
-
   }
   .blue:hover, .green:hover, .yellow:hover {
     background-position: right center;
@@ -110,7 +107,6 @@
     background-image:linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
     border:solid 1px white;  
     box-shadow: 0px 4px 7px 0px #023258;
-
   }
   </style>
 </head>
@@ -118,33 +114,39 @@
 
 <div class="w3-top">
  <div class="w3-bar w3-right-align w3-large w3-blue">
-  <a href="mode.html"><img class="w3-left" src="PATicon1.png" alt="logo" width="210px" height="95px"/></a>
+  <img class="w3-left" src="PATicon1.png" alt="logo" width="210px" height="95px"/>
   <!-- <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-sky-blue" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a> -->
-  <a href="login.html" class="w3-bar-item w3-button w3-right w3-padding-large w3-blue"></i>Log Out</a>
+  <a onclick="logout()" class="w3-bar-item w3-button w3-right w3-padding-large w3-blue"></i>Log Out</a>
    <a href="/team" class="w3-bar-item w3-button w3-right w3-padding-large w3-blue"></i>Contact Us</a>
   </a>
  </div>
 </div>
+<script>
+    function logout(){
+      localStorage.clear();
+      location = "login.html";
+    }
+</script>
 <!-- 
   <nav class="navbar sticky-top navbar-light bg-light">
      <img src="static/logo.png" alt="logo" width="200px" height="70px"/>
   </nav> -->
 
 
-<div class="container" style="margin-top: 120px;">
+<div class="container">
   <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bodyx yellow" onclick="location.href='enroll_home.html'"style="border-radius: 50px 50px 50px 50px;>
-      <p>Child Class</p>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bodyx yellow" onclick="location.href='report.html'" style="border-radius: 50px 50px 50px 50px; margin-top: 80px">
+      <p>Child Progress</p>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bodyx green" onclick="location.href='categories.html'"style="border-radius: 50px 50px 50px 50px;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bodyx green" onclick="location.href='categories.html'" style="border-radius: 50px 50px 50px 50px;">
       <p>Categories</p>
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bodyx yellow" onclick="location.href='activityLogs.html'" style="border-radius: 50px 50px 50px 50px;">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bodyx yellow" onclick="logs()" style="border-radius: 50px 50px 50px 50px;">
       <p>Child Activity</p>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bodyx green" onclick="location.href='forum.html'" style="border-radius: 50px 50px 50px 50px;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bodyx green" style="border-radius: 50px 50px 50px 50px;">
       <p>Forum</p>
     </div>
   </div>
@@ -155,7 +157,7 @@
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bodyx green" onclick="location.href='ParentProfile.html'" style="border-radius: 50px 50px 50px 50px;">
       <p>Parent Profile</p>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bodyx yellow" onclick="location.href='directory.html'"style="border-radius: 50px 50px 50px 50px;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 bodyx yellow" onclick="location.href='directory.html'" style="border-radius: 50px 50px 50px 50px;">
       <p>Directory</p>
     </div>
   </div>
@@ -165,9 +167,10 @@
 </body>
 
 <script>
-  function 
-
-
+  function logs(){
+    var acc_id = localStorage.getItem("acc_id");
+    location.href='activityLogs.html';
+  }
 </script>
 
 </div>

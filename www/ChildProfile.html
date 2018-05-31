@@ -19,22 +19,26 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
     <!-- Left Column -->
     <div class="w3-container w3-padding-14 w3-green" style="font-size:50px; font-weight: bold;">Profile
-    <span style="float: right; padding-top: 20px; padding-right: 10px; font-size: 20px; color:black;">&lt; Back</span></div>
+    <span onclick="back()" style="float: right; padding-top: 20px; padding-right: 10px; font-size: 20px; color:black;">&lt; Back</span></div>
+    <script>
+      function back(){
+        location = "p_mode.html"
+      }
+    </script>
   </a>
       <div class="w3-white w3-text-grey w3-card-16 pull" id="view_teacher">
         <div class="w3-container w3-center">
           <div class="w3-container pull-left" style="text-align:left;">
             <br>
             <h2 class="w3-disply-bottomleft w3-container w3-text-black"><img src="user.png" style="width:50%" alt="Avatar"></h2>
-             <h2 class="w3-disply-bottomleft w3-container w3-text-black"> Kigwa Kigwa</h2>
-             <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-green w3-round"></i>Bio</b></p>
-             <p>My name is Kigwaa. I thank you!</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-green"></i>Iligan City, Philippines</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-green"></i>kigwaa@gmail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-green"></i>09123456789</p>
-          <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-green"></i>May 24, 2018</p>
-          <p><i class="fa fa-venus-mars fa-fw w3-margin-right w3-large w3-text-green"></i>Male</p>
-          <p><i class="fa fa-book fa-fw w3-margin-right w3-large w3-text-green"></i>di ko musaba</p>
+             <h2 class="w3-disply-bottomleft w3-container w3-text-black" id="name"> Name</h2>
+             
+             <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-green w3-round">Bio</i></b></p>
+             <b id="diagnosis">Bio </b><br><br>
+          
+          <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-green"></i><b id="birthday"></b></p>
+          <p><i class="fa fa-venus-mars fa-fw w3-margin-right w3-large w3-text-green"></i><b id="gender"></b></p>
+          <p><i class="fa fa-book fa-fw w3-margin-right w3-large w3-text-green"></i><b id="classes"></b></p>
           <hr>
           <a href="/edit" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-10 w3-green   w3-round">Edit Profile</a>
            </div> 
@@ -63,89 +67,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <!-- End Page Container -->
 </div>
 
-    <script type="text/javascript">
-        $(document).ready( function () {
-        $('#myTable').DataTable();
-}       );
-    </script>
-
-
 <script>
-     var tokens = localStorage.getItem('token');
-         function viewProfile(){
-             $("#view_teacher").show();
-         $.ajax({
-
-                   // url: 'http://127.0.0.1:5000/api/parentprofile'
-
-                   url: 'https://mighty-badlands-16603.herokuapp.com/api/teacherprofile',
-
-                   type: "GET",
-                   dataType: "json",
-                   crossDomain: true,
-                    // headers: {
-                    //      'x-access-token': tokens
-                    //          },
-                   success: function(resp) {
-                    $("#view_teacher").html("");
-                     //if (resp.status  === 'ok') {
-                                       fname_t = resp[i].fname_t;
-                                       lname_t = resp[i].lname_t;
-                                       add_t = resp[i].add_t;
-                                       email = resp[i].email;
-                                       tel_num = resp[i].tel_num;
-                                       gender = resp[i].gender;
-                                       bday_t = resp[i].bday_t;
-                                       bio_t = resp[i].bio_t;
-                                       specialty = resp[i].specialty;
-                                       t_id = resp[i].t_id;
-                                       console.log(t_id);
-
-                                       $("#view_teacher").append(showRes(fname_t, lname_t, add_t, email, gender, bio_t, tel_num, bday_t, specialty, parseInt(t_id)));
-                     //} else {
-                        //alert('No Data')
-                            // }
-                                             }
-               });
-                             }
-          function showRes(fname_t, lname_t, add_t, email, tel_num, gender, bday_t, bio_t, specialty)
-                   {
-                      return '<div class="w3-content w3-margin-top" style="max-width:1400px;">' +
-                                        '<div class="w3-row-padding">' +
-
-                                          '<div class="w3-container">' +
-                                            '<div class="w3-white w3-text-grey w3-card-16 pull" id="view_teacher">' +
-                                              '<div class="w3-container w3-center" >' +
-                                                '<div class="w3-container pull-left" style="margin-left:25%;">' +
-                                                  '<br>'
-                                                  '<h2 class="w3-disply-bottomleft w3-container w3-text-black">''<img src="user.png" style="width:50%" alt="Avatar"></h2>' +
-                                                  '<h2 class="w3-disply-bottomleft w3-container w3-text-black">' + fname_t + + lname_t +' </h2>' +
-                                                   '<p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-pink w3-round">''</i>''Bio''</b>''</p>' +
-                                                   '<p>' + bio_t + '</p>' +
-                                                 '</div>'
-                                                 '<br>' 
-                                               '<div class="w3-container pull-right" style="margin-right:25%; text-align:left;">' +
-                                                '<p>''<i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-pink">''</i>' + add_t + '</p>' +
-                                                '<p>''<i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-pink">''</i>' + email + '</p>' +
-                                                '<p>''<i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-pink">''</i>' + tel_num + '</p>' +
-                                                '<p>''<i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-pink">''</i>'+ bday_t + '</p>' +
-                                                '<p>''<i class="fa fa-venus-mars fa-fw w3-margin-right w3-large w3-text-pink">''</i>' + gender + '</p>' +
-                                                '<p>''<i class="fa fa-star fa-fw w3-margin-right w3-large w3-text-pink">''</i>' + specialty + '</p>' +
-                                                '<hr>'
-                                                '<a href="/edit" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-10 w3-pink   w3-round">'+ Edit Profile + '</a>' +
-                                              '</div>' 
-                                            '</div>' 
-                                            '<br>' 
-
-                                          '</div>' 
-
-                                        '</div>' 
-
-                                      '</div>' 
-                  }           
-
-
- </script>
+  var diagnosis = localStorage.getItem("diagnosis");
+  
+  document.getElementById("diagnosis").innerHTML =  diagnosis;  
+   document.getElementById("name").innerHTML = localStorage.getItem("full_name");
+    document.getElementById("classes").innerHTML = localStorage.getItem("classes");
+    document.getElementById("birthday").innerHTML = localStorage.getItem("bday_c");
+    document.getElementById("gender").innerHTML = localStorage.getItem("gender");
+            
+</script>
 
 </body>
 </html>

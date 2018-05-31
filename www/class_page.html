@@ -287,7 +287,7 @@ autocomplete(document.getElementById("myInput"), countries);
     }
 
     function about(val){
-        alert(val)
+        
         var url  = "https://cryptic-fjord-60133.herokuapp.com/api/child/"+val;
         var xhr  = new XMLHttpRequest()
         xhr.open('GET', url, true)
@@ -303,10 +303,10 @@ autocomplete(document.getElementById("myInput"), countries);
                 localStorage.setItem('bday_c', json.user.bday_c);
                 
 
-                alert(xhr.responseText)
+                
                 location = "report.html"
             } else {
-                alert('igit')
+                alert('Sorry but you have a poor connection. Please try again.')
             }
         }
         xhr.send(null);
