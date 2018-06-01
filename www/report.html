@@ -55,7 +55,7 @@
 </head>
 <body>
 
- <div class="w3-top w3-bar w3-left-align w3-xlarge w3-blue w3-padding-large">Progress Report<a onclick="back()" class="w3-bar-item w3-button w3-right w3-blue w3-large"></i>Back</a>
+ <div class="w3-top w3-bar w3-left-align w3-xlarge w3-blue w3-padding-large" ><h2 id="name">Progress Report</h2><a onclick="back()" class="w3-bar-item w3-button w3-right w3-blue w3-large"></i>Back</a>
     <!-- <a href="/team" class="w3-bar-item w3-button w3-right w3-padding-large w3-blue"></i>Contact Us</a> -->
  </div>
 
@@ -66,7 +66,7 @@
                     location = "p_mode.html"
                 }
                 else if(acc_type == 2) {
-                    location = "t_mode.html"
+                    location = "class_page.html"
                 }  
             }
         </script>
@@ -116,6 +116,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script>
+    
+    document.getElementById("name").innerHTML = localStorage.getItem("name");
   function post_progress(){
         var title = $('#title').val();
         var details = $('#details').val();
@@ -135,6 +137,7 @@
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var json = JSON.parse(xhr.responseText);
                 alert("Thanks ! successfully Posted!");
+                location ="class_page.html"
             }
         }
         var json =JSON.stringify({"prog_title":title, "details": details, "prog_date":date, "prog_time":time, "score":rating,"childid":childid});
