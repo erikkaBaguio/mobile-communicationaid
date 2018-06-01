@@ -105,11 +105,19 @@
           if (xhr.readyState == 4 && xhr.status == 200) {
               var json = JSON.parse(xhr.responseText);
               localStorage.setItem('c_id', json.c_id);
+              localStorage.setItem('bday_c', json.bday_c);
+              localStorage.setItem('classes', json.classes);
+              localStorage.setItem('diagnosis', json.diagnosis);
+              localStorage.setItem('fname_c', json.fname_c);
+              localStorage.setItem('full_name', json.full_name);
+              localStorage.setItem('gender', json.gender);
+              localStorage.setItem('lname_c', json.lname_c);
+              localStorage.setItem('p_id', json.p_id);
               var c_id = localStorage.getItem("c_id");
               var edit_c = localStorage.getItem('edit_c');
               if(edit_c == 'true'){
                 
-                    location = "TeacherProfile.html";
+                    location = "ChildProfile.html";
                   }  
                   
                   
