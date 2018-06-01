@@ -13,8 +13,21 @@
 <input onclick="back()" type="button" class="submit" value="◄" style="height: 50px; width: 100px; color: green;">
 <script>
   function back(){
+    var childs = localStorage.getItem('child');
+    var acc_type = localStorage.getItem('acc_type');
+    if (childs == 'true'){
+      location = "ChildProfile.html";
+    }else{
+      if(acc_type == 1){
+        location = "ParentProfile.html";
+      }else if(acc_type == 2){
+        location = "TeacherProfile.html";
+      }
+
+    } 
+    
   
-    location = "ParentProfile.html"
+    
   }
 </script>
 
@@ -49,7 +62,35 @@ function formCreate(acc_id, img_type, filetype1, fileVal1){
     alert("in")
   var acc_id = localStorage.getItem('acc_id');
   var acc_type = localStorage.getItem('acc_type');
-    
+  var childs = localStorage.getItem('child');
+  if(childs == 'true'){
+      $.ajax({
+      type: 'POST',
+      url: 'https://cryptic-fjord-60133.herokuapp.com/api/v3/profilepic',
+      data: formCreate(acc_id,'Child','image', $('input[name="image"]')[0].files[0]),
+      cache: false,
+      contentType: false,
+      processData: false,
+      async: false,
+      success: function(response) {
+        if(response.msg=='ok'){
+          alert(response.img)
+          
+            localStorage.setItem('child_pic', response.img);
+            location="ChildProfile.html";
+
+          
+              
+        }
+        else{
+          console.log(response.msg);
+          alert(response.msg);
+        }
+      },
+  });
+  alert(acc_id)
+
+  }else{  
     
       $.ajax({
       type: 'POST',
@@ -80,6 +121,8 @@ function formCreate(acc_id, img_type, filetype1, fileVal1){
       },
   });
   alert(acc_id)
+}
+
 }
 </script>
 

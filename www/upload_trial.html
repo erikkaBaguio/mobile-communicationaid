@@ -1,30 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/font.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-grid.css">
+<link rel="stylesheet" href="css/bootstrap-reboot.css">
+<!-- <link rel="stylesheet" href="js/bootstrap.bundle.js">
+<link rel="stylesheet" href="js/bootstrap.js"> -->
+<link rel="stylesheet" href="css/agency.min.css">
 </head>
 
+<style>
+    body {
+
+        background-image: url('images/waves.jpg');
+        min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color:skyblue;
+        font-family:Roboto;
+    }
+    .pad-50 {
+        background-color: #fff;
+        padding: 10% 5%;
+    }
+    .pad-50:first-child {
+        background-color:#f8f9fa;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+    .pad-50:last-child {
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .btn-primary {
+        width:100%;
+        margin-top: 13%;
+    }
+    .mar-50 {
+        margin-top: 8%;
+    }
+    </style>
+
+
+
 <body>
-<!-- 	<input type="file" id = "up_image"> -->
-<!-- 	<h1>Click the button to create a File Upload Button.</h1>
+<div class="w3-top">
+ <div class="w3-bar w3-right-align w3-large w3-blue w3-padding-12">
+  <a onclick="back()" type="button" class="submit w3-bar-item w3-button w3-left w3-blue w3-text-white"></i>Back</a>
+   
+  </a>
+ </div>
+</div>
 
-	<button onclick="myFunction()">Upload Pic</button> -->
-<input onclick="back()" type="button" class="submit" value="◄" style="height: 50px; width: 100px; color: green;">
-<center><h1 id="cats" style="color: Blue">Categoty_Type</h1></center>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<form id="form1" runat="server">
-  <h1>Image</h1>
-  <input type="text" name="img_name" placeholder="Image Name">
-  
-  <input type='file' id="imgInp" name="image" src="#" />
-  <h1>Audio</h1>
-  <input type='file' id="audInp" name="audio" src="#" />
-  <img id="blah" src="#" alt="your image" style="height: 20%; width: 20%" />
-  <p id="get_src"></p>
-</form>
-<center><input onclick="uploadImage()" type="button" class="submit" value="Upload" style="height: 50px; width: 100px; color: green;"></center>
 
+
+<div class="container mar-50">
+        <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 pad-50">
+                  <center><h1 id="cats" style="color: Blue;">Category_Type</h1></center><br>
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                      
+                      <div class="container" style="margin-left: 18%;">   
+                      <form id="form1" runat="server">
+                        <h2>Image</h2>
+                        <img id="blah" src="#" alt="your image" style="height: 40%; width: 50%" /><br><br>
+                        <input type="text" name="img_name" placeholder="Image Name">
+                        <br>
+                        <input type='file' id="imgInp" name="image" src="#" />
+                        <h2>Audio</h2>
+                        <input type='file' id="audInp" name="audio" src="#" />
+                        </form>
+                       </div>
+                       <center><input onclick="uploadImage()" type="button" class="submit w3-bar-item w3-button w3-center w3-blue w3-text-white" value="Upload" style="height: 50px; width: 150px; color: white; margin-top: 50px; font-size: 140%;"></center>
+                </div>
+          </div>
+</div>
 <script>
   $("#cats").html(localStorage.getItem('Cat_type'));
 function readURL(input) {

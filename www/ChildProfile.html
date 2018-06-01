@@ -30,7 +30,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-container w3-center">
           <div class="w3-container pull-left" style="text-align:left;">
             <br>
-            <h2 class="w3-disply-bottomleft w3-container w3-text-black"><img src="user.png" style="width:50%" alt="Avatar"></h2>
+            <h2 class="w3-disply-bottomleft w3-container w3-text-black"><img id="pic" src="user.png" style="width:50%" alt="Avatar"></h2>
+            <input onclick="upload()" type="button" class="submit" name="image" value="Edit" style="margin-left: 9%; width: 100px;height: 30px; font-size: 15px; color: green;" src="#" />
              <h2 class="w3-disply-bottomleft w3-container w3-text-black" id="name"> Name</h2>
              
              <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-green w3-round">Bio</i></b></p>
@@ -75,6 +76,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     document.getElementById("classes").innerHTML = localStorage.getItem("classes");
     document.getElementById("birthday").innerHTML = localStorage.getItem("bday_c");
     document.getElementById("gender").innerHTML = localStorage.getItem("gender");
+    
+    var memes = document.getElementById('pic');
+    memes.setAttribute('src', localStorage.getItem('child_pic'));
     function edit(){
       
       localStorage.setItem('edit_c', 'true');
@@ -82,6 +86,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     }
 
     function upload(){
+      location = "prof_upload.html"
+    }
+    function upload(){
+      localStorage.setItem('child', 'true');
       location = "prof_upload.html"
     }        
 </script>

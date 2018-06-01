@@ -14,6 +14,8 @@ function get_info(){
     var acc_type = localStorage.getItem("acc_type");
     
     if(acc_type == 1){
+
+        get_childpic();
         var url  = "https://cryptic-fjord-60133.herokuapp.com/api/parent/"+acc_id;
         var xhr  = new XMLHttpRequest()
         xhr.open('GET', url, true)
@@ -154,6 +156,26 @@ function pasuser(form) {
     
 }
 
+function get_childpic(){
+    var acc_id = localStorage.getItem("acc_id");
+    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/v3/profilechild/"+acc_id;
+    var xhr  = new XMLHttpRequest()
+    xhr.open('GET', url, true)
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var json = JSON.parse(xhr.responseText);
+
+            localStorage.setItem('child_pic', json.img); 
+
+            
+        }
+
+
+            
+    }
+    xhr.send(null);    
+}
+
 
 function register_user(form,acc_type){
        
@@ -205,14 +227,20 @@ function register_user(form,acc_type){
 
 
 function get_pic(acc_id){
-    
+    var acc_id = localStorage.getItem("acc_id");
     var url  = "https://cryptic-fjord-60133.herokuapp.com/api/v3/profileget/"+acc_id;
     var xhr  = new XMLHttpRequest()
     xhr.open('GET', url, true)
     xhr.onreadystatechange = function () { 
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            localStorage.setItem('parent_pic', json.img);
+            var acc_type = localStorage.getItem('acc_type');
+            if(acc_type == 1){
+               localStorage.setItem('parent_pic', json.img); 
+           }else if(acc_type == 2){
+                localStorage.setItem('teacher_pic', json.img);
+           }
+            
         }
 
 
