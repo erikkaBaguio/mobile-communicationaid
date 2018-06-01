@@ -149,10 +149,11 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <script>
 var acc_type = localStorage.getItem("acc_type");
+var acc_id = localStorage.getItem("acc_id");
 if (acc_type == 2){
 	$(document).ready(function(){
 	  var acc_id = localStorage.getItem('acc_id');
-	    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/progress_view",function(data){
+	    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/progress_view="+acc_id,function(data){
 	      var pictures='';
 	      $.each(data,function(key,value){
 	      	
@@ -201,9 +202,12 @@ function detail(prog_num){
 	      	localStorage.setItem('prog_time', value.prog_time);
 	      	localStorage.setItem('prog_title', value.prog_title);
 	      	localStorage.setItem('score', value.score);
+	      	localStorage.setItem('teacher', value.acc_id);
+	      	var teacher = localStorage.getItem("teacher");
 	      	// var c_id = localStorage.getItem("childid");
 	      	// alert(c_id)
 	      	// aboutc(c_id)
+	      	get_tech(teacher);
 	      	var tits = localStorage.getItem("prog_title");
 	      	alert("Loading daetails about "+tits)
 	      	location = 'report_details.html';
@@ -213,6 +217,24 @@ function detail(prog_num){
     xhr.send(null)
 
     
+}
+
+function get_tech(teacher){
+	var url  = "https://cryptic-fjord-60133.herokuapp.com/api/teacher/"+teacher;
+    var xhr  = new XMLHttpRequest()
+    xhr.open('GET', url, true)
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var value = JSON.parse(xhr.responseText);
+            var teacher_name = value.fname_t+" "+value.lname_t;
+            localStorage.setItem('teacher_name', teacher_name);
+	      	
+	      	
+        }
+
+    }
+    xhr.send(null)
+
 }
 
 // function aboutc(c_id){
