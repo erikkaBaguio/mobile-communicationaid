@@ -130,16 +130,17 @@ function pasuser(form) {
             localStorage.clear();
             localStorage.setItem('acc_id', json.acc_id);
             var acc_id = localStorage.getItem('acc_id');
-            alert(acc_id)
+            
             localStorage.setItem('token', json.token);
             localStorage.setItem('acc_type', json.acc_type);
             localStorage.setItem('email', json.email);
             console.log(json.token);
             
             get_info();
-            
+            get_pic(acc_id);
 
             console.log(json);
+            alert(acc_id)
         }
         
     }
@@ -200,6 +201,24 @@ function register_user(form,acc_type){
     alert("Thanks " + form.id.value  + "! You are now Registered.");
     
 
+}
+
+
+function get_pic(acc_id){
+    
+    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/v3/profileget/"+acc_id;
+    var xhr  = new XMLHttpRequest()
+    xhr.open('GET', url, true)
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var json = JSON.parse(xhr.responseText);
+            localStorage.setItem('parent_pic', json.img);
+        }
+
+
+            
+    }
+    xhr.send(null);
 }
 
 

@@ -92,7 +92,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     document.getElementById("email").innerHTML = localStorage.getItem("email");
     document.getElementById("gender_p").innerHTML = localStorage.getItem("gender_p");
     document.getElementById("bio").innerHTML = bio
-    document.getElementById('pic').src = localStorage.getItem('parent_pic');
+    var memes = document.getElementById('pic');
+    memes.setAttribute('src', localStorage.getItem('parent_pic'));
+
     function edit(){
       
       localStorage.setItem('edit', 'true');

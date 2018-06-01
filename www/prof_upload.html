@@ -48,6 +48,7 @@ function formCreate(acc_id, img_type, filetype1, fileVal1){
   function uploadImage(){
     alert("in")
   var acc_id = localStorage.getItem('acc_id');
+  var acc_type = localStorage.getItem('acc_type');
     
     
       $.ajax({
@@ -60,8 +61,16 @@ function formCreate(acc_id, img_type, filetype1, fileVal1){
       async: false,
       success: function(response) {
         if(response.msg=='ok'){
-          alert("successfully uploaded")
-          location="ParentProfile.html";
+          alert(response.img)
+          
+          if(acc_type == 1){
+            localStorage.setItem('parent_pic', response.img);
+            location="ParentProfile.html";
+          }else if(acc_type == 2){
+            localStorage.setItem('teacher_pic', response.img);
+            location = "TeacherProfile.html";
+          }
+          
               
         }
         else{
