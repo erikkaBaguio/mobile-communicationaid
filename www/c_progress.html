@@ -149,7 +149,7 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <script>
 var acc_type = localStorage.getItem("acc_type");
-if (acc_type == 1){
+if (acc_type == 2){
 	$(document).ready(function(){
 	  var acc_id = localStorage.getItem('acc_id');
 	    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/progress_view",function(data){
@@ -166,7 +166,7 @@ if (acc_type == 1){
 	    });
 	  });
 }
-else if(acc_type == 2) {
+else if(acc_type == 1) {
 	var c_id = localStorage.getItem("c_id");
   $(document).ready(function(){
 	  var acc_id = localStorage.getItem('acc_id');
