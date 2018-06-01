@@ -115,16 +115,22 @@
 <div class="w3-top">
  <div class="w3-bar w3-right-align w3-large w3-blue">
   <img class="w3-left" src="PATicon1.png" alt="logo" width="210px" height="95px"/>
+  <a onclick="back()" class="w3-bar-item w3-button w3-right w3-blue w3-large"></i>Back</a>
   <!-- <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-sky-blue" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a> -->
 
  </div>
 </div>
-<script>
-    function logout(){
-      localStorage.clear();
-      location = "login.html";
-    }
-</script>
+ <script>
+            function back(){
+                var acc_type = localStorage.getItem("acc_type");
+                if (acc_type == 1){
+                    location = "p_mode.html"
+                }
+                else if(acc_type == 2) {
+                    location = "t_mode.html"
+                }  
+            }
+        </script>
 <!-- 
   <nav class="navbar sticky-top navbar-light bg-light">
      <img src="static/logo.png" alt="logo" width="200px" height="70px"/>
@@ -142,20 +148,93 @@
 </body>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script>
-$(document).ready(function(){
-  var acc_id = localStorage.getItem('acc_id');
-    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/progress_view",function(data){
-      var pictures='';
-      $.each(data,function(key,value){
+var acc_type = localStorage.getItem("acc_type");
+if (acc_type == 1){
+	$(document).ready(function(){
+	  var acc_id = localStorage.getItem('acc_id');
+	    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/progress_view",function(data){
+	      var pictures='';
+	      $.each(data,function(key,value){
+	      	
 
-        pictures += '<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bodyx yellow" onclick="location.href="enroll_home.html"style="border-radius: 0 50px 50px 0; margin-top: 80px">';
-        pictures+='<p>'+value.prog_title+'</p>'
-        pictures+='</div>';
+	        pictures += '<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bodyx yellow" onclick="detail('+value.prog_num+')"style="border-radius: 0 50px 50px 0; margin-top: 80px">';
+	        pictures+='<p>'+value.prog_title+'</p>'
+	        pictures+='</div>';
 
-      });
-      $('#progs').append(pictures);
-    });
-  });
+	      });
+	      $('#progs').append(pictures);
+	    });
+	  });
+}
+else if(acc_type == 2) {
+	var c_id = localStorage.getItem("c_id");
+  $(document).ready(function(){
+	  var acc_id = localStorage.getItem('acc_id');
+	    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/progress_view/cid="+c_id,function(data){
+	      var pictures='';
+	      $.each(data,function(key,value){
+	      	
+
+	        pictures += '<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 bodyx yellow" onclick="detail('+value.prog_num+')"style="border-radius: 0 50px 50px 0; margin-top: 80px">';
+	        pictures+='<p>'+value.prog_title+'</p>'
+	        pictures+='</div>';
+
+	      });
+	      $('#progs').append(pictures);
+	    });
+	  });
+} 
+
+function detail(prog_num){
+
+	// var acc_type = localStorage.getItem("acc_type");
+	var url  = "https://cryptic-fjord-60133.herokuapp.com/api/progress_view/"+prog_num;
+    var xhr  = new XMLHttpRequest()
+    xhr.open('GET', url, true)
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var value = JSON.parse(xhr.responseText);
+            localStorage.setItem('childid', value.childid);
+	      	localStorage.setItem('details', value.details);
+	      	localStorage.setItem('prog_date', value.prog_date);
+	      	localStorage.setItem('prog_num', value.prog_num);
+	      	localStorage.setItem('prog_time', value.prog_time);
+	      	localStorage.setItem('prog_title', value.prog_title);
+	      	localStorage.setItem('score', value.score);
+	      	// var c_id = localStorage.getItem("childid");
+	      	// alert(c_id)
+	      	// aboutc(c_id)
+	      	var tits = localStorage.getItem("prog_title");
+	      	alert("Loading daetails about "+tits)
+	      	location = 'report_details.html';
+        }
+
+    }
+    xhr.send(null)
+
+    
+}
+
+// function aboutc(c_id){
+// 	var url  = "https://cryptic-fjord-60133.herokuapp.com/api/child/"+c_id;
+//     var xhr  = new XMLHttpRequest()
+//     xhr.open('GET', url, true)
+//     xhr.onreadystatechange = function () { 
+//         if (xhr.readyState == 4 && xhr.status == 200) {
+//             var json = JSON.parse(xhr.responseText);
+//             alert(json)
+//             localStorage.setItem('fname', json.fname_c);
+//             localStorage.setItem('lname', value.lname_c);
+	      	
+	      	
+	      	
+// 	      	alert(json.fname)
+//         }
+
+//     }
+//     xhr.send(null)
+// }
+
 </script>
 
 </div>
