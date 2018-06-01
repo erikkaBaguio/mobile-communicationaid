@@ -69,9 +69,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </div>
 
 <script>
-  var diagnosis = localStorage.getItem("diagnosis");
   
-  document.getElementById("diagnosis").innerHTML =  diagnosis;  
+  
+  document.getElementById("diagnosis").innerHTML =  localStorage.getItem("diagnosis");
    document.getElementById("name").innerHTML = localStorage.getItem("full_name");
     document.getElementById("classes").innerHTML = localStorage.getItem("classes");
     document.getElementById("birthday").innerHTML = localStorage.getItem("bday_c");
@@ -79,18 +79,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
     var memes = document.getElementById('pic');
     memes.setAttribute('src', localStorage.getItem('child_pic'));
+
     function edit(){
       
       localStorage.setItem('edit_c', 'true');
       location = "edit_c.html";
     }
 
+
     function upload(){
-      location = "prof_upload.html"
-    }
-    function upload(){
-      localStorage.setItem('child', 'true');
-      location = "prof_upload.html"
+      
+      location = "pchild_upload.html";
     }        
 </script>
 
