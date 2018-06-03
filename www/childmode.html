@@ -11,10 +11,24 @@
 <link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
 
 <head>	
-	<div class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
-  	<span class="w3-left w3-padding">
-  	<img src="PATicon.png" alt="logo" width="40px" height="auto"/>PIC-A-TALK</span>
-	</div>
+<div class="w3-top">
+ <div class="w3-bar w3-right-align w3-large w3-green">
+  <img class="w3-left" src="PATicon1.png" alt="logo" width="220px" height="95px"/>
+   <a onclick= "back()">
+  <span style="float: right; padding-top: 30px; padding-right: 15px; font-size: 110%; color: black;">Back</span></a>
+ </div>
+         <script>
+            function back(){
+                var acc_type = localStorage.getItem("acc_type");
+                if (acc_type == 1){
+                    location = "p_mode.html"
+                }
+                else if(acc_type == 2) {
+                    location = "t_mode.html"
+                }  
+            }
+        </script>
+</div>
 </head>
 
 <style>

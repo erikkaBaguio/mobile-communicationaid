@@ -39,7 +39,7 @@ function get_info(){
 
                     var p_id = localStorage.getItem("p_id");
                     var bio_p = localStorage.getItem("bio_p");
-                    alert(bio_p)
+                    
 
                     if (acc_type == 1){
                                 location = "mode.html"
@@ -142,7 +142,7 @@ function pasuser(form) {
             get_pic(acc_id);
 
             console.log(json);
-            alert(acc_id)
+            
         }
         
     }

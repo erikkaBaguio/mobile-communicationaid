@@ -1,83 +1,109 @@
 <!DOCTYPE html>
 <html>
-<title>NUMBERS</title>
-<link rel="shortcut icon" href="static/images/PATicon.png" />
-<meta charset="UTF-8"><link rel="stylesheet" href="css/w3.css">
-<link rel="stylesheet" href="css/font.css">
-<link rel="stylesheet" href="css/font-awesome.css">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/bootstrap-grid.css">
-<link rel="stylesheet" href="css/bootstrap-reboot.css">
-<link rel="stylesheet" href="js/bootstrap.bundle.js">
-<link rel="stylesheet" href="js/bootstrap.js">
-<link rel="stylesheet" href="css/agency.min.css">
+<title>Numbers</title>
+<link rel="shortcut icon" href="clothes pics/clothesicon.png">
+<link rel="shorcut-icon" href="clothes pics/clothesicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-.w3-quarter img{margin-bottom: -6px; cursor: pointer}
-.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+.w3-third img{margin: 1px; opacity: 0.8; cursor: pointer}
+.w3-third img:hover{opacity: 1}
 </style>
-<body class="w3-light-grey">
+<body class="w3-light-grey w3-content" style="max-width:1600px">
 
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-blue w3-xlarge w3-padding-32">
-  <span class="w3-left w3-padding" style="font-size: 50px">
-  <img src="food/foodicon.png" alt="logo" width="30px" height="auto"/>NUMBERS</span>
-  <a href="#">
-    <span style="float: right; padding-top: 15px; padding-right: 20px; font-size: 200%; color:black;">&lt; Back</span>
-  </a>
+<header class="w3-container w3-top w3-hide-large w3-green w3-xlarge w3-padding-16">
+  <div class="w3-left w3-padding-16"><img src="pics/numbers.png" alt="logo" width="50px" height="auto"/>NUMBERS</div>
+  <a href="educational.html">
+      <span style="float: right; padding-top: 18px; padding-right: 5px; font-size: 80%;">Back</span></a>
+    </div>
 </header>
 
+
 <!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content" style="max-width:1600px;margin-top:150px">
+<div class="w3-main" style="margin-left:300px">
 
-  <!-- NUMBERS -->
-  <div class="w3-container w3-light-grey w3-center w3-text-light-grey w3-padding-32" id="food">
-    <div class="w3-quarter hover">
-        <img src="NUMBERS/0.png" style="width:100%" id="0" onclick="document.getElementById('0_play').play();return false;" alt="0">
-        <img src="NUMBERS/4.png" style="width:100%" id="4" onclick="document.getElementById('4_play').play();return false;" alt="4">
-        <img src="NUMBERS/8.png" style="width:100%" id="8" onclick="document.getElementById('8_play').play();return false;" alt="8">
-        <img src="NUMBERS/12.png" style="width:100%" id="12" onclick="document.getElementById('12_play').play();return false;" alt="12">
-        <img src="NUMBERS/16.png" style="width:100%" id="16" onclick="document.getElementById('16_play').play();return false;" alt="16">
-        <img src="NUMBERS/20.png" style="width:100%" id="20" onclick="document.getElementById('20_play').play();return false;" alt="20">
-        <img src="NUMBERS/24.png" style="width:100%" id="24" onclick="document.getElementById('24_play').play();return false;" alt="24">
-        <img src="NUMBERS/28.png" style="width:100%" id="28" onclick="document.getElementById('28_play').play();return false;" alt="28">
-   </div>
-
-   <div class="w3-quarter hover">
-      <img src="NUMBERS/1.png" style="width:100%" id="1" onclick="document.getElementById('1_play').play();return false;" alt="1">
-      <img src="NUMBERS/5.png" style="width:100%" id="5" onclick="document.getElementById('5_play').play();return false;" alt="5">
-      <img src="NUMBERS/9.png" style="width:100%" id="9" onclick="document.getElementById('9_play').play();return false;" alt="9">
-      <img src="NUMBERS/13.png" style="width:100%" id="13" onclick="document.getElementById('13_play').play();return false;" alt="13">
-      <img src="NUMBERS/17.png" style="width:100%" id="17" onclick="document.getElementById('17_play').play();return false;" alt="17">
-      <img src="NUMBERS/21.png" style="width:100%" id="21" onclick="document.getElementById('21_play').play();return false;" alt="21">
-      <img src="NUMBERS/25.png" style="width:100%" id="25" onclick="document.getElementById('25_play').play();return false;" alt="25">
-      <img src="NUMBERS/29.png" style="width:100%" id="26" onclick="document.getElementById('29_play').play();return false;" alt="29">
-
+  <!-- Push down content on small screens --> 
+  <div class="w3-hide-large" style="margin-top:120px"></div>
+  
+  <!-- Photo grid -->
+  <div class="w3-row">
+    <div class="w3-third">
+      <img src="NUMBERS/1.png" style="width:32%" onclick="onClick(this);document.getElementById('1_play').play(); return false;" alt="ONE">
+      <img src="NUMBERS/2.png" style="width:32%" onclick="onClick(this);document.getElementById('2_play').play(); return false;" alt="TWO">
+      <img src="NUMBERS/3.png" style="width:32%" onclick="onClick(this);document.getElementById('3_play').play(); return false;" alt="THREE">
     </div>
 
-    <div class="w3-quarter hover">
-      <img src="NUMBERS/2.png" style="width:100%" id="2" onclick="document.getElementById('2_play').play();return false;" alt="2">
-      <img src="NUMBERS/6.png" style="width:100%" id="6" onclick="document.getElementById('6_play').play();return false;" alt="6">
-      <img src="NUMBERS/10.png" style="width:100%" id="10" onclick="document.getElementById('10_play').play();return false;" alt="10">
-      <img src="NUMBERS/14.png" style="width:100%" id="14" onclick="document.getElementById('14_play').play();return false;" alt="14">
-      <img src="NUMBERS/18.png" style="width:100%" id="18" onclick="document.getElementById('18_play').play();return false;" alt="18">
-      <img src="NUMBERS/22.png" style="width:100%" id="22" onclick="document.getElementById('22_play').play();return false;" alt="22">
-      <img src="NUMBERS/26.png" style="width:100%" id="26" onclick="document.getElementById('26_play').play();return false;" alt="26">
-      <img src="NUMBERS/30.png" style="width:100%" id="30" onclick="document.getElementById('30_play').play();return false;" alt="30">
+    <div class="w3-third">
+      <img src="NUMBERS/4.png" style="width:32%" onclick="onClick(this);document.getElementById('4_play').play(); return false;" alt="FOUR">
+      <img src="NUMBERS/5.png" style="width:32%" onclick="onClick(this);document.getElementById('5_play').play(); return false;" alt="FIVE">
+      <img src="NUMBERS/6.png" style="width:32%" onclick="onClick(this);document.getElementById('6_play').play(); return false;" alt="SIX">
+    </div>
+    
+    <div class="w3-third">
+      <img src="NUMBERS/7.png" style="width:32%" onclick="onClick(this);document.getElementById('7_play').play(); return false;" alt="SEVEN">
+      <img src="NUMBERS/8.png" style="width:32%" onclick="onClick(this);document.getElementById('8_play').play(); return false;" alt="EIGHT">
+      <img src="NUMBERS/9.png" style="width:32%" onclick="onClick(this);document.getElementById('9_play').play(); return false;" alt="NINE">
     </div>
 
-    <div class="w3-quarter hover">
-      <img src="NUMBERS/3.png" style="width:100%" id="3" onclick="document.getElementById('3_play').play();return false;" alt="3">
-      <img src="NUMBERS/7.png" style="width:100%" id="7" onclick="document.getElementById('7_play').play();return false;" alt="7">
-      <img src="NUMBERS/11.png" style="width:100%" id="11" onclick="document.getElementById('11_play').play();return false;" alt="11">
-      <img src="NUMBERS/15.png" style="width:100%" id="15" onclick="document.getElementById('15_play').play();return false;" alt="15">
-      <img src="NUMBERS/19.png" style="width:100%" id="19" onclick="document.getElementById('19_play').play();return false;" alt="19">
-      <img src="NUMBERS/23.png" style="width:100%" id="23" onclick="document.getElementById('23_play').play();return false;" alt="23">
-      <img src="NUMBERS/27.png" style="width:100%" id="27" onclick="document.getElementById('27_play').play();return false;" alt="27">
+    <div class="w3-third">
+      <img src="NUMBERS/10.png" style="width:32%" onclick="onClick(this);document.getElementById('10_play').play(); return false;" alt="TEN">
+      <img src="NUMBERS/11.png" style="width:32%" onclick="onClick(this);document.getElementById('11_play').play(); return false;" alt="ELEVEN">
+      <img src="NUMBERS/12.png" style="width:32%" onclick="onClick(this);document.getElementById('12_play').play(); return false;" alt="TWELVE">
     </div>
+
+    <div class="w3-third">
+      <img src="NUMBERS/13.png" style="width:32%" onclick="onClick(this);document.getElementById('13_play').play(); return false;" alt="THIRTEEN">
+      <img src="NUMBERS/14.png" style="width:32%" onclick="onClick(this);document.getElementById('14_play').play(); return false;" alt="FOURTEEN">
+      <img src="NUMBERS/15.png" style="width:32%" onclick="onClick(this);document.getElementById('15_play').play(); return false;" alt="FIFTHEEN">
+    </div>
+
+    <div class="w3-third">
+      <img src="NUMBERS/16.png" style="width:32%" onclick="onClick(this);document.getElementById('16_play').play(); return false;" alt="SIXTEEN">
+      <img src="NUMBERS/17.png" style="width:32%" onclick="onClick(this);document.getElementById('17_play').play(); return false;" alt="SEVENTEEN">
+      <img src="NUMBERS/18.png" style="width:32%" onclick="onClick(this);document.getElementById('18_play').play(); return false;" alt="EIGHTEEN">
+    </div>
+
+    <div class="w3-third">
+      <img src="NUMBERS/19.png" style="width:32%" onclick="onClick(this);document.getElementById('19_play').play(); return false;" alt="NINETEEN">
+      <img src="NUMBERS/20.png" style="width:32%" onclick="onClick(this);document.getElementById('20_play').play(); return false;" alt="TWENTY">
+      <img src="NUMBERS/21.png" style="width:32%" onclick="onClick(this);document.getElementById('21_play').play(); return false;" alt="TWENTY-ONE">
+    </div>
+
+    <div class="w3-third">
+      <img src="NUMBERS/22.png" style="width:32%" onclick="onClick(this);document.getElementById('22_play').play(); return false;" alt="TWENTY-TWO">
+      <img src="NUMBERS/23.png" style="width:32%" onclick="onClick(this);document.getElementById('23_play').play(); return false;" alt="TWENTY-THREE">
+      <img src="NUMBERS/24.png" style="width:32%" onclick="onClick(this);document.getElementById('24_play').play(); return false;" alt="TWENTY-FOUR">
+    </div>
+
+    <div class="w3-third">
+      <img src="NUMBERS/25.png" style="width:32%" onclick="onClick(this);document.getElementById('25_play').play(); return false;" alt="TWENTY-FIVE">
+      <img src="NUMBERS/26.png" style="width:32%" onclick="onClick(this);document.getElementById('26_play').play(); return false;" alt="TWENTY-SIX">
+      <img src="NUMBERS/27.png" style="width:32%" onclick="onClick(this);document.getElementById('27_play').play(); return false;" alt="TWENTY-SEVEN">
+    </div>
+
+    <div class="w3-third">
+      <img src="NUMBERS/28.png" style="width:32%" onclick="onClick(this);document.getElementById('28_play').play(); return false;" alt="TWENTY-EIGHT">
+      <img src="NUMBERS/29.png" style="width:32%" onclick="onClick(this);document.getElementById('29_play').play(); return false;" alt="TWENTY-NINE">
+      <img src="NUMBERS/30.png" style="width:32%" onclick="onClick(this);document.getElementById('30_play').play(); return false;" alt="THIRTY">
+    </div>  
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
 
     
-
     <audio id="0_play">
     <source src="audio/0.mp3" type="audio/ogg" />
     </audio>
@@ -172,26 +198,32 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <source src="audio/30.mp3" type="audio/ogg" />
     </audio>
 
-  </div>
-  
+
+<!-- End page content -->
 </div>
 
 <script>
-
+// Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
 }
-
+ 
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
 }
-
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+function logout(){
+    location = "login.html"
+ }
 </script>
-
- <script src="jQuery-2.1.4.min.js"></script>
- <script src="../static/js/app.js"></script>
 
 
 </body>

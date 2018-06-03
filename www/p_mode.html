@@ -115,10 +115,10 @@
 
 <div class="w3-top">
  <div class="w3-bar w3-right-align w3-large w3-blue">
-  <img class="w3-left" src="PATicon1.png" alt="logo" style="width:210px; height:95px;"/>
+  <img onclick="back()" class="w3-left" src="PATicon1.png" alt="logo" style="width:210px; height:95px;"/>
   <!-- <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-sky-blue" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a> -->
   <a onclick="logout()" class="w3-bar-item w3-button w3-right w3-padding-large w3-blue"></i>Log Out</a>
-   <a href="/team" class="w3-bar-item w3-button w3-right w3-padding-large w3-blue"></i>Contact Us</a>
+   <a href="team.html" class="w3-bar-item w3-button w3-right w3-padding-large w3-blue"></i>Contact Us</a>
   </a>
  </div>
 </div>
@@ -126,6 +126,15 @@
     function logout(){
       localStorage.clear();
       location = "login.html";
+    }
+    function back(){
+        var acc_type = localStorage.getItem("acc_type");
+        if (acc_type == 1){
+            location = "p_mode.html"
+        }
+        else if(acc_type == 2) {
+            location = "t_mode.html"
+        }  
     }
 </script>
 <!-- 

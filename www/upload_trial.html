@@ -155,9 +155,14 @@ $("#imgInp").change(function() {
               alert("successfully uploaded "+cat_type+" Category")
               if(cat_type == "Places"){
                 location = "places.html";
-              }else if(cat_type == "Clothes"){
-                location = "clothes.html";
-              }else if(cat_type == "Toys"){
+              }else if(cat_type == "Clothes-Boys"){
+                
+                  location = "clothes_b.html";
+              }else if(cat_type == "Clothes-Girls"){
+                  location = "clothes_g.html";
+              }
+                
+              else if(cat_type == "Toys"){
                 location = "toys.html";
               }else if(cat_type == "Food"){
                 location = "food.html";

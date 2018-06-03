@@ -105,10 +105,17 @@
 <div class="w3-top">
  <div class="w3-bar w3-right-align w3-large w3-pink">
   <img class="w3-left" src="PATicon1.png" alt="logo" width="210px" height="95px"/>
-  <a href="login.html" class="w3-bar-item w3-button w3-right w3-padding-large w3-pink"></i>Log Out</a>
-   <a href="/team" class="w3-bar-item w3-button w3-right w3-padding-large w3-pink"></i>Contact Us</a>
+  <a onclick="logout()" class="w3-bar-item w3-button w3-right w3-padding-large w3-pink"></i>Log Out</a>
+   <a href="team.html" class="w3-bar-item w3-button w3-right w3-padding-large w3-pink"></i>Contact Us</a>
   </a>
  </div>
+<script>
+    function logout(){
+      localStorage.clear();
+      location = "login.html";
+    }
+    
+</script>
 </div>
 
 
