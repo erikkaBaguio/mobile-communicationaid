@@ -180,28 +180,7 @@ function post(){
     xhr.send(json);
 }
 
-function comment(forum_no){
-    var acc_id = localStorage.getItem("acc_id");
-    
-    var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    
-    xhr = new XMLHttpRequest();
-    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/comment";
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/json");
-    xhr.onreadystatechange = function () { 
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var json = JSON.parse(xhr.responseText);
-            location = "p_forum.html";
-            // document.getElementById('comment').innerHTML = json.details;
-        }
-    }
-    var json =JSON.stringify({"acc_id": acc_id, 'date':date, 'time':time, "forum_no":forum_no, "details":document.getElementById('comment_box').value});
-    console.log(json)
-    xhr.send(json);
-}
+
 
 
 </script>
@@ -218,7 +197,15 @@ function comment(forum_no){
           data = response.reverse();
         var forum='';
         $.each(data,function(key,value){
-          
+                     $(document).ready(function(){
+            $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/comment/"+value.forum_no,function(data){
+              var forum='';
+              $.each(data,function(key,value){
+                forum+='<div class="row">          <div class="col-xs-3" style="width: 25%; padding: 3%;">            <img id="pic" src="https://scontent.fmnl3-2.fna.fbcdn.net/v/t1.0-9/10523561_10203263504898679_14334644979234152_n.jpg?_nc_cat=0&amp;_nc_eui2=AeFRuD7DNykfoQipglQK-ESkOaQLmIhMglZ6OQgqVgFQ3s1b-4dzeSaSxJdBne3QAZpSSlkn2l5PJaj-h2WAKhiqGybXZW_wRYVImZkHFWIGkjji27X1OhmUExqF5NViw70&amp;oh=2b88589d05f5d4220af404169e9832a7&amp;oe=5BB9EE8D" style="max-width: 100%; max-height: 100%; height:50px;  width:50px;">          </div>          <div class="cl-xs-9">            <div class="col-xs-12" style="    width: 76%; padding: 8px 10px; margin: 8px 0; display: inline-block; border: 1px solid #fcf8e3; background-color: #ffff; border-radius: 4px; box-sizing: border-box; margin-left: -6%;"><div class="cl-xs-9"><span style="font-weight:bold;">'+value.name+'</span><br><span style="font-size:12px;">Date:'+value.date+' Time:'+value.time+'</span></div><h3>'+value.details+'</h3></div>         </div>      </div>'
+              });
+              $('#'+value.forum_no).append(forum);
+            });
+          });
 
           forum+='<div class="panel panel-default" style="box-shadow: 0 0 15px 1px #80808082;">'
                           
@@ -239,14 +226,18 @@ function comment(forum_no){
                           
           
 
-           forum+='                     <div id="comments" class="panel-heading" style="background-color: #cfe5f7;">'
+           forum+='<div id="'+value.forum_no+'" class="panel-heading" style="background-color: #cfe5f7;">'
           
+
+
+
+
           forum+='      <div class="row">'
           forum+='          <div class="col-xs-3">'
           forum+='            <img id="pic" src="'+image+'" style="max-width: 100%; max-height: 100%; height:50px;  width:50px;">'
           forum+='          </div>'
           forum+='          <div class="cl-xs-9">'
-          forum+='            <input id="comment_box" type="text" name="comment" style="width: 52%; padding: 8px 10px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; margin-left: -6%;">'
+          forum+='            <input id="'+value.forum_no+'1" type="text" name="comment" style="width: 52%; padding: 8px 10px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; margin-left: -6%;">'
           forum+='            <button onclick="comment('+value.forum_no+')" type="button" class="btn btn-primary" style="margin-top: -17%; margin-left:75%; width:20%;">post</button>'
             forum+='        </div>'
           forum+='      </div>'
@@ -258,15 +249,28 @@ function comment(forum_no){
       });
     });
 
-    $(document).ready(function(){
-    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/view_all_comment",function(data){
-      var forum='';
-      $.each(data,function(key,value){
-        forum+='<div id="comments" class="row">          <div class="col-xs-3" style="width: 25%; padding: 3%;">            <img id="pic" src="https://scontent.fmnl3-2.fna.fbcdn.net/v/t1.0-9/10523561_10203263504898679_14334644979234152_n.jpg?_nc_cat=0&amp;_nc_eui2=AeFRuD7DNykfoQipglQK-ESkOaQLmIhMglZ6OQgqVgFQ3s1b-4dzeSaSxJdBne3QAZpSSlkn2l5PJaj-h2WAKhiqGybXZW_wRYVImZkHFWIGkjji27X1OhmUExqF5NViw70&amp;oh=2b88589d05f5d4220af404169e9832a7&amp;oe=5BB9EE8D" style="max-width: 100%; max-height: 100%; height:50px;  width:50px;">          </div>          <div class="cl-xs-9">            <div class="col-xs-12" style="    width: 76%; padding: 8px 10px; margin: 8px 0; display: inline-block; border: 1px solid #fcf8e3; background-color: #ffff; border-radius: 4px; box-sizing: border-box; margin-left: -6%;">'+value.details+'</div>         </div>      </div>'
-      });
-      $('#comments').append(forum);
-    });
-  });
+    function comment(forum_no){
+    var acc_id = localStorage.getItem("acc_id");
+    
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    
+    xhr = new XMLHttpRequest();
+    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/comment";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var json = JSON.parse(xhr.responseText);
+            location = "p_forum.html";
+            // document.getElementById('comment').innerHTML = json.details;
+        }
+    }
+    var json =JSON.stringify({"acc_id": acc_id, 'date':date, 'time':time, "forum_no":forum_no, "details":document.getElementById(forum_no+"1").value});
+    console.log(json)
+    xhr.send(json);
+}
 
 </script>
 
