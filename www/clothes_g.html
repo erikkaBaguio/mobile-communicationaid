@@ -85,6 +85,10 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <img src="childgirl/sneakers.png" style="width:32%" onclick="onClick(this);document.getElementById('sneakers_play').play(); return false;" alt="Sneakers">
     </div>     -->
   </div>
+
+  <div id="loadpics" class="w3-third">
+    
+  </div>
   
   <!-- Modal for full size images on click-->
   <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
@@ -160,6 +164,8 @@ function onClick(element) {
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
+  var c_id = localStorage.getItem("c_id");
+  var d_image = document.getElementById('caption').getAttribute("src");
   captionText.innerHTML = element.alt;
 
   var today = new Date();
@@ -176,10 +182,10 @@ function onClick(element) {
             console.log(xhr.responseText);
         }
     }
-    var json =JSON.stringify({"clicks": "1", "log_date":date, "log_time":time, "category_type":"Clothes", "image_name":element.alt});
+
+     var json =JSON.stringify({"clicks": "1",'c_id':c_id, "log_date":date, "log_time":time, "category_type":"Clothes", "image_name":element.alt});
     console.log(json)
     xhr.send(json);
-
 }
 
 function logout(){
@@ -187,11 +193,12 @@ function logout(){
  }
 
   $(document).ready(function(){
+
   var acc_id = localStorage.getItem('acc_id');
     $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/v3/spec_categories/"+acc_id+"/Clothes-Girls",function(data){
       var pictures='';
       $.each(data,function(key,value){
-
+        
         pictures += '<img src="'+value.img+'" style="width:32%" onclick="onClick(this); adiioplay(\''+value.aud+'\'); return false;" alt="'+value.image_name+'">';
 
       });

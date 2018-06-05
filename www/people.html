@@ -18,20 +18,19 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-green w3-xlarge w3-padding-16">
-  <div class="w3-left w3-padding-16"><img src="clothes pics/clothesicon.png" alt="logo" width="40px" height="auto"/>CLOTHES</div>
+  <div class="w3-left w3-padding-16"><img src="pics/clothes.png" alt="logo" width="40px" height="auto"/>People/Characters</div>
    <a onclick="back()">
       <span style="float: right; padding-top: 18px; padding-right: 5px; font-size: 80%;">Back</span></a>
     </div>
     <script>
         function upload(){
-          localStorage.setItem('Cat_type', "Clothes-Boys");
+          localStorage.setItem('Cat_type', "Characters");
           location="upload_trial.html";
 
         }
         function back(){
-          location = "categories.html";
+          location = "childmode.html";
         }
-
       </script>
 </header>
 <div  class="w3-container w3-top w3-hide-large w3-gray w3-xlarge w3-padding-12" style="margin-top: 100px;">
@@ -48,48 +47,23 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   
   <!-- Photo grid -->
   <div class="w3-row">
-    <div class="w3-third">
-      <img src="childboy/tuxedo.png" style="width:32%" onclick="onClick(this);document.getElementById('tuxedo_play').play(); return false;" alt="Tuxedo">
-      <img src="childboy/jeans.png" style="width:32%" onclick="onClick(this);document.getElementById('jeans_play').play(); return false;" alt="Jeans">
-      <img src="childboy/jumper.png" style="width:32%" onclick="onClick(this);document.getElementById('jumper_play').play(); return false;" alt="Jumper">
-    </div>
+   
 
-    <div class="w3-third">
-      <img src="childboy/jumpsuit.png" style="width:32%" onclick="onClick(this);document.getElementById('jumpsuit_play').play(); return false;" alt="Jumpsuit">
-      <img src="childboy/pajamas.png" style="width:32%" onclick="onClick(this);document.getElementById('pajamas_play').play(); return false;" alt="Pajamas">
-      <img src="childboy/polo.png" style="width:32%" onclick="onClick(this);document.getElementById('polo_play').play(); return false;" alt="Polo">
-    </div>
+ 
     
-    <div class="w3-third">
-      <img src="childboy/raincoat.png" style="width:32%" onclick="onClick(this);document.getElementById('raincoat_play').play(); return false;" alt="Raincoat">
-      <img src="childboy/tanktop.png" style="width:32%" onclick="onClick(this);document.getElementById('tanktop_play').play(); return false;" alt="Tanktop">
-      <img src="childboy/shirt.png" style="width:32%" onclick="onClick(this);document.getElementById('shirt_play').play(); return false;" alt="Shirt">
-    </div>
+
 
 
     <!-- next page -->
-    <div class="w3-third">
-      <img src="childboy/shorts.png" style="width:32%" onclick="onClick(this);document.getElementById('shorts_play').play(); return false;" alt="Shorts">
-      <img src="childboy/trunks.png" style="width:32%" onclick="onClick(this);document.getElementById('trunks_play').play(); return false;" alt="Trunks">
-      <img src="childboy/brief.jpg" style="width:32%" onclick="onClick(this);document.getElementById('brief_play').play(); return false;" alt="Brief">
-    </div>
 
-    <div class="w3-third">
-      <img src="childboy/sweater.png" style="width:32%" onclick="onClick(this);document.getElementById('sweater_play').play(); return false;" alt="Sweater">
-      <img src="childboy/sweatpants.png" style="width:32%" onclick="onClick(this);document.getElementById('sweatpants_play').play(); return false;" alt="Sweatpants">
-      <img src="childboy/sandals.png" style="width:32%" onclick="onClick(this);document.getElementById('sandals_play').play(); return false;" alt="Sandals">
-    </div>
 
-    <div class="w3-third">
-      <img src="childboy/blackshoes.png" style="width:32%" onclick="onClick(this);document.getElementById('schoolshoes_play').play(); return false;" alt="School Shoes">
-      <img src="childboy/slippers.png" style="width:32%" onclick="onClick(this);document.getElementById('slippers_play').play(); return false;" alt="Slippers">
-      <img src="childboy/sneakers.png" style="width:32%" onclick="onClick(this);document.getElementById('sneakers_play').play(); return false;" alt="Sneakers">
-    </div> 
-      <div id="loadpics" class="w3-third">
+
+
+  <div id="loadpics" class="w3-third">
     
   </div>
-
-  </div>
+</div>
+</div>
   
   <!-- Modal for full size images on click-->
   <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
@@ -101,53 +75,41 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
 
     
-    <audio id="tuxedo_play">
-    <source src="audio/tuxedo.mp3" type="audio/ogg" />
+    <audio id="schoolshoes_play">
+    <source src="audio/schoolshoes.mp3" type="audio/ogg" />
     </audio>
     <audio id="jeans_play">
     <source src="audio/jeans.mp3" type="audio/ogg" />
     </audio>
-    <audio id="jumper_play">
-    <source src="audio/jumper.mp3" type="audio/ogg" />
+    <audio id="blouse_play">
+    <source src="audio/blouse.mp3" type="audio/ogg" />
     </audio>
-    <audio id="jumpsuit_play">
-    <source src="audio/jumpsuit.mp3" type="audio/ogg" />
+    <audio id="dress_play">
+    <source src="audio/dress.mp3" type="audio/ogg" />
     </audio>
     <audio id="pajamas_play">
     <source src="audio/pajamas.mp3" type="audio/ogg" />
     </audio>
-    <audio id="polo_play">
-    <source src="audio/polo.mp3" type="audio/ogg" />
-    </audio>
-    <audio id="raincoat_play">
-    <source src="audio/raincoat.mp3" type="audio/ogg" />
-    </audio>
     <audio id="tanktop_play">
     <source src="audio/tanktop.mp3" type="audio/ogg" />
-    </audio>
-    <audio id="shirt_play">
-    <source src="audio/shirt.mp3" type="audio/ogg" />
     </audio>
     <audio id="shorts_play">
     <source src="audio/shorts.mp3" type="audio/ogg" />
     </audio>
-    <audio id="trunks_play">
-    <source src="audio/trunks.mp3" type="audio/ogg" />
+    <audio id="skirt_play">
+    <source src="audio/skirt.mp3" type="audio/ogg" />
     </audio>
-    <audio id="brief_play">
-    <source src="audio/brief.mp3" type="audio/ogg" />
+    <audio id="panty_play">
+    <source src="audio/panty.mp3" type="audio/ogg" />
     </audio>
     <audio id="sweater_play">
     <source src="audio/sweater.mp3" type="audio/ogg" />
     </audio>
-    <audio id="sweatpants_play">
-    <source src="audio/sweatpants.mp3" type="audio/ogg" />
+    <audio id="swimsuit_play">
+    <source src="audio/swimsuit.mp3" type="audio/ogg" />
     </audio>
     <audio id="sandals_play">
     <source src="audio/sandals.mp3" type="audio/ogg" />
-    </audio>
-    <audio id="schoolshoes_play">
-    <source src="audio/schoolshoes.mp3" type="audio/ogg" />
     </audio>
     <audio id="slippers_play">
     <source src="audio/slippers.mp3" type="audio/ogg" />
@@ -195,22 +157,23 @@ function onClick(element) {
             console.log(xhr.responseText);
         }
     }
-    var json =JSON.stringify({"clicks": "1",'c_id':c_id, "log_date":date, "log_time":time, "category_type":"Clothes", "image_name":element.alt});
+
+     var json =JSON.stringify({"clicks": "1",'c_id':c_id, "log_date":date, "log_time":time, "category_type":"People/Characters", "image_name":element.alt});
     console.log(json)
     xhr.send(json);
-
 }
 
 function logout(){
     location = "login.html";
  }
 
- $(document).ready(function(){
+  $(document).ready(function(){
+
   var acc_id = localStorage.getItem('acc_id');
-    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/v3/spec_categories/"+acc_id+"/Clothes-Boys",function(data){
+    $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/v3/spec_categories/"+acc_id+"/Characters",function(data){
       var pictures='';
       $.each(data,function(key,value){
-
+        
         pictures += '<img src="'+value.img+'" style="width:32%" onclick="onClick(this); adiioplay(\''+value.aud+'\'); return false;" alt="'+value.image_name+'">';
 
       });
@@ -222,6 +185,7 @@ function adiioplay(val){
   audio = new Audio(val);
   audio.play();
 }
+
 
 </script>
 
