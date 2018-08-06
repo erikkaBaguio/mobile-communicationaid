@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Easy Bootstrap Gallery with Pop-up Modal Carousel</title>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <body>
+
+  <div id="imagesList" hidden>
+    <img src="childboy/tuxedo.png" class="img-responsive">
+    <img src="childboy/jeans.png" class="img-responsive">
+    <img src="childboy/jumper.png" class="img-responsive">
+    <img src="childboy/sandals.png" class="img-responsive">
+    <img src="childboy/slippers.png" class="img-responsive">
+    <img src="childboy/sneakers.png" class="img-responsive">
+  </div>
+
+  <div class="container">
+    <div id="imageModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">  
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+              </div>
+              <div class="modal-body">
+                <a class="left carousel-control" onclick="previousImage()">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+              <a class="right carousel-control" onclick="nextImage()">
+             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+                <!-- <span id="previousImage" class="glyphicon glyphicon-menu-left" onclick="previousImage()"></span>
+                <span id="nextImage" class="glyphicon glyphicon-menu-right" onclick="nextImage()"></span> -->
+                <p id="currentImageNumber" hidden>number</p>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row" id="imageRow1">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <a onclick="showImageGallery(0)">
+            <img src="childboy/tuxedo.png" class="img-responsive" onclick="document.getElementById('tuxedo_play').play(); return false;" alt="Tuxedo">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <a onclick="showImageGallery(1)">
+            <img src="childboy/jeans.png" class="img-responsive">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <a onclick="showImageGallery(2)">
+            <img src="childboy/jumper.png" class="img-responsive">
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class="row" id="imageRow2">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <a onclick="showImageGallery(3)">
+            <img src="childboy/sandals.png" class="img-responsive">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <a onclick="showImageGallery(4)">
+            <img src="childboy/slippers.png" class="img-responsive">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <a onclick="showImageGallery(5)">
+            <img src="childboy/sandals.png" class="img-responsive">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="tuxedo_play">
+    <source src="audio/tuxedo.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="jeans_play">
+    <source src="audio/jeans.mp3" type="audio/ogg" />
+    </audio>
+
+  <script>
+
+    var imagesList = $("div#imagesList");
+    var imagesListLength = imagesList.children().length;
+
+    var showImageGallery = function(imageNumber){
+
+      $('.modal-body>img').remove();
+
+      $('#imageModal').modal('show');
+      
+      var image = imagesList.children()[imageNumber];
+      $(image).clone().appendTo('.modal-body');
+
+      $("#currentImageNumber").text(imageNumber);
+
+    }
+
+    var nextImage = function(){
+
+      $('.modal-body>img').remove();
+
+      var nextNum = parseInt($("#currentImageNumber").text());
+      if(nextNum == imagesListLength-1){ nextNum = -1;}
+      $("#currentImageNumber").text(nextNum+1);
+
+      var image = imagesList.children()[nextNum+1];
+      $(image).clone().appendTo('.modal-body');
+
+    }
+
+    var previousImage = function(){
+
+      $('.modal-body>img').remove();
+
+      var previousNum = parseInt($("#currentImageNumber").text());
+      if(previousNum == 0){ previousNum = imagesListLength;}
+      $("#currentImageNumber").text(previousNum-1);
+
+      var image = imagesList.children()[previousNum-1];
+      $(image).clone().appendTo('.modal-body');
+
+    }
+
+    
+    $(".carousel").swipe({
+
+    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+
+    if (direction == 'left') $(this).carousel('next');
+    if (direction == 'right') $(this).carousel('prev');
+
+  },
+
+    allowPageScroll:"vertical"
+
+  });
+
+  </script>
+  </body>
+  </html>

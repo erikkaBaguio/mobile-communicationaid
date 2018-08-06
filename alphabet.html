@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html>
+<title>Colors</title>
+<link rel="shortcut icon" href="clothes pics/clothesicon.png">
+<link rel="shorcut-icon" href="clothes pics/clothesicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="w3_bootstrap/css/menubar.css">
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-third img{margin: 1px; opacity: 0.8; cursor: pointer}
+.w3-third img:hover{opacity: 1}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-green w3-xlarge w3-padding-16">
+  <div class="w3-left w3-padding-16"><img src="pics/alphabets.png" alt="logo" width="30px" height="auto"/> ALPHABETS</div>
+  <a href="educational.html">
+      <span style="float: right; padding-top: 15px; padding-right: 5px; font-size: 90%;">Back</span></a>
+    </div>
+</header>
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Push down content on small screens --> 
+  <div class="w3-hide-large" style="margin-top:120px"></div>
+  
+  <!-- Photo grid -->
+  <div class="w3-row">
+    <div class="w3-third">
+      <img src="ALPHABET/A.jpg" style="width:32%" onclick="onClick(this);document.getElementById('A_play').play(); return false;" alt="A">
+      <img src="ALPHABET/B.png" style="width:32%" onclick="onClick(this);document.getElementById('B_play').play(); return false;" alt="B">
+      <img src="ALPHABET/C.png" style="width:32%" onclick="onClick(this);document.getElementById('C_play').play(); return false;" alt="C">
+    </div>
+
+    <div class="w3-third">
+      <img src="ALPHABET/D.png" style="width:32%" onclick="onClick(this);document.getElementById('D_play').play(); return false;" alt="D">
+      <img src="ALPHABET/E.png" style="width:32%" onclick="onClick(this);document.getElementById('E_play').play(); return false;" alt="E">
+      <img src="ALPHABET/F.png" style="width:32%" onclick="onClick(this);document.getElementById('F_play').play(); return false;" alt="F">
+    </div>
+    
+    <div class="w3-third">
+      <img src="ALPHABET/G.png" style="width:32%" onclick="onClick(this);document.getElementById('G_play').play(); return false;" alt="G">
+      <img src="ALPHABET/H.png" style="width:32%" onclick="onClick(this);document.getElementById('H_play').play(); return false;" alt="H">
+      <img src="ALPHABET/I.png" style="width:32%" onclick="onClick(this);document.getElementById('I_play').play(); return false;" alt="I">
+    </div>
+
+    <div class="w3-third">
+      <img src="ALPHABET/J.png" style="width:32%" onclick="onClick(this);document.getElementById('J_play').play(); return false;" alt="J">
+      <img src="ALPHABET/K.png" style="width:32%" onclick="onClick(this);document.getElementById('K_play').play(); return false;" alt="K">
+      <img src="ALPHABET/L.png" style="width:32%" onclick="onClick(this);document.getElementById('L_play').play(); return false;" alt="L">
+    </div>
+
+    <div class="w3-third">
+      <img src="ALPHABET/M.png" style="width:32%" onclick="onClick(this);document.getElementById('M_play').play(); return false;" alt="M">
+      <img src="ALPHABET/N.png" style="width:32%" onclick="onClick(this);document.getElementById('N_play').play(); return false;" alt="N">
+      <img src="ALPHABET/O.png" style="width:32%" onclick="onClick(this);document.getElementById('O_play').play(); return false;" alt="O">
+    </div>
+
+    <div class="w3-third">
+      <img src="ALPHABET/P.png" style="width:32%" onclick="onClick(this);document.getElementById('P_play').play(); return false;" alt="P">
+      <img src="ALPHABET/Q.png" style="width:32%" onclick="onClick(this);document.getElementById('Q_play').play(); return false;" alt="Q">
+      <img src="ALPHABET/R.png" style="width:32%" onclick="onClick(this);document.getElementById('R_play').play(); return false;" alt="R">
+    </div>
+
+    <div class="w3-third">
+      <img src="ALPHABET/S.png" style="width:32%" onclick="onClick(this);document.getElementById('S_play').play(); return false;" alt="S">
+      <img src="ALPHABET/T.png" style="width:32%" onclick="onClick(this);document.getElementById('T_play').play(); return false;" alt="T">
+      <img src="ALPHABET/U.png" style="width:32%" onclick="onClick(this);document.getElementById('U_play').play(); return false;" alt="U">
+    </div>
+
+    <div class="w3-third">
+      <img src="ALPHABET/V.png" style="width:32%" onclick="onClick(this);document.getElementById('V_play').play(); return false;" alt="V">
+      <img src="ALPHABET/W.png" style="width:32%" onclick="onClick(this);document.getElementById('W_play').play(); return false;" alt="W">
+      <img src="ALPHABET/X.png" style="width:32%" onclick="onClick(this);document.getElementById('X_play').play(); return false;" alt="X">
+    </div>
+
+    <div class="w3-third">
+      <img src="ALPHABET/Y.png" style="width:32%" onclick="onClick(this);document.getElementById('Y_play').play(); return false;" alt="Y">
+      <img src="ALPHABET/Z.png" style="width:32%" onclick="onClick(this);document.getElementById('Z _play').play(); return false;" alt="Z">
+      <!-- <img src="ALPHABET/I.png" style="width:32%" onclick="onClick(this);document.getElementById('gray_play').play(); return false;" alt="Gray"> -->
+    </div>
+  
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+    
+    <audio id="A_play">
+    <source src="audio/A.mp3"/>
+    </audio>
+    <audio id="B_play">
+    <source src="audio/B.mp3" />
+    </audio>
+    <audio id="C_play">
+    <source src="audio/C.mp3" />
+    </audio>
+    <audio id="D_play">
+    <source src="audio/D.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="E_play">
+    <source src="audio/E.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="F_play">
+    <source src="audio/F.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="G_play">
+    <source src="audio/G.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="H_play">
+    <source src="audio/H.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="I_play">
+    <source src="audio/I.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="J_play">
+    <source src="audio/J.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="K_play">
+    <source src="audio/K.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="L_play">
+    <source src="audio/L.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="M_play">
+    <source src="audio/M.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="N_play">
+    <source src="audio/N.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="O_play">
+    <source src="audio/O.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="P_play">
+    <source src="audio/P.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="Q_play">
+    <source src="audio/Q.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="R_play">
+    <source src="audio/R.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="S_play">
+    <source src="audio/S.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="T_play">
+    <source src="audio/T.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="U_play">
+    <source src="audio/U.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="V_play">
+    <source src="audio/V.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="W_play">
+    <source src="audio/W.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="X_play">
+    <source src="audio/X.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="Y_play">
+    <source src="audio/Y.mp3" type="audio/ogg" />
+    </audio>
+    <audio id="Z_play">
+    <source src="audio/Z.mp3" type="audio/ogg" />
+    </audio>
+
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+function logout(){
+    location = "login.html"
+ }
+</script>
+
+
+</body>
+</html>
