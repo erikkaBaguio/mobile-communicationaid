@@ -42,12 +42,12 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a onclick="dash(this.id);" class="simple-text">
-                        <img src="/static/assets/img/logo.png" style="height: 60px;width:20vh;"/>
+                        <img src="/static/assets/img/logo.png" style="height: 60px;width:20vh; cursor: pointer;"/>
                     </a>
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" onclick="dasher()">
+                        <a class="nav-link" onclick="dasher()" style="cursor: pointer;">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -59,25 +59,25 @@
                         </script>
                     </li>
                     <li>
-                        <a onclick="childprog(this.id);" class="nav-link" >
+                        <a onclick="childprog(this.id);" class="nav-link" style="cursor: pointer;" >
                             <i class="nc-icon nc-notes"></i>
                             <p>Child Progress</p>
                         </a>
                     </li>
                     <li>
-                        <a onclick="childact(this.id);" class="nav-link" >
+                        <a onclick="childact(this.id);" class="nav-link" style="cursor: pointer;" >
                             <i class="nc-icon nc-paper-2"></i>
                             <p>Child Activity</p>
                         </a>
                     </li>
                     <li>
-                        <a onclick="food(this.id);" class="nav-link" >
+                        <a onclick="food(this.id);" class="nav-link" style="cursor: pointer;">
                             <i class="nc-icon nc-apple"></i>
                             <p>Food</p>
                         </a>
                     </li>
                     <li>
-                        <a onclick="gender_bender();" class="nav-link" >
+                        <a onclick="gender_bender();" class="nav-link" style="cursor: pointer;">
                             <i class="nc-icon nc-backpack"></i>
                             <p>Clothes</p>
                         </a>
@@ -103,13 +103,13 @@
                         </script>
                     </li>
                     <li>
-                        <a onclick="place(this.id);" class="nav-link" >
+                        <a onclick="place(this.id);" class="nav-link" style="cursor: pointer;">
                             <i class="nc-icon nc-square-pin"></i>
                             <p>Places</p>
                         </a>
                     </li>
                     <li>
-                        <a onclick="toys(this.id);" class="nav-link" >
+                        <a onclick="toys(this.id);" class="nav-link" style="cursor: pointer;">
                             <i class="nc-icon nc-spaceship"></i>
                             <p>Toys</p>
                         </a>
@@ -134,7 +134,7 @@
                                     <div class="container">
                                         <div class="example" style="margin:auto;max-width:300px; margin-left: -40%;">
                                           <input id="searching" style="width: 250px; border-radius: 5px; border: 1px solid black; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;" type="text" placeholder="Search Keyword" name="search2">
-                                          <button onclick="search_forum()" class="w3-xlarge w3-teal" style="border: none; padding: 3px 13px; margin-top: 4px; padding-bottom: 7px; border-radius: 5px;"><i class="fa fa-search" style="padding-left: -4px; padding-top: 4px;"></i></button>
+                                          <button onclick="search_forum()" class="w3-xlarge w3-teal" style="border: none; padding: 3px 13px; margin-top: 4px; padding-bottom: 7px; border-radius: 5px; cursor: pointer;"><i class="fa fa-search" style="padding-left: -4px; padding-top: 4px;"></i></button>
                                         </div>
                                     </div>
                                   </div>
@@ -144,13 +144,13 @@
                                     <span class="no-icon">Profile</span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a onclick="p_prof()" class="dropdown-item" >User Profile</a>
+                                    <a onclick="p_prof()" class="dropdown-item" style="cursor: pointer;">User Profile</a>
                                     <div class="divider"></div>
-                                    <a onclick="c_prof()" class="dropdown-item" >Child Profile</a>
+                                    <a onclick="c_prof()" class="dropdown-item" style="cursor: pointer;">Child Profile</a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a onclick="logout()" class="nav-link" >
+                                <a onclick="logout()" class="nav-link" style="cursor: pointer;">
                                     <span class="no-icon">Log out</span>
                                 </a>
                             </li>
@@ -171,7 +171,7 @@
                                             <div class="card-header">
                                                 <div class="row">
                                                     <div class="col-md-1">
-                                                        <img id ="pic" src="https://24.p3k.hu/app/uploads/2015/06/troll53353749-2c3f-45c3-a498-ab2cd2c3fe6f.jpg" style="height: 80px; width: 80px; border-radius:30%;">
+                                                        <img src="{{img}}" style="height: 80px; width: 80px; border-radius:30%;">
                                                         
                                                     </div>
                                                     <div class="col-md-10">
@@ -181,7 +181,7 @@
                                                 <hr>
                                                 <!-- <button type="button" class="btn btn-primary" style="min-width:100%;">POST</button> -->
                                                 <center>
-                                                <input onclick="post()" class="btn btn-primary" type="submit" value="POST" style="min-width:85%; color: #fff;border-color: #4091e2; background-color: #4091e2;">
+                                                <input onclick="post()" class="btn btn-primary" type="submit" value="POST" style="min-width:85%; color: #fff;border-color: #4091e2; background-color: #4091e2; cursor: pointer;">
                                             </center>
                                             </div>
                                             <div class="card-body"></div>
@@ -218,8 +218,8 @@
         </a>
 
         <ul class="dropdown-menu">
-      <li class="header-title"> Sidebar Style</li>
-            <li class="adjustments-line">
+            <li class="header-title"> Sidebar Style</li>
+            <li class="adjustments-line" style="visibility: hidden;position: fixed;">
                 <a href="javascript:void(0)" class="switch-trigger">
                     <p>Background Image</p>
                     <label class="switch">
@@ -301,23 +301,6 @@
 </script>
 
 <script>
-    var acc_id = localStorage.getItem("acc_id");
-
-    xhr = new XMLHttpRequest();
-    var url  = "https://cryptic-fjord-60133.herokuapp.com/api/get_pprof/"+acc_id;
-    xhr.open("GET", url, true);
-    xhr.setRequestHeader("Content-type", "application/json");
-    xhr.onreadystatechange = function () { 
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var json = JSON.parse(xhr.responseText);
-            var memes = document.getElementById('pic');
-            var pict = json.img;
-            memes.setAttribute('src',pict);
-            
-        }
-    }
-
-    xhr.send();
 
     function logout(){
       localStorage.clear();
@@ -418,7 +401,7 @@
             $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/comment/"+value.forum_no,function(data){
               var forum='';
               $.each(data,function(key,value){
-                forum+='<div class="col-md-10"><div class="card"><div class="card-header"><div class="row"><div class="col-md-1"><img src="'+value.image+'" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase; ">'+value.name+'</h5><h6 style="text-transform: none; font-weight: 5;">'+value.date+' Time:'+value.time+'</h6><li class="nav-item dropdown pull-right" style="margin-top: -80px;"><a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fa fa-bars"></i></span></a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a onclick="delete_comment('+value.comment_id+','+value.forum_no+')" class="dropdown-item" >Delete</a><div class="divider"></div><a onclick="update_comment('+value.comment_id+','+value.forum_no+')" class="dropdown-item" >Edit</a></div></li></div></div></div><div class="card-body"><div class="row" style="margin-top: 5px; margin-left: 50px;"><div class="col-md-11"><p>'+value.details+'</p></div><div class="col"></div></div></div></div></div>';
+                forum+='<div class="col-md-10"><div class="card"><div class="card-header"><div class="row"><div class="col-md-1"><img src="'+value.image+'" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase; ">'+value.name+'</h5><h6 style="text-transform: none; font-weight: 5;">'+value.date+' Time:'+value.time+'</h6><button onclick="delete_comment('+value.comment_id+','+value.forum_no+')" class="w3-large w3-teal pull-right" style="border: none; padding: 3px 13px; margin-top: -60px; padding-bottom: 7px; border-radius: 5px; cursor: pointer;"><i class="fa fa-trash" style="padding-left: -4px; padding-top: 4px;"></i></button></div></div></div><div class="card-body"><div class="row" style="margin-top: 5px; margin-left: 50px;"><div class="col-md-11"><p>'+value.details+'</p></div><div class="col"></div></div></div></div></div>';
 
 
 
@@ -428,9 +411,10 @@
             });
           });
 
-          forum+='<div class="card" style=" box-shadow: 0 0 1px 2px #888;"><div class="card-header"><div class="row"><div class="col-md-1"><img src="'+value.img+'" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase; ">'+value.name+'</h5><h6 style="text-transform: none; font-weight: 5;">Date:'+value.date+' Time:'+value.time+'</h6><li class="nav-item dropdown pull-right" style="margin-top: -80px;"><a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fa fa-bars"></i></span></a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a onclick="delete_forum('+value.forum_no+')" class="dropdown-item" >Delete</a><div class="divider"></div><a onclick="update_forum('+value.forum_no+')" class="dropdown-item" >Edit</a></div></li><br><div class="row" style="margin-top: 5px;"><div class="col-md-11"><p>'+value.details+'</p></div><div class="col"></div></div><!-- question here --></div></div></div><div id="'+value.forum_no+'" class="card-body"><hr></div><hr><div class="row"><div class="col-md-12"><div class="form-group"><div class="row"><div class="col-md-9"><input id="'+value.forum_no+'1" type="text" class="form-control" placeholder="Comment" style="margin-left: 80px;"></div><div class="col-md-2"<button onclick="comment('+value.forum_no+')" type="submit" class="btn btn-info btn-fill pull-right" style="border-color: #009688; background-color: #009688; text-align: center; padding-top: 7px; color: white;">Comment</button><div class="clearfix"></div></div></div></div></div></div></div></div>';
-                          
+          forum+='<div class="card" style=" box-shadow: 0 0 1px 2px #888;"><div class="card-header"><div class="row"><div class="col-md-1"><img src="'+value.img+'" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase; ">'+value.name+'</h5><h6 style="text-transform: none; font-weight: 5;">Date:'+value.date+' Time:'+value.time+'</h6><button onclick="delete_forum('+value.forum_no+')" class="w3-large w3-teal pull-right" style="border: none; padding: 3px 13px; margin-top: -60px; padding-bottom: 7px; border-radius: 5px; cursor: pointer;"><i class="fa fa-trash" style="padding-left: -4px; padding-top: 4px;"></i></button><br><div class="row" style="margin-top: 5px;"><div class="col-md-11"><p>'+value.details+'</p></div><div class="col"></div></div><!-- question here --></div></div></div><div id="'+value.forum_no+'" class="card-body"><hr></div><hr><div class="row"><div class="col-md-12"><div class="form-group"><div class="row"><div class="col-md-9"><input id="'+value.forum_no+'1" type="text" class="form-control" placeholder="Comment" style="margin-left: 80px;"></div><div class="col-md-2"<button onclick="comment('+value.forum_no+')" type="submit" class="btn btn-primary" style="cursor: pointer;">Comment</button><div class="clearfix"></div></div></div></div></div></div></div></div>';
 
+                          // border-color: #009688; background-color: #009688; text-align: center; padding-top: 7px; color: white; 
+                          // class="btn btn-info btn-fill pull-right" 
 
 
                           
@@ -541,7 +525,7 @@ function delete_comment(comid,forum_no){
             $.getJSON("https://cryptic-fjord-60133.herokuapp.com/api/comment/"+value.forum_no,function(data){
               var forum='';
               $.each(data,function(key,value){
-                forum+='<div class="col-md-10"><div class="card"><div class="card-header"><div class="row"><div class="col-md-1"><img src="'+value.image+'" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase; ">'+value.name+'</h5><h6 style="text-transform: none; font-weight: 5;">'+value.date+' Time:'+value.time+'</h6><li class="nav-item dropdown pull-right" style="margin-top: -80px;"><a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fa fa-bars"></i></span></a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a onclick="delete_comment('+value.comment_id+','+value.forum_no+')" class="dropdown-item" >Delete</a><div class="divider"></div><a onclick="update_comment('+value.comment_id+','+value.forum_no+')" class="dropdown-item" >Edit</a></div></li></div></div></div><div class="card-body"><div class="row" style="margin-top: 5px; margin-left: 50px;"><div class="col-md-11"><p>'+value.details+'</p></div><div class="col"></div></div></div></div></div>';
+                forum+='<div class="col-md-10"><div class="card"><div class="card-header"><div class="row"><div class="col-md-1"><img src="'+value.image+'" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase; ">'+value.name+'</h5><h6 style="text-transform: none; font-weight: 5;">'+value.date+' Time:'+value.time+'</h6><button onclick="delete_comment('+value.comment_id+','+value.forum_no+')" class="w3-large w3-teal pull-right" style="border: none; padding: 3px 13px; margin-top: -60px; padding-bottom: 7px; border-radius: 5px; cursor: pointer;"><i class="fa fa-trash" style="padding-left: -4px; padding-top: 4px;"></i></button></div></div></div><div class="card-body"><div class="row" style="margin-top: 5px; margin-left: 50px;"><div class="col-md-11"><p>'+value.details+'</p></div><div class="col"></div></div></div></div></div>';
 
 
 
@@ -550,7 +534,7 @@ function delete_comment(comid,forum_no){
             });
           });
 
-          forum+='<div class="card" style=" box-shadow: 0 0 1px 2px #888;"><div class="card-header"><div class="row"><div class="col-md-1"><img src="'+value.img+'" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase; margin-left: 20px;">'+value.name+'</h5><h6 style="text-transform: none; font-weight: 5; margin-left: 20px;">Date:'+value.date+' Time:'+value.time+'</h6><li class="nav-item dropdown pull-right" style="margin-top: -80px;"><a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fa fa-bars"></i></span></a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a onclick="delete_forum('+value.forum_no+')" class="dropdown-item" >Delete</a><div class="divider"></div><a onclick="update_forum('+value.forum_no+')" class="dropdown-item" >Edit</a></div></li><br><div class="row" style="margin-top: 5px;"><div class="col-md-11"><p>'+value.details+'</p></div><div class="col"></div></div><!-- question here --></div></div></div><div id="'+value.forum_no+'" class="card-body"><hr></div><hr><div class="row"><div class="col-md-12"><div class="form-group"><div class="row"><div class="col-md-9"><input id="'+value.forum_no+'1" type="text" class="form-control" placeholder="Comment" style="margin-left: 80px;"></div><div class="col-md-2"<button onclick="comment('+value.forum_no+')" type="submit" class="btn btn-info btn-fill pull-right" style="border-color: #009688; background-color: #009688; text-align: center; padding-top: 7px; color: white;">Comment</button><div class="clearfix"></div></div></div></div></div></div></div></div>';
+          forum+='<div class="card" style=" box-shadow: 0 0 1px 2px #888;"><div class="card-header"><div class="row"><div class="col-md-1"><img src="'+value.img+'" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase; margin-left: 20px;">'+value.name+'</h5><h6 style="text-transform: none; font-weight: 5; margin-left: 20px;">Date:'+value.date+' Time:'+value.time+'</h6><button onclick="delete_forum('+value.forum_no+')" class="w3-large w3-teal pull-right" style="border: none; padding: 3px 13px; margin-top: -60px; padding-bottom: 7px; border-radius: 5px; cursor: pointer;"><i class="fa fa-trash" style="padding-left: -4px; padding-top: 4px;"></i></button><br><div class="row" style="margin-top: 5px;"><div class="col-md-11"><p>'+value.details+'</p></div><div class="col"></div></div><!-- question here --></div></div></div><div id="'+value.forum_no+'" class="card-body"><hr></div><hr><div class="row"><div class="col-md-12"><div class="form-group"><div class="row"><div class="col-md-9"><input id="'+value.forum_no+'1" type="text" class="form-control" placeholder="Comment" style="margin-left: 80px; cursor: pointer;"></div><div class="col-md-2"<button onclick="comment('+value.forum_no+')" type="submit" class="btn btn-info btn-fill pull-right" style="border-color: #009688; background-color: #009688; text-align: center; padding-top: 7px; color: white;">Comment</button><div class="clearfix"></div></div></div></div></div></div></div></div>';
         });
         $('#forum-parent').append(forum);
         }
@@ -573,7 +557,7 @@ function delete_comment(comid,forum_no){
             var json = JSON.parse(xhr.responseText);
             // alert(json);
             var comment = '';
-            comment +='<div class="col-md-10"><div class="card"><div class="card-header"><div class="row"><div class="col-md-1"><img src="{{img}}" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase;">{{name}}</h5><h6 style="text-transform: none; font-weight: 5; margin-left: 20px;">'+json.date+' Time:'+json.time+'</h6></div></div></div><div class="card-body"><div class="row" style="margin-top: 5px; margin-left: 50px;"><div class="col-md-11"><p>'+json.details+'</p></div><div class="col"></div></div></div></div></div>';
+            comment +='<div class="col-md-10"><div class="card"><div class="card-header"><div class="row"><div class="col-md-1"><img src="{{img}}" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase;">'+json.name+'</h5><h6 style="text-transform: none; font-weight: 5; margin-left: 20px;">'+json.date+' Time:'+json.time+'</h6><button onclick="delete_forum('+json.comment_id+')" class="w3-large w3-teal pull-right" style="border: none; padding: 3px 13px; margin-top: -60px; padding-bottom: 7px; border-radius: 5px; cursor: pointer;"><i class="fa fa-trash" style="padding-left: -4px; padding-top: 4px;"></i></button></div></div></div><div class="card-body"><div class="row" style="margin-top: 5px; margin-left: 50px;"><div class="col-md-11"><p>'+json.details+'</p></div><div class="col"></div></div></div></div></div>';
 
 
 
@@ -586,3 +570,7 @@ function delete_comment(comid,forum_no){
     console.log(json)
     xhr.send(json);
 }
+</script>
+
+
+</html>
