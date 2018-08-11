@@ -303,7 +303,7 @@
 <script>
 
     var memes = document.getElementById('pic');
-    memes.setAttribute('src', localStorage.getItem('parent_pic'));
+    memes.setAttribute('src', localStorage.getItem('teacher_pic'));
 
     function logout(){
       localStorage.clear();
@@ -558,8 +558,8 @@ function delete_comment(comid,forum_no){
     xhr.onreadystatechange = function () { 
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            // alert(json);
-            var bidal= localStorage.getItem('parent_pic')
+            alert(json.comment_id);
+            var bidal= localStorage.getItem('teacher_pic')
             var comment = '';
             comment +='<div class="col-md-10"><div class="card"><div class="card-header"><div class="row"><div class="col-md-1"><img src="'+bidal+'" style="height: 50px; width: 50px; border-radius:30%;"></div><div class="col-md-11"><h5 style="font-weight: 600; text-transform: uppercase;">'+json.name+'</h5><h6 style="text-transform: none; font-weight: 5; margin-left: 20px;">'+json.date+' Time:'+json.time+'</h6><button onclick="delete_comment('+json.comment_id+','+json.forum_no+')" class="w3-large w3-teal pull-right" style="border: none; padding: 3px 13px; margin-top: -60px; padding-bottom: 7px; border-radius: 5px; cursor: pointer;"><i class="fa fa-trash" style="padding-left: -4px; padding-top: 4px;"></i></button></div></div></div><div class="card-body"><div class="row" style="margin-top: 5px; margin-left: 50px;"><div class="col-md-11"><p>'+json.details+'</p></div><div class="col"></div></div></div></div></div>';
 
